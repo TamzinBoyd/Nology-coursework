@@ -1,0 +1,57 @@
+#german {
+  width: 700px;
+  height: 400px;
+}
+#german {
+  background-image: linear-gradient(
+    180deg,
+    black,
+    black 133px,
+    red 5px,
+    red 266px,
+    yellow 5px,
+    yellow
+  );
+}
+
+#french {
+  width: 700px;
+  height: 400px;
+  position: absolute;
+  top: 450px;
+}
+#french {
+  background-image: linear-gradient(
+    to right,
+    blue,
+    blue 233px,
+    white 5px,
+    white 466px,
+    red 5px,
+    red
+  );
+}
+
+#german:hover {
+  background-image: linear-gradient(
+    180deg,
+    rgb(255, 33, 66),
+    rgb(255, 33, 66) 133px,
+    white 5px,
+    white 266px,
+    rgb(37, 102, 38) 5px,
+    rgb(37, 102, 38)
+  );
+}
+
+#french:hover {
+  background-image: linear-gradient(
+    to right,
+    rgb(37, 102, 38),
+    rgb(37, 102, 38) 233px,
+    white 5px,
+    white 466px,
+    rgb(255, 153, 0) 5px,
+    rgb(255, 153, 0)
+  );
+}
