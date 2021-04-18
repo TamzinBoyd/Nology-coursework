@@ -1,0 +1,87 @@
+/* Really struggled with this exercise. Watched quite a few videos etc but not 100% I've mastered the flexbox outside of the standard commands
+I can get it to appear like the image on my screen but not sure it will scale down on a smaller screen? */
+
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.nav {
+  list-style: none;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.L1 {
+  padding-right: 190px;
+  margin-bottom: 7px;
+  margin-top: 7px;
+}
+.L2 {
+  padding-right: 190px;
+}
+.L3 {
+  padding-right: 190px;
+}
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 98%;
+}
+
+#nology {
+  background-color: green;
+  width: 100px;
+  height: 25px;
+  padding: 5px 5px 5px 5px;
+  font-size: 1em;
+  text-align: center;
+  color: white;
+  margin-right: 620px;
+}
+
+.container {
+  display: flex;
+  align-items: space-evenly;
+  flex-wrap: wrap;
+  height: 500px;
+}
+h2 {
+  padding-left: 10px;
+}
+
+/* Read that having the span element below created space for the 4th box to go to the right */
+.mosaic1 {
+  list-style: none;
+}
+.mosaic2 {
+  list-style: none;
+}
+#box1 {
+  border: black 2px solid;
+  width: 75%;
+  margin-bottom: 10px;
+}
+
+#box2 {
+  border: black 2px solid;
+  width: 75%;
+  margin-bottom: 10px;
+}
+
+#box3 {
+  border: black 2px solid;
+  width: 75%;
+  margin-bottom: 10px;
+}
+
+#box4 {
+  border: black 2px solid;
+  width: 30%;
+  margin-left: 112%;
+  margin-top: -489px;
+  height: 475px;
+  padding: 0px 20px 0px 20px;
+}
