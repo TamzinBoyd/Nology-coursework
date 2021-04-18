@@ -1,0 +1,167 @@
+/* Really struggled with this exercise. Watched quite a few videos etc but not 100% I've mastered the flexbox outside of the standard commands
+I can get it to appear like the image on my screen but not sure it will scale down on a smaller screen? */
+
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.nav {
+  list-style: none;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.L1 {
+  padding-right: 190px;
+  margin-bottom: 7px;
+  margin-top: 7px;
+}
+.L2 {
+  padding-right: 190px;
+}
+.L3 {
+  padding-right: 70px;
+}
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 98%;
+}
+
+#nology {
+  background-color: green;
+  width: 100px;
+  height: 25px;
+  padding: 5px 5px 5px 5px;
+  font-size: 1em;
+  text-align: center;
+  color: white;
+  margin-right: 690px;
+}
+
+.mainBox1 {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: white;
+  border: black 2px solid;
+  height: 150px;
+  width: 70%;
+  margin-bottom: 15px;
+  justify-content: space-around;
+  align-items: center;
+  font-weight: bold;
+}
+
+.box1 {
+  width: 90px;
+  height: 90px;
+  background-color: black;
+  color: white;
+}
+
+.box2 {
+  width: 90px;
+  height: 90px;
+  background-color: black;
+  color: white;
+}
+
+.box3 {
+  width: 90px;
+  height: 90px;
+  background-color: black;
+  color: white;
+}
+
+.mainBox2 {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: white;
+  border: black 2px solid;
+  height: 150px;
+  width: 70%;
+  margin-bottom: 15px;
+  justify-content: flex-end;
+  align-items: center;
+  font-weight: bold;
+}
+
+.box4 {
+  width: 90px;
+  height: 90px;
+  background-color: black;
+  color: white;
+  margin-right: 20px;
+}
+
+.box5 {
+  width: 90px;
+  height: 90px;
+  background-color: black;
+  color: white;
+  margin-right: 20px;
+}
+
+.box6 {
+  width: 90px;
+  height: 90px;
+  background-color: black;
+  color: white;
+  margin-right: 20px;
+}
+
+.mainBox3 {
+  display: flex;
+  /* flex-wrap: wrap; */
+  background-color: white;
+  border: black 2px solid;
+  height: 150px;
+  width: 70%;
+  flex-direction: row reverse;
+  align-self: flex-start;
+  align-items: center;
+  font-weight: bold;
+}
+
+.box7 {
+  width: 90px;
+  height: 90px;
+  background-color: black;
+  color: white;
+  margin-left: 20px;
+}
+
+.box8 {
+  width: 90px;
+  height: 90px;
+  background-color: black;
+  color: white;
+  margin-left: 20px;
+}
+
+.box9 {
+  width: 90px;
+  height: 90px;
+  background-color: black;
+  color: white;
+  margin-left: 20px;
+}
+/* Read that having the span element below created space for the 4th box to go to the right */
+.mosaic1 {
+  list-style: none;
+}
+.mosaic2 {
+  list-style: none;
+}
+
+#rightBox {
+  border: black 2px solid;
+  width: 25%;
+  margin-left: 72%;
+  margin-top: -492px;
+  height: 488px;
+  padding: 0px 20px 0px 20px;
+}
