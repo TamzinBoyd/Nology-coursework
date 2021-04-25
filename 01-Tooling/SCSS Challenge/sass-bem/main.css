@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&family=Roboto&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  color: #333333;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+.navigation {
+  height: 10vh;
+  background-color: #28527a;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: "Dancing Script", cursive;
+  font-size: 20px;
+  color: #fafafa;
+}
+
+.button {
+  display: block;
+  width: 100px;
+  background-color: #f0a500;
+  text-align: center;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: #fafafa;
+}
+.button--form {
+  width: 100%;
+  background-color: #55a5f0;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+.intro {
+  text-align: center;
+}
+.intro__heading {
+  color: #28527a;
+  font-size: 50px;
+}
+.intro__sub-heading {
+  font-family: "Dancing Script", cursive;
+  font-size: 25px;
+  margin: 20px 0px;
+}
+.intro__button {
+  width: 100%;
+  background-color: #f0a500;
+  border-radius: 10px;
+  color: #fafafa;
+  padding: 10px 20px;
+  margin-top: 50px;
+}
+
+.goodbye {
+  text-align: center;
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.goodbye__heading {
+  color: #28527a;
+  font-family: "Dancing Script", cursive;
+}
+.goodbye__button {
+  width: 100px;
+  background-color: #fafafa;
+  border: #333333 1px solid;
+  border-radius: 10px;
+  color: #333333;
+  padding: 10px 20px;
+  margin-top: 10px;
+}
+
+.wave {
+  vertical-align: top;
+}
+
+.wave__footer {
+  vertical-align: top;
+  margin-top: -150px;
+}
+
+.form {
+  background-color: #fafafa;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.form__input {
+  margin-bottom: 20px;
+}
+
+.footer__copy {
+  color: #fafafa;
+}
+.footer__date {
+  color: #fafafa;
+}
+.footer__logo {
+  font-family: "Dancing Script", cursive;
+  font-size: 20px;
+  color: #fafafa;
+}
+
+.header {
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  height: 50vh;
+  background-color: #28527a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer {
+  height: 10vh;
+  background-color: #28527a;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

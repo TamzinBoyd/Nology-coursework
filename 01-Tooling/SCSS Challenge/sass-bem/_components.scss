@@ -1,0 +1,113 @@
+.navigation {
+  height: 10vh;
+  background-color: $color-primary;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: $font-display;
+  font-size: 20px;
+  color: $color-white;
+}
+
+.button {
+  display: block;
+  width: 100px;
+  background-color: $color-secondary;
+  text-align: center;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: $color-white;
+
+  &--form {
+    width: 100%;
+    background-color: $color-primary-light;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+  }
+}
+
+.intro {
+  text-align: center;
+
+  &__heading {
+    color: $color-primary;
+    font-size: 50px;
+  }
+
+  &__sub-heading {
+    font-family: $font-display;
+    font-size: 25px;
+    margin: 20px 0px;
+  }
+
+  &__button {
+    width: 100%;
+    background-color: $color-secondary;
+    border-radius: 10px;
+    color: $color-white;
+    padding: 10px 20px;
+    margin-top: 50px;
+  }
+}
+
+.goodbye {
+  text-align: center;
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__heading {
+    color: $color-primary;
+    font-family: $font-display;
+  }
+
+  &__button {
+    width: 100px;
+    background-color: $color-white;
+    border: $color-black 1px solid;
+    border-radius: 10px;
+    color: $color-black;
+    padding: 10px 20px;
+    margin-top: 10px;
+  }
+}
+.wave {
+  vertical-align: top;
+}
+
+.wave__footer {
+  vertical-align: top;
+  margin-top: -150px;
+}
+.form {
+  background-color: $color-white;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+
+  &__input {
+    margin-bottom: 20px;
+  }
+}
+
+.footer {
+  &__copy {
+    color: $color-white;
+  }
+
+  &__date {
+    color: $color-white;
+  }
+  &__logo {
+    font-family: $font-display;
+    font-size: 20px;
+    color: $color-white;
+  }
+}

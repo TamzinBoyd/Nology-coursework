@@ -11,6 +11,10 @@ I can get it to appear like the image on my screen but not sure it will scale do
   color: white;
   font-weight: bold;
   font-size: 1.1em;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 98%;
 }
 
 .L1 {
@@ -24,12 +28,7 @@ I can get it to appear like the image on my screen but not sure it will scale do
 .L3 {
   padding-right: 190px;
 }
-.nav {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  width: 98%;
-}
+
 
 #nology {
   background-color: green;
