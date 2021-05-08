@@ -1,0 +1,551 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Assistant:wght@200;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Chau+Philomene+One&family=PT+Sans:wght@400;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.title {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 25px;
+  font-size: 20px;
+  font-family: "Chau Philomene One", sans-serif;
+}
+.title__projects {
+  margin-top: -12px;
+  color: #4f4f4f;
+  letter-spacing: 3px;
+}
+.title__contact {
+  margin-top: -10px;
+  color: #4f4f4f;
+  margin-right: 7px;
+  letter-spacing: 3px;
+}
+
+@media screen and (min-width: 760px) {
+  .title {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 60px;
+    font-size: 40px;
+  }
+  .title__projects {
+    margin-top: -20px;
+  }
+  .title__contact {
+    margin-top: -20px;
+  }
+}
+.chevron {
+  margin-left: -3000px;
+  margin-top: -3000px;
+}
+
+@media screen and (min-width: 760px) {
+  .chevron {
+    font-family: "Assistant", sans-serif;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    margin-left: 25%;
+    margin-bottom: 10px;
+  }
+  .chevron__scroll {
+    text-align: center;
+  }
+  .chevron__scroll__icon {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-right: 10px;
+    border: 2px red solid;
+  }
+}
+.container {
+  display: flex;
+  background-color: #ffbc00;
+  position: relative;
+}
+
+.nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+}
+.nav__list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 30px;
+  margin-top: 20px;
+  list-style: none;
+  font-family: "Chau Philomene One", sans-serif;
+  font-size: 20px;
+}
+.nav__projects {
+  background-color: white;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+.nav__projects a {
+  text-decoration: none;
+  color: #4f4f4f;
+}
+.nav__skills {
+  background-color: white;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  text-decoration: none;
+}
+.nav__skills a {
+  text-decoration: none;
+  color: #4f4f4f;
+}
+.nav__contact {
+  background-color: white;
+  color: #ffbc00;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  text-decoration: none;
+}
+.nav__contact a {
+  text-decoration: none;
+  color: #4f4f4f;
+}
+
+.header {
+  font-family: "Chau Philomene One", sans-serif;
+  height: 270px;
+  display: flex;
+  align-items: flex-end;
+  color: #4f4f4f;
+}
+
+.header__hey {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: -50px;
+  margin-left: 20px;
+  font-size: 150px;
+}
+
+@media screen and (min-width: 760px) {
+  .container {
+    display: flex;
+    position: relative;
+  }
+
+  .nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+  }
+  .nav__list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 30px;
+    margin-top: 20px;
+    font-size: 30px;
+  }
+  .nav__projects {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 50%;
+    margin-bottom: 20px;
+  }
+  .nav__skills {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 50%;
+    margin-bottom: 20px;
+  }
+  .nav__contact {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 50%;
+    margin-bottom: 20px;
+  }
+
+  .header {
+    height: 700px;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .header__hey {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: -65px;
+    margin-left: 50px;
+    font-size: 200px;
+  }
+}
+.name {
+  color: #ffbc00;
+}
+
+.welcome {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  background-color: #4f4f4f;
+  font-family: "PT Sans", sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  color: white;
+  padding: 50px 20px 50px 15px;
+  text-align: center;
+}
+.welcome__message {
+  padding: 20px 30px;
+}
+
+@media screen and (min-width: 760px) {
+  .welcome {
+    height: 900px;
+    display: flex;
+    padding: 0 100px;
+    align-items: center;
+    font-size: 50px;
+  }
+  .welcome__message {
+    padding: 20px 170px;
+  }
+}
+.container__projects {
+  background-color: #ffa392;
+  letter-spacing: 3px;
+  height: 600px;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 10px;
+  padding: 0px 25px;
+  margin-top: 25px;
+}
+.projects__1 {
+  max-width: 150px;
+  border-radius: 50%;
+}
+.projects__1:hover {
+  border: #4f4f4f 4px solid;
+}
+.projects__2 {
+  border-radius: 50%;
+  max-width: 150px;
+}
+.projects__2:hover {
+  border: #4f4f4f 4px solid;
+}
+.projects__3 {
+  border-radius: 50%;
+  max-width: 150px;
+}
+.projects__3:hover {
+  border: #4f4f4f 4px solid;
+}
+.projects__4 {
+  border-radius: 50%;
+  max-width: 150px;
+}
+.projects__4:hover {
+  border: #4f4f4f 4px solid;
+}
+.projects__5 {
+  border-radius: 50%;
+  max-width: 150px;
+}
+.projects__5:hover {
+  border: #4f4f4f 4px solid;
+}
+.projects__6 {
+  border-radius: 50%;
+  max-width: 150px;
+}
+.projects__6:hover {
+  border: #4f4f4f 4px solid;
+}
+
+@media screen and (min-width: 760px) {
+  .container__projects {
+    letter-spacing: 3px;
+    height: 850px;
+  }
+
+  .projects {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 50px;
+    padding: 50px 300px 0px 300px;
+    margin-top: 5px;
+  }
+  .projects__1 {
+    border-radius: 50%;
+    max-width: 300px;
+  }
+  .projects__2 {
+    border-radius: 50%;
+    max-width: 300px;
+  }
+  .projects__3 {
+    border-radius: 50%;
+    max-width: 300px;
+  }
+  .projects__4 {
+    border-radius: 50%;
+    max-width: 300px;
+  }
+  .projects__5 {
+    border-radius: 50%;
+    max-width: 300px;
+  }
+  .projects__6 {
+    border-radius: 50%;
+    max-width: 300px;
+  }
+}
+.title__skills {
+  color: #ffa392;
+  margin-top: -10px;
+  letter-spacing: 3px;
+}
+
+.container__skills {
+  background-color: #4f4f4f;
+  height: 525px;
+}
+
+.skillslogo {
+  margin-top: 40px;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  color: #4f4f4f;
+}
+.skillslogo__1 {
+  background-color: #ffa392;
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 0 20px;
+}
+.skillslogo__2 {
+  background-color: #ffa392;
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.skillslogo__3 {
+  background-color: #ffa392;
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 0 20px;
+}
+
+.skills {
+  font-family: "Assistant", sans-serif;
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 20px 50px;
+  text-align: center;
+}
+
+@media screen and (min-width: 760px) {
+  .title__skills {
+    color: #ffa392;
+    margin-top: -20px;
+    letter-spacing: 3px;
+  }
+
+  .container__skills {
+    background-color: #4f4f4f;
+    height: 900px;
+  }
+
+  .skillslogo {
+    margin-top: 150px;
+    margin-bottom: 25px;
+    font-size: 50px;
+    display: flex;
+    justify-content: space-around;
+    color: #4f4f4f;
+  }
+  .skillslogo__1 {
+    background-color: #ffa392;
+    text-align: center;
+    vertical-align: center;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+  }
+  .skillslogo__2 {
+    background-color: #ffa392;
+    text-align: center;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+  }
+  .skillslogo__3 {
+    background-color: #ffa392;
+    text-align: center;
+    vertical-align: center;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+  }
+
+  .skills {
+    font-family: "Assistant", sans-serif;
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    text-align: center;
+    font-size: 20px;
+  }
+  .skills__1 {
+    padding-right: 40px;
+  }
+}
+.container__contact {
+  background-color: #ffbc00;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.contact__image {
+  display: flex;
+  justify-content: flex-end;
+  max-width: 100px;
+  border-radius: 50%;
+  margin-left: 30px;
+  margin-top: -300px;
+}
+
+.contact__heading {
+  display: flex;
+  justify-self: flex-end;
+  font-family: "Assistant", sans-serif;
+  font-weight: 1000;
+  font-size: 20px;
+  margin-left: 140px;
+  margin-top: 20px;
+}
+
+.contact__cv {
+  font-family: "Assistant", sans-serif;
+  font-size: 14px;
+  margin-left: 140px;
+  padding-right: 10px;
+}
+
+.contact__cv a {
+  text-decoration: none;
+  color: #4f4f4f;
+  font-weight: bold;
+}
+
+.links {
+  display: flex;
+  font-size: 25px;
+  margin-left: 140px;
+  margin-top: 10px;
+  color: #4f4f4f;
+  letter-spacing: 20px;
+}
+
+.links a {
+  text-decoration: none;
+  color: #4f4f4f;
+}
+
+@media screen and (min-width: 760px) {
+  .container__contact {
+    background-color: #ffbc00;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .contact__image {
+    display: flex;
+    justify-content: flex-end;
+    border-radius: 50%;
+    margin-left: 100px;
+    margin-top: -360px;
+    max-width: 200px;
+  }
+
+  .contact__heading {
+    display: flex;
+    justify-self: flex-end;
+    font-family: "Assistant", sans-serif;
+    font-weight: 1500;
+    font-size: 40px;
+    margin-left: 320px;
+    margin-top: 100px;
+  }
+
+  .contact__cv {
+    font-family: "Assistant", sans-serif;
+    font-size: 20px;
+    margin-left: 320px;
+  }
+
+  .contact__cv a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+  }
+
+  .links {
+    display: flex;
+    font-size: 40px;
+    margin-left: 320px;
+    margin-top: 20px;
+    color: #4f4f4f;
+    letter-spacing: 40px;
+    color: black;
+  }
+
+  .links a {
+    text-decoration: none;
+    color: black;
+  }
+}

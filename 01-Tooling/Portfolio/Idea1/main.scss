@@ -1,0 +1,547 @@
+@import url("https://fonts.googleapis.com/css2?family=Abel&family=Amatic+SC&family=Bungee+Shade&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Livvic:wght@100&display=swap");
+
+$font-main: "Bungee Shade", cursive;
+$font-second: "Livvic", sans-serif;
+$font-text: "Abel", sans-serif;
+$color-main: #ff0070;
+$color-second: #08fdd8;
+$color-background: #02021c;
+
+// still need to separate SCSS doc & link them
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: $color-background;
+}
+h1 {
+  font-family: $font-main;
+}
+
+h2 {
+  font-family: $font-second;
+}
+
+p {
+  font-family: $font-text;
+}
+
+// Triangle image /////
+
+.triangle__image img {
+  display: flex;
+  float: left;
+  max-width: 150px;
+}
+
+//desktop
+@media screen and (min-width: 760px) {
+  .triangle__image img {
+    display: flex;
+    float: left;
+    max-width: 600px;
+  }
+}
+
+// style toggle ////////////////////////////////////////////////////////////////
+
+// mobile //
+
+.toggle {
+  font-family: $font-second;
+  color: $color-second;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+  margin-right: 20px;
+
+  &__back {
+    border: 2px solid $color-second;
+    border-radius: 15px;
+    width: 30px;
+    height: 15px;
+  }
+
+  &__button {
+    position: absolute;
+    border: 2px solid $color-second;
+    border-radius: 20px;
+    width: 15px;
+    height: 15px;
+    background-color: $color-second;
+  }
+
+  &__text {
+    display: flex;
+    align-items: center;
+    margin-right: 2%;
+    font-size: 10px;
+  }
+}
+
+// desktop //
+
+@media screen and (min-width: 760px) {
+  .toggle {
+    margin-top: 10px;
+    margin-right: 10px;
+
+    &__back {
+      width: 60px;
+      height: 30px;
+    }
+
+    &__button {
+      width: 30px;
+      height: 30px;
+    }
+
+    &__text {
+      margin-right: 10px;
+      font-size: 20px;
+    }
+  }
+}
+
+// heading //////////////////////////////////////////////////////////////
+
+// Settings - mobile
+
+.intro {
+  text-align: right;
+  margin-right: 20px;
+  position: relative;
+
+  &__heading {
+    color: $color-main;
+    font-size: 30px;
+    line-height: 40px;
+    margin-top: 100px;
+  }
+
+  &__about {
+    color: $color-second;
+    font-size: 12px;
+    margin-top: 10px;
+    letter-spacing: 2.5px;
+    margin-bottom: 90px;
+    text-transform: uppercase;
+  }
+}
+
+// Settings - dektop //
+
+@media screen and (min-width: 760px) {
+  .intro {
+    margin-right: 100px;
+
+    &__heading {
+      font-size: 100px;
+      line-height: 110px;
+      margin-top: 190px;
+    }
+
+    &__about {
+      font-size: 27px;
+      margin-top: 10px;
+      margin-bottom: 100px;
+    }
+  }
+}
+
+// styling nav buttons /////////////////////////////////////////////////
+
+// Mobile
+
+.nav {
+  &__buttons {
+    display: flex;
+    justify-content: center;
+    font-family: $font-second;
+    font-size: 17px;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+  }
+
+  &__projects {
+    border: 2px $color-main solid;
+    border-radius: 5px;
+    width: 90px;
+    height: 20px;
+    margin-right: 4%;
+    text-align: center;
+    text-decoration: none;
+    background-color: $color-background;
+    color: $color-second;
+    box-shadow: -5px 5px $color-second;
+    padding-top: 10px;
+  }
+
+  &__experience {
+    border: 2px $color-main solid;
+    border-radius: 10px;
+    width: 90px;
+    height: 25px;
+    text-align: center;
+    text-decoration: none;
+    background-color: $color-background;
+    color: $color-second;
+    box-shadow: -5px 5px $color-second;
+    padding-top: 10px;
+  }
+
+  &__contact {
+    border: 2px $color-main solid;
+    border-radius: 10px;
+    width: 90px;
+    height: 25px;
+    margin-left: 4%;
+    text-align: center;
+    text-decoration: none;
+    background-color: $color-background;
+    color: $color-second;
+    box-shadow: -5px 5px $color-second;
+    padding-top: 10px;
+  }
+}
+
+// Desktop
+
+@media screen and (min-width: 760px) {
+  .nav {
+    &__buttons {
+      font-size: 30px;
+      margin-bottom: 100px;
+    }
+
+    &__projects {
+      border-radius: 10px;
+      width: 220px;
+      height: 60px;
+      margin-right: 4%;
+    }
+
+    &__experience {
+      border-radius: 10px;
+      width: 220px;
+      height: 60px;
+    }
+
+    &__contact {
+      border-radius: 10px;
+      width: 220px;
+      height: 60px;
+      margin-left: 4%;
+    }
+  }
+}
+
+// Images grid /////////////////////////////////////////////////////////////////////////
+
+//settings for mobile
+
+.projects__header {
+  font-size: 60px;
+  color: $color-main;
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 20px;
+}
+
+.line {
+  height: 7px;
+  width: 370px;
+  background-color: $color-main;
+  box-shadow: -5px 5px $color-second;
+  border: none;
+  margin-top: -20px;
+  margin-bottom: 50px;
+  margin-left: 17px;
+}
+
+.images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 2fr;
+}
+
+.images > img {
+  width: 100%;
+  height: 100%;
+  border-left: $color-second 4px solid;
+  border-bottom: $color-main 4px solid;
+  // object-fit: cover;
+}
+
+// settings for desktop
+@media screen and (min-width: 760px) {
+  .images {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 2fr;
+    gap: 20px;
+  }
+}
+.images > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+// Ex / skills header //////////////////////////////////////////////////////////
+
+.experience__header {
+  display: flex;
+  justify-content: flex-start;
+  color: $color-main;
+  font-size: 30px;
+  margin-top: 20px;
+}
+
+// desktop
+@media screen and (min-width: 760px) {
+  .experience__header {
+    font-size: 60px;
+    margin-top: 100px;
+    margin-left: 20px;
+  }
+}
+
+.line2 {
+  height: 7px;
+  width: 280px;
+  background-color: $color-main;
+  box-shadow: -5px 5px $color-second;
+  border: none;
+  margin-top: -20px;
+  margin-bottom: 50px;
+  margin-left: 17px;
+}
+
+// Experience - skills grid ////////////////////////////////////////////////////////////////
+
+.experience {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 4fr;
+  gap: 5px;
+
+  h2 {
+    color: $color-main;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 20px;
+    text-transform: uppercase;
+  }
+
+  p {
+    color: $color-second;
+    text-align: center;
+    font-size: 12px;
+    padding: 15px;
+  }
+}
+
+// Desktop
+
+@media screen and (min-width: 760px) {
+  .experience {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+
+    h2 {
+      font-size: 40px;
+      margin-top: 30px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      padding: 10px 50px;
+      font-size: 20px;
+    }
+  }
+}
+
+// Contact paragraph - CV download //////////////////////////////////////
+
+//  mobile /////
+
+.contact__message {
+  background-color: $color-background;
+  border-top: $color-main 2px solid;
+  border-bottom: $color-main 2px solid;
+  color: $color-second;
+  text-align: center;
+  padding: 10px;
+  margin-top: 20px;
+  font-size: 15px;
+  box-shadow: 0px 10px $color-second;
+}
+.contact__link {
+  text-decoration: none;
+
+  &:hover {
+    color: $color-main;
+  }
+}
+
+// Desktop
+
+@media screen and (min-width: 760px) {
+  .contact__message {
+    border-top: $color-main 2px solid;
+    border-bottom: $color-main 2px solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    font-size: 35px;
+
+    margin-top: 150px;
+    box-shadow: 0px 5px $color-second;
+  }
+  .contact__link {
+    text-decoration: none;
+    color: $color-main;
+    &:hover {
+    }
+  }
+}
+
+// contact section //////////////////////////////////////////
+
+// mobile
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__header {
+    color: $color-main;
+    margin-top: 10px;
+    font: size 25px;
+  }
+}
+
+.line3 {
+  height: 7px;
+  width: 512px;
+  background-color: $color-main;
+  box-shadow: -5px 5px $color-second;
+  border: none;
+  margin-top: -20px;
+  margin-bottom: 150px;
+  margin-left: 17px;
+}
+// desktop
+
+@media screen and (min-width: 760px) {
+  .contact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    &__header {
+      margin-top: 100px;
+      margin-left: 20px;
+      font-size: 60px;
+    }
+  }
+}
+
+// contact links //////////////////////////////////////////////
+
+// mobile
+.links {
+  &__container {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    font-family: $font-second;
+    font-size: 17px;
+    margin-bottom: 70px;
+    margin-top: 10px;
+    text-transform: uppercase;
+  }
+
+  &__email {
+    border: 2px $color-main solid;
+    border-radius: 5px;
+    width: 90px;
+    height: 25px;
+    margin-right: 4%;
+    text-align: center;
+    text-decoration: none;
+    background-color: $color-background;
+    color: $color-second;
+    box-shadow: -5px 5px $color-second;
+  }
+  &__linkedin {
+    border: 2px $color-main solid;
+    border-radius: 5px;
+    width: 90px;
+    height: 25px;
+    margin-right: 4%;
+    text-align: center;
+    text-decoration: none;
+    background-color: $color-background;
+    color: $color-second;
+    box-shadow: -5px 5px $color-second;
+  }
+
+  &__github {
+    border: 2px $color-main solid;
+    border-radius: 5px;
+    width: 90px;
+    height: 25px;
+    margin-right: 4%;
+    text-align: center;
+    text-decoration: none;
+    background-color: $color-background;
+    color: $color-second;
+    box-shadow: -5px 5px $color-second;
+  }
+}
+
+// Desktop
+@media screen and (min-width: 760px) {
+  .links {
+    &__container {
+      margin-top: 100px;
+      font-size: 30px;
+      margin-bottom: 150px;
+      margin-top: 50px;
+    }
+
+    &__email {
+      width: 220px;
+      height: 60px;
+      margin-right: 4%;
+      padding-top: 15px;
+    }
+    &__linkedin {
+      width: 220px;
+      height: 60px;
+      margin-right: 4%;
+      padding-top: 15px;
+    }
+
+    &__github {
+      width: 220px;
+      height: 60px;
+      padding-top: 15px;
+    }
+  }
+}
+
+.footer__triangles {
+  display: flex;
+  margin-left: 75%;
+  margin-top: -300px;
+}
