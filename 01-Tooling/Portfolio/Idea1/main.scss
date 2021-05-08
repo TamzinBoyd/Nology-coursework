@@ -37,8 +37,15 @@ p {
   max-width: 150px;
 }
 
+// tablet
+@media screen and (min-width: 550px) {
+  .triangle__image img {
+    max-width: 300px;
+  }
+}
+
 //desktop
-@media screen and (min-width: 760px) {
+@media screen and (min-width: 800px) {
   .triangle__image img {
     display: flex;
     float: left;
@@ -82,9 +89,33 @@ p {
   }
 }
 
+// tablet - toggle
+
+@media screen and (min-width: 550px) {
+  .toggle {
+    margin-top: 10px;
+    margin-right: 10px;
+
+    &__back {
+      width: 40px;
+      height: 20px;
+    }
+
+    &__button {
+      width: 20px;
+      height: 20px;
+    }
+
+    &__text {
+      margin-right: 10px;
+      font-size: 20px;
+    }
+  }
+}
+
 // desktop //
 
-@media screen and (min-width: 760px) {
+@media screen and (min-width: 800px) {
   .toggle {
     margin-top: 10px;
     margin-right: 10px;
@@ -132,11 +163,30 @@ p {
   }
 }
 
-// Settings - dektop //
+//  heading - tablet
 
-@media screen and (min-width: 760px) {
+@media screen and (min-width: 550px) {
   .intro {
-    margin-right: 100px;
+    margin-right: 70px;
+
+    &__heading {
+      font-size: 70px;
+      line-height: 90px;
+      margin-top: 150px;
+    }
+
+    &__about {
+      font-size: 20px;
+      margin-top: 10px;
+      margin-bottom: 50px;
+    }
+  }
+}
+// heading - dektop //
+
+@media screen and (min-width: 800px) {
+  .intro {
+    margin-right: 50px;
 
     &__heading {
       font-size: 100px;
@@ -152,9 +202,9 @@ p {
   }
 }
 
-// styling nav buttons /////////////////////////////////////////////////
+//  nav buttons /////////////////////////////////////////////////
 
-// Mobile
+// Mobile - NAV buttons
 
 .nav {
   &__buttons {
@@ -182,6 +232,12 @@ p {
     color: $color-second;
     box-shadow: -5px 5px $color-second;
     padding-top: 10px;
+
+    &:hover {
+      background-color: $color-main;
+      color: $color-background;
+      font-weight: bold;
+    }
   }
 
   &__experience {
@@ -195,6 +251,12 @@ p {
     color: $color-second;
     box-shadow: -5px 5px $color-second;
     padding-top: 10px;
+
+    &:hover {
+      background-color: $color-main;
+      color: $color-background;
+      font-weight: bold;
+    }
   }
 
   &__contact {
@@ -209,16 +271,53 @@ p {
     color: $color-second;
     box-shadow: -5px 5px $color-second;
     padding-top: 10px;
+
+    &:hover {
+      background-color: $color-main;
+      color: $color-background;
+      font-weight: bold;
+    }
+  }
+}
+
+@media screen and (min-width: 550px) {
+  .nav {
+    &__buttons {
+      font-size: 20px;
+      margin-bottom: 100px;
+      margin-top: 100px;
+    }
+
+    &__projects {
+      border-radius: 10px;
+      width: 150px;
+      height: 40px;
+      margin-right: 4%;
+    }
+
+    &__experience {
+      border-radius: 10px;
+      width: 150px;
+      height: 40px;
+    }
+
+    &__contact {
+      border-radius: 10px;
+      width: 150px;
+      height: 40px;
+      margin-left: 4%;
+    }
   }
 }
 
 // Desktop
 
-@media screen and (min-width: 760px) {
+@media screen and (min-width: 800px) {
   .nav {
     &__buttons {
       font-size: 30px;
       margin-bottom: 100px;
+      margin-top: 100px;
     }
 
     &__projects {
@@ -283,24 +382,18 @@ p {
   border-bottom: $color-main 2px solid;
   // object-fit: cover;
 }
+// tablet - images grid
 
-// desktop
-
-@media screen and (min-width: 760px) {
+@media screen and (min-width: 550px) {
   .projects__header {
-    font-size: 60px;
-    color: $color-main;
-    display: flex;
-    justify-content: flex-start;
+    font-size: 40px;
     margin-left: 20px;
   }
 
   .line {
     height: 7px;
-    width: 370px;
-    background-color: $color-main;
-    box-shadow: -5px 5px $color-second;
-    border: none;
+    width: 250px;
+    box-shadow: -4px 4px $color-second;
     margin-top: -20px;
     margin-bottom: 50px;
     margin-left: 17px;
@@ -316,6 +409,34 @@ p {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+// desktop - images grid
+
+@media screen and (min-width: 800px) {
+  .projects__header {
+    font-size: 60px;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 20px;
+  }
+
+  .line {
+    height: 7px;
+    width: 370px;
+    background-color: $color-main;
+    box-shadow: -8px 8px $color-second;
+    border: none;
+    margin-top: -20px;
+    margin-bottom: 50px;
+    margin-left: 17px;
+  }
+  .images {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 20px;
+  }
 }
 
 // Ex / skills header //////////////////////////////////////////////////////////
@@ -340,8 +461,25 @@ p {
   margin-left: 20px;
 }
 
+//  tablet - skills
+
+@media screen and (min-width: 550px) {
+  .experience__header {
+    font-size: 40px;
+    margin-left: 20px;
+  }
+
+  .line2 {
+    height: 7px;
+    width: 200px;
+    box-shadow: -4px 4px $color-second;
+    margin-top: -20px;
+    margin-bottom: 50px;
+    margin-left: 17px;
+  }
+}
 // desktop
-@media screen and (min-width: 760px) {
+@media screen and (min-width: 800px) {
   .experience__header {
     font-size: 60px;
     margin-top: 100px;
@@ -539,6 +677,12 @@ p {
     color: $color-second;
     box-shadow: -5px 5px $color-second;
     padding-top: 6px;
+
+    &:hover {
+      background-color: $color-main;
+      color: $color-background;
+      font-weight: bold;
+    }
   }
   &__linkedin {
     border: 2px $color-main solid;
@@ -552,6 +696,11 @@ p {
     color: $color-second;
     box-shadow: -5px 5px $color-second;
     padding-top: 6px;
+    &:hover {
+      background-color: $color-main;
+      color: $color-background;
+      font-weight: bold;
+    }
   }
 
   &__github {
@@ -566,6 +715,11 @@ p {
     color: $color-second;
     box-shadow: -5px 5px $color-second;
     padding-top: 6px;
+    &:hover {
+      background-color: $color-main;
+      color: $color-background;
+      font-weight: bold;
+    }
   }
 }
 
@@ -605,16 +759,24 @@ p {
 // mobile
 .footer__triangles {
   display: flex;
-  margin-left: 65%;
+  float: right;
   margin-top: -220px;
   max-width: 150px;
 }
 
-// desktop
-@media screen and (min-width: 760px) {
+//  tablet
+
+@media screen and (min-width: 550px) {
   .footer__triangles {
-    display: flex;
-    margin-left: 75%;
+    max-width: 300px;
     margin-top: -300px;
+  }
+}
+
+// desktop
+@media screen and (min-width: 800px) {
+  .footer__triangles {
+    max-width: 500px;
+    margin-top: -400px;
   }
 }

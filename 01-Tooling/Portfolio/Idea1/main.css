@@ -27,7 +27,12 @@ p {
   max-width: 150px;
 }
 
-@media screen and (min-width: 760px) {
+@media screen and (min-width: 550px) {
+  .triangle__image img {
+    max-width: 300px;
+  }
+}
+@media screen and (min-width: 800px) {
   .triangle__image img {
     display: flex;
     float: left;
@@ -63,7 +68,25 @@ p {
   font-size: 10px;
 }
 
-@media screen and (min-width: 760px) {
+@media screen and (min-width: 550px) {
+  .toggle {
+    margin-top: 10px;
+    margin-right: 10px;
+  }
+  .toggle__back {
+    width: 40px;
+    height: 20px;
+  }
+  .toggle__button {
+    width: 20px;
+    height: 20px;
+  }
+  .toggle__text {
+    margin-right: 10px;
+    font-size: 20px;
+  }
+}
+@media screen and (min-width: 800px) {
   .toggle {
     margin-top: 10px;
     margin-right: 10px;
@@ -101,9 +124,24 @@ p {
   text-transform: uppercase;
 }
 
-@media screen and (min-width: 760px) {
+@media screen and (min-width: 550px) {
   .intro {
-    margin-right: 100px;
+    margin-right: 70px;
+  }
+  .intro__heading {
+    font-size: 70px;
+    line-height: 90px;
+    margin-top: 150px;
+  }
+  .intro__about {
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 50px;
+  }
+}
+@media screen and (min-width: 800px) {
+  .intro {
+    margin-right: 50px;
   }
   .intro__heading {
     font-size: 100px;
@@ -141,6 +179,11 @@ p {
   box-shadow: -5px 5px #08fdd8;
   padding-top: 10px;
 }
+.nav__projects:hover {
+  background-color: #ff0070;
+  color: #02021c;
+  font-weight: bold;
+}
 .nav__experience {
   border: 2px #ff0070 solid;
   border-radius: 10px;
@@ -152,6 +195,11 @@ p {
   color: #08fdd8;
   box-shadow: -5px 5px #08fdd8;
   padding-top: 10px;
+}
+.nav__experience:hover {
+  background-color: #ff0070;
+  color: #02021c;
+  font-weight: bold;
 }
 .nav__contact {
   border: 2px #ff0070 solid;
@@ -166,11 +214,41 @@ p {
   box-shadow: -5px 5px #08fdd8;
   padding-top: 10px;
 }
+.nav__contact:hover {
+  background-color: #ff0070;
+  color: #02021c;
+  font-weight: bold;
+}
 
-@media screen and (min-width: 760px) {
+@media screen and (min-width: 550px) {
+  .nav__buttons {
+    font-size: 20px;
+    margin-bottom: 100px;
+    margin-top: 100px;
+  }
+  .nav__projects {
+    border-radius: 10px;
+    width: 150px;
+    height: 40px;
+    margin-right: 4%;
+  }
+  .nav__experience {
+    border-radius: 10px;
+    width: 150px;
+    height: 40px;
+  }
+  .nav__contact {
+    border-radius: 10px;
+    width: 150px;
+    height: 40px;
+    margin-left: 4%;
+  }
+}
+@media screen and (min-width: 800px) {
   .nav__buttons {
     font-size: 30px;
     margin-bottom: 100px;
+    margin-top: 100px;
   }
   .nav__projects {
     border-radius: 10px;
@@ -226,21 +304,16 @@ p {
   border-bottom: #ff0070 2px solid;
 }
 
-@media screen and (min-width: 760px) {
+@media screen and (min-width: 550px) {
   .projects__header {
-    font-size: 60px;
-    color: #ff0070;
-    display: flex;
-    justify-content: flex-start;
+    font-size: 40px;
     margin-left: 20px;
   }
 
   .line {
     height: 7px;
-    width: 370px;
-    background-color: #ff0070;
-    box-shadow: -5px 5px #08fdd8;
-    border: none;
+    width: 250px;
+    box-shadow: -4px 4px #08fdd8;
     margin-top: -20px;
     margin-bottom: 50px;
     margin-left: 17px;
@@ -259,6 +332,32 @@ p {
   object-fit: cover;
 }
 
+@media screen and (min-width: 800px) {
+  .projects__header {
+    font-size: 60px;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 20px;
+  }
+
+  .line {
+    height: 7px;
+    width: 370px;
+    background-color: #ff0070;
+    box-shadow: -8px 8px #08fdd8;
+    border: none;
+    margin-top: -20px;
+    margin-bottom: 50px;
+    margin-left: 17px;
+  }
+
+  .images {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 20px;
+  }
+}
 .experience__header {
   font-size: 25px;
   color: #ff0070;
@@ -279,7 +378,22 @@ p {
   margin-left: 20px;
 }
 
-@media screen and (min-width: 760px) {
+@media screen and (min-width: 550px) {
+  .experience__header {
+    font-size: 40px;
+    margin-left: 20px;
+  }
+
+  .line2 {
+    height: 7px;
+    width: 200px;
+    box-shadow: -4px 4px #08fdd8;
+    margin-top: -20px;
+    margin-bottom: 50px;
+    margin-left: 17px;
+  }
+}
+@media screen and (min-width: 800px) {
   .experience__header {
     font-size: 60px;
     margin-top: 100px;
@@ -444,6 +558,11 @@ p {
   box-shadow: -5px 5px #08fdd8;
   padding-top: 6px;
 }
+.links__email:hover {
+  background-color: #ff0070;
+  color: #02021c;
+  font-weight: bold;
+}
 .links__linkedin {
   border: 2px #ff0070 solid;
   border-radius: 10px;
@@ -457,6 +576,11 @@ p {
   box-shadow: -5px 5px #08fdd8;
   padding-top: 6px;
 }
+.links__linkedin:hover {
+  background-color: #ff0070;
+  color: #02021c;
+  font-weight: bold;
+}
 .links__github {
   border: 2px #ff0070 solid;
   border-radius: 10px;
@@ -469,6 +593,11 @@ p {
   color: #08fdd8;
   box-shadow: -5px 5px #08fdd8;
   padding-top: 6px;
+}
+.links__github:hover {
+  background-color: #ff0070;
+  color: #02021c;
+  font-weight: bold;
 }
 
 @media screen and (min-width: 760px) {
@@ -498,15 +627,20 @@ p {
 }
 .footer__triangles {
   display: flex;
-  margin-left: 65%;
+  float: right;
   margin-top: -220px;
   max-width: 150px;
 }
 
-@media screen and (min-width: 760px) {
+@media screen and (min-width: 550px) {
   .footer__triangles {
-    display: flex;
-    margin-left: 75%;
+    max-width: 300px;
     margin-top: -300px;
+  }
+}
+@media screen and (min-width: 800px) {
+  .footer__triangles {
+    max-width: 500px;
+    margin-top: -400px;
   }
 }
