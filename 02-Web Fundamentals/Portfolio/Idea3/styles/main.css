@@ -292,7 +292,7 @@
   border: #4f4f4f 4px solid;
 }
 
-@media screen and (min-width: 760px) {
+@media screen and (min-width: 800px) {
   .container__projects {
     letter-spacing: 3px;
     height: 850px;
@@ -303,32 +303,29 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 50px;
-    padding: 50px 300px 0px 300px;
     margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .projects__1 {
     border-radius: 50%;
-    max-width: 300px;
+    width: 100%;
+    margin: 20px;
   }
   .projects__2 {
     border-radius: 50%;
-    max-width: 300px;
+    width: 100%;
+    margin: 20px;
   }
   .projects__3 {
     border-radius: 50%;
-    max-width: 300px;
+    width: 100%;
+    margin: 20px;
   }
-  .projects__4 {
-    border-radius: 50%;
-    max-width: 300px;
-  }
-  .projects__5 {
-    border-radius: 50%;
-    max-width: 300px;
-  }
-  .projects__6 {
-    border-radius: 50%;
-    max-width: 300px;
+
+  .projects img {
+    min-width: 350px;
   }
 }
 .title__skills {
@@ -351,7 +348,9 @@
 }
 .skillslogo__1 {
   background-color: #ffa392;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -359,6 +358,9 @@
 }
 .skillslogo__2 {
   background-color: #ffa392;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   width: 40px;
   height: 40px;
@@ -366,6 +368,9 @@
 }
 .skillslogo__3 {
   background-color: #ffa392;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   width: 40px;
   height: 40px;
@@ -442,7 +447,7 @@
 }
 .container__contact {
   background-color: #ffbc00;
-  height: 350px;
+  height: 200px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -454,7 +459,7 @@
   max-width: 100px;
   border-radius: 50%;
   margin-left: 30px;
-  margin-top: -300px;
+  margin-top: -150px;
 }
 
 .contact__heading {

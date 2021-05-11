@@ -360,7 +360,7 @@ $font-text: "Assistant", sans-serif;
   }
 }
 // Desktop
-@media screen and (min-width: 760px) {
+@media screen and (min-width: 800px) {
   .container__projects {
     letter-spacing: 3px;
     height: 850px;
@@ -370,38 +370,47 @@ $font-text: "Assistant", sans-serif;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 50px;
-    padding: 50px 300px 0px 300px;
     margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     &__1 {
       border-radius: 50%;
-      max-width: 300px;
+      width: 100%;
+      margin: 20px;
     }
 
     &__2 {
       border-radius: 50%;
-      max-width: 300px;
+      width: 100%;
+      margin: 20px;
     }
 
     &__3 {
       border-radius: 50%;
-      max-width: 300px;
-    }
-    &__4 {
-      border-radius: 50%;
-      max-width: 300px;
-    }
-
-    &__5 {
-      border-radius: 50%;
-      max-width: 300px;
-    }
-    &__6 {
-      border-radius: 50%;
-      max-width: 300px;
+      width: 100%;
+      margin: 20px;
     }
   }
+  .projects img {
+    min-width: 350px;
+  }
+  // &__4 {
+  //   border-radius: 50%;
+  //   max-width: 300px;
+  // }
+
+  // &__5 {
+  //   border-radius: 50%;
+  //   max-width: 300px;
+  // }
+  // &__6 {
+  //   border-radius: 50%;
+  //   max-width: 300px;
+  // }
 }
+
 // Siklls //////////////////
 
 ///////////////////
@@ -426,7 +435,9 @@ $font-text: "Assistant", sans-serif;
 
   &__1 {
     background-color: $color-second;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -435,6 +446,9 @@ $font-text: "Assistant", sans-serif;
 
   &__2 {
     background-color: $color-second;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     width: 40px;
     height: 40px;
@@ -443,6 +457,9 @@ $font-text: "Assistant", sans-serif;
 
   &__3 {
     background-color: $color-second;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     width: 40px;
     height: 40px;
@@ -528,7 +545,7 @@ $font-text: "Assistant", sans-serif;
 // Mobile
 .container__contact {
   background-color: $color-background;
-  height: 350px;
+  height: 200px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -540,7 +557,7 @@ $font-text: "Assistant", sans-serif;
   max-width: 100px;
   border-radius: 50%;
   margin-left: 30px;
-  margin-top: -300px;
+  margin-top: -150px;
 }
 
 .contact__heading {
