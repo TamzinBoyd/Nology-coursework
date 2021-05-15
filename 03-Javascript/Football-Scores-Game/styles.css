@@ -1,0 +1,80 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: rgb(88, 145, 88);
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  border: 2px white solid;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 700px;
+  height: 600px;
+  margin-top: 100px;
+  border-radius: 50%;
+}
+
+.title {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 70px;
+  color: white;
+  align-self: center;
+  margin-top: 40px;
+}
+
+.game {
+  width: 500px;
+  height: 1000px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.scoreButtons {
+  width: 500px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.button__team1 {
+  background-color: red;
+  width: 175px;
+  height: 100px;
+  font-family: monospace;
+  font-size: 20px;
+  margin-left: 13%;
+  color: white;
+}
+
+.button__team2 {
+  background-color: blue;
+  width: 175px;
+  height: 100px;
+  font-family: monospace;
+  font-size: 20px;
+  color: white;
+}
+
+.endGame {
+  display: flex;
+  margin-bottom: -50px;
+}
+
+.endGameButton {
+  background-color: white;
+  border-radius: 50%;
+  width: 175px;
+  height: 160px;
+  font-family: monospace;
+  font-size: 20px;
+  color: black;
+  border-style: none;
+}
