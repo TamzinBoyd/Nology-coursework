@@ -17,7 +17,7 @@
       <div class="title__headngs">
         <h2 class="title__heading">Register for</h2>
         <h2 class="title__subHeading">nologyconf</h2>
-        <h3 class="title__button" href="#">Register below</h3>
+        <h3 class="title__button" href="#" id="register">Register below</h3>
       </div>
       <img class="title__image" src="images/me.png" />
     </div>
@@ -80,9 +80,26 @@
           document.getElementById("reminder").innerHTML =
             "Please enter an email address";
           document.getElementById("email").style.border = "solid 2px red";
+
           return false;
         }
       }
+
+      const formInputs = document.querySelectorAll(".form__input");
+
+      formInputs.forEach((formInput) => {
+        formInput.addEventListener("input", (event) => {
+          let inputValue = event.target.value;
+
+          if (inputValue != undefined && inputValue.length > 0) {
+            event.target.classList.remove("invalid");
+            event.target.classList.add("valid");
+          } else {
+            event.target.classList.remove("valid");
+            event.target.classList.add("invalid");
+          }
+        });
+      });
     </script>
   </body>
 </html>

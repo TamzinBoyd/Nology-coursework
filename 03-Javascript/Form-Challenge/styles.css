@@ -180,3 +180,10 @@ p {
   font-size: 0.8em;
   margin-top: 5px;
 }
+
+.valid {
+  border: 1px solid green;
+}
+.invalid {
+  border: 1px solid red;
+}
