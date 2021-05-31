@@ -32,19 +32,57 @@
 
     <main>
       <div class="form">
-        <form action="" class="form__name">
+        <form
+          action="#next"
+          class="form__name"
+          id="name-form"
+          onsubmit="return checkForBlankName()"
+        >
           <label for="name" class="form__label">Name</label>
-          <input type="text" name="name" class="form__input" />
-          <p class="reminder"></p>
+          <input type="text" name="name" class="form__input" id="name" />
+          <p></p>
 
-          <label for="email" class="form__label">Email</label>
-          <input type="email" name="email" class="form__input" />
-          <p class="reminder"></p>
-          <button class="form__button">
-            <a href="form.html">Sign me up!</a>
-          </button>
+          <label for="email" class="form__label">Email *</label>
+          <input type="email" name="email" class="form__input" id="email" />
+          <p id="reminder"></p>
+
+          <button type="submit" class="form__button">Next</button>
         </form>
       </div>
+
+      <div class="emptySpace">
+        <div class="dropdown" id="#next">
+          <label for="options" class="dropdown__label"
+            >How did you hear about Nology?</label
+          >
+          <select class="dropdown__options">
+            <option value="Word of mouth" class="option">Word of Mouth</option>
+            <option value="social media" class="option">Social Media</option>
+            <option value="search engine" class="option">Search Engine</option>
+            <option value="other" class="option">Other</option>
+          </select>
+
+          <button
+            onclick="submitAlert()"
+            class="submit"
+            id="submit"
+            type="submit"
+          >
+            <a href="#"> Complete Registration</a>
+          </button>
+        </div>
+      </div>
     </main>
+
+    <script>
+      function checkForBlankName() {
+        if (document.getElementById("email").value == "") {
+          document.getElementById("reminder").innerHTML =
+            "Please enter an email address";
+          document.getElementById("email").style.border = "solid 2px red";
+          return false;
+        }
+      }
+    </script>
   </body>
 </html>

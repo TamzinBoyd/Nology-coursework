@@ -21,9 +21,9 @@ $pink: #e7315e;
 }
 
 main {
-  height: 50vh;
-
+  height: 90vh;
   background-color: #cdcbcd;
+  padding-top: 30px;
 }
 .title {
   display: flex;
@@ -67,17 +67,19 @@ main {
 .wave {
   overflow: hidden;
   vertical-align: top;
+  margin-top: -60px;
 }
 
 .form {
   background-color: #f1efef;
   border: 2px solid rgb(59, 59, 59);
   width: 300px;
-  height: 350px;
+  height: 400px;
   display: flex;
   flex-direction: column;
   margin: 0px auto;
   padding: 0px 30px 20px 30px;
+  margin-bottom: 100px;
 
   &__name {
     display: flex;
@@ -109,18 +111,50 @@ main {
 form > input {
   height: 30px;
   margin-top: 15px;
+  font-size: 1em;
+  padding: 5px;
 }
 
 a {
   text-decoration: none;
   color: white;
 }
+
+@media screen and (min-width: 600px) {
+  .nav {
+    width: 100%;
+  }
+
+  .wave {
+    margin-top: -50px;
+    display: block;
+  }
+
+  main {
+    height: 50vh;
+  }
+}
 @media screen and (min-width: 768px) {
   .nav {
     width: 100%;
   }
+
+  .wave {
+    margin-top: -200px;
+    display: block;
+  }
+
+  main {
+    height: 50vh;
+    padding-top: 0px;
+  }
 }
 
+.emptySpace {
+  height: 50vh;
+  background-color: $pink;
+  padding-top: 100px;
+}
 // second page
 
 .dropdown {
@@ -129,6 +163,7 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: white;
 
   &__label {
     font-size: 1.5em;
@@ -150,6 +185,12 @@ a {
   background-color: $purple;
   color: white;
   text-align: center;
-  font-size: 1em;
+  font-size: 1.5em;
   margin-top: 30px;
+}
+
+p {
+  color: red;
+  font-size: 0.8em;
+  margin-top: 5px;
 }
