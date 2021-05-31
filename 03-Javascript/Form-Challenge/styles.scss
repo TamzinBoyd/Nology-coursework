@@ -1,0 +1,155 @@
+$purple: #361763;
+$pink: #e7315e;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.nav {
+  width: 100%;
+  height: 4em;
+  display: flex;
+  background-color: $purple;
+  color: white;
+
+  &__logo {
+    padding: 15px;
+  }
+}
+
+main {
+  height: 50vh;
+
+  background-color: #cdcbcd;
+}
+.title {
+  display: flex;
+  justify-content: center;
+  padding: 100px;
+
+  &__headings {
+    display: flex;
+    flex-direction: column;
+  }
+  &__heading {
+    display: flex;
+    color: $purple;
+    font-size: 2em;
+    margin-bottom: 5px;
+  }
+
+  &__subHeading {
+    color: $pink;
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+
+  &__button {
+    border: 2px black solid;
+    padding: 8px 30px;
+
+    border-radius: 15px;
+    background-color: $purple;
+    color: white;
+    text-align: center;
+    font-weight: 100;
+  }
+  &__image {
+    max-height: 150px;
+    max-width: 150px;
+    margin-left: 50px;
+  }
+}
+
+.wave {
+  overflow: hidden;
+  vertical-align: top;
+}
+
+.form {
+  background-color: #f1efef;
+  border: 2px solid rgb(59, 59, 59);
+  width: 300px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  margin: 0px auto;
+  padding: 0px 30px 20px 30px;
+
+  &__name {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0px;
+    font-size: 1.5em;
+  }
+
+  &__email {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0px;
+
+    font-size: 1.5em;
+  }
+
+  &__button {
+    background-color: $purple;
+    color: white;
+    padding: 10px;
+    margin-top: 50px;
+    font-size: 1em;
+  }
+}
+
+.form__label {
+  margin-top: 30px;
+}
+form > input {
+  height: 30px;
+  margin-top: 15px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+@media screen and (min-width: 768px) {
+  .nav {
+    width: 100%;
+  }
+}
+
+// second page
+
+.dropdown {
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__label {
+    font-size: 1.5em;
+    padding: 20px;
+  }
+
+  &__options {
+    height: 60px;
+    width: 300px;
+    font-size: 1em;
+    text-align: center;
+  }
+}
+
+.submit {
+  border: 2px black solid;
+  padding: 8px 30px;
+  border-radius: 15px;
+  background-color: $purple;
+  color: white;
+  text-align: center;
+  font-size: 1em;
+  margin-top: 30px;
+}

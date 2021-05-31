@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Challenge</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <nav class="nav">
+      <h1 class="nav__logo">Nology Conference 2021</h1>
+    </nav>
+
+    <div class="title">
+      <div class="title__headngs">
+        <h2 class="title__heading">How did you</h2>
+        <h2 class="title__heading">hear about</h2>
+        <h2 class="title__subHeading">nologyconf?</h2>
+        <!-- <h3 class="title__button" href="#">Register below</h3> -->
+      </div>
+      <img class="title__image" src="images/me.png" />
+    </div>
+
+    <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <path
+        fill="#CDCBCD"
+        fill-opacity="1"
+        d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,165.3C960,192,1056,224,1152,240C1248,256,1344,256,1392,256L1440,256L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+      ></path>
+    </svg>
+
+    <main>
+      <div class="dropdown">
+        <label for="options" class="dropdown__label"
+          >How did you hear about Nology?</label
+        >
+        <select class="dropdown__options">
+          <option value="Word of mouth" class="option">Word of Mouth</option>
+          <option value="social media" class="option">Social Media</option>
+          <option value="search engine" class="option">Search Engine</option>
+          <option value="other" class="option">Other</option>
+        </select>
+
+        <button class="submit" type="submit">Complete Registration</button>
+      </div>
+    </main>
+  </body>
+</html>
