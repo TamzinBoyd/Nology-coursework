@@ -9,25 +9,102 @@
   </head>
   <body>
     <main>
-      <div class="grid-container">
-        <div class="span three title">Calculator</div>
-        <div class="add operand">+</div>
-        <div class="one number">1</div>
-        <div class="two number">2</div>
-        <div class="three number">3</div>
-        <div class="minus operand">-</div>
-        <div class="four number">4</div>
-        <div class="five number">5</div>
-        <div class="six number">6</div>
-        <div class="multi operand">x</div>
-        <div class="seven number">7</div>
-        <div class="eight number">8</div>
-        <div class="nine number">9</div>
-        <div class="div operand">÷</div>
-        <div class="text">Total</div>
-        <div class="span two total">0.00</div>
-        <div class="equals operand">=</div>
+      <div class="grid-container keys" id="buttons">
+        <button class="span four title" id="title">Calculator</button>
+        <button class="number" value="0">0</button>
+        <button class="number" value=".">.</button>
+        <button class="clear" value="AC">AC</button>
+        <button class="add operand" value="+">+</button>
+        <button class="one number" value="1">1</button>
+        <button class="two number" value="2">2</button>
+        <button class="three number" value="3">3</button>
+        <button class="minus operand" value="-">-</button>
+        <button class="four number" value="4">4</button>
+        <button class="five number" value="5">5</button>
+        <button class="six number" value="6">6</button>
+        <button class="multi operand" value="x">x</button>
+        <button class="seven number" value="7">7</button>
+        <button class="eight number" value="8">8</button>
+        <button class="nine number" value="9">9</button>
+        <button class="button operand" value="/">÷</button>
+        <button class="text">Total</button>
+        <button class="span two total" id="total" value="0">test</button>
+        <button class="equals operand" value="=">=</button>
       </div>
-    </main>
+
+
+    <script>
+      // what do I want to happen - basic?
+      // When user clicks on a number it saves it
+      
+      document.querySelector(".one").addEventListener("click", clicked);
+      function clicked(event) {
+        document.getElementById("total").innerHTML = event.target.value
+      }
+
+//       document.querySelector(".two").addEventListener("click", clicked);
+//     function clicked(event) {
+//     document.getElementById("total").innerHTML = event.target.value
+// }
+
+//     document.querySelector(".three").addEventListener("click", clicked);
+//     function clicked(event) {
+//         document.getElementById("total").innerHTML = event.target.value
+//     }
+
+//     document.querySelector(".four").addEventListener("click", clicked);
+//     function clicked(event) {
+//         document.getElementById("total").innerHTML = event.target.value
+//     }
+
+//     document.querySelector(".five").addEventListener("click", clicked);
+//     function clicked(event) {
+//         document.getElementById("total").innerHTML = event.target.value
+//     }
+
+//     document.querySelector(".six").addEventListener("click", clicked);
+//     function clicked(event) {
+//         document.getElementById("total").innerHTML = event.target.value
+//     }
+
+//     document.querySelector(".seven").addEventListener("click", clicked);
+//     function clicked(event) {
+//         document.getElementById("total").innerHTML = event.target.value
+//     }
+
+//     document.querySelector(".eight").addEventListener("click", clicked);
+//     function clicked(event) {
+//         document.getElementById("total").innerHTML = event.target.value
+//     }
+
+//     document.querySelector(".nine").addEventListener("click", clicked);
+//     function clicked(event) {
+//         document.getElementById("total").innerHTML = event.target.value
+//     }
+
+
+      //   document.getElementById("two").onclick = function () {
+      //     document.getElementById("total").innerHTML =
+      //      "test";
+      //   };
+
+    //   let currentNumber = document.getElementsByClassName("number").value;
+    //   let accumulativeNumber = document.getElementById("title");
+
+      //   function addNumbers(event) {
+      //     accumulativeNumber.innerHTML = currentNumber;
+      //   }
+
+      // Then user selects an operand and it adds it to the above
+
+      // then user selects another number and adds it to the above
+
+      // User selects equals and the above are calculated as a sum
+
+      // and the totals box changes to show the total
+
+      //   let total = document.getElementById("total");
+      //   total.innerHTML = "";
+    </script>
   </body>
 </html>

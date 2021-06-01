@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Squada+One&display=swap");
+
+$buttonColor: rgb(255, 123, 0);
+$textColor: white;
 * {
   padding: 0;
   margin: 0;
@@ -27,7 +30,7 @@ body {
 button {
   border: none;
   outline: none;
-  background-color: #ff7b00;
+  background-color: $buttonColor;
   color: white;
   display: flex;
   justify-content: center;
@@ -35,10 +38,9 @@ button {
   font-size: 1.2em;
   font-family: "Squada One", sans-serif;
 }
-
 .title {
   font-size: 1.5em;
-  grid-column: 1/5;
+  grid-column: 1 / 5;
   background-color: white;
   color: black;
   display: flex;
@@ -47,23 +49,23 @@ button {
 }
 
 .dot:hover {
-  background-color: white;
-  color: #ff7b00;
+  background-color: $textColor;
+  color: $buttonColor;
 }
 
 .clear:hover {
-  background-color: white;
-  color: #ff7b00;
+  background-color: $textColor;
+  color: $buttonColor;
 }
 
 .number:hover {
-  background-color: white;
-  color: #ff7b00;
+  background-color: $textColor;
+  color: $buttonColor;
 }
 
 .operand:hover {
-  background-color: white;
-  color: #ff7b00;
+  background-color: $textColor;
+  color: $buttonColor;
 }
 
 .equals {
@@ -71,9 +73,9 @@ button {
 }
 
 .total {
-  background-color: white;
+  background-color: $textColor;
   color: black;
-  grid-column: 2/4;
+  grid-column: 2 / 4;
   display: flex;
   justify-content: center;
   align-items: center;
