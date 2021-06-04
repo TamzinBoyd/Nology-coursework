@@ -79,4 +79,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+  word-wrap: break-word;
+  word-break: break-all;
+  max-width: 100%;
 }

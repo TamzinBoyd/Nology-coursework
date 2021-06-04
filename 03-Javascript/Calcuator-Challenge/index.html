@@ -16,7 +16,7 @@
         <button class="clear" value="AC">AC</button>
         <button class="add operand" value="+">+</button>
         <button class="one number" value="1">1</button>
-        <button class="two number" value="2">2</button>
+        <button class="two number" value="2" id="two">2</button>
         <button class="three number" value="3">3</button>
         <button class="minus operand" value="-">-</button>
         <button class="four number" value="4">4</button>
@@ -28,83 +28,94 @@
         <button class="nine number" value="9">9</button>
         <button class="button operand" value="/">÷</button>
         <button class="text">Total</button>
-        <button class="span two total" id="total" value="0">test</button>
-        <button class="equals operand" value="=">=</button>
+        <button class="span two total" id="total" value="">test</button>
+        <button id="equals" value="=">=</button>
       </div>
-
+    </main>
 
     <script>
-      // what do I want to happen - basic?
-      // When user clicks on a number it saves it
-      
-      document.querySelector(".one").addEventListener("click", clicked);
-      function clicked(event) {
-        document.getElementById("total").innerHTML = event.target.value
+      // what do I want to happen
+      // When user clicks on a number or operand it saves it & displays it
+      //   above needs to be limitless
+      // When user clicks = the calculator needs to carry out the sum and display total
+      // When user clicks AC display should reset back to 0
+
+      //   Declare variables
+      //   empty array to push the values into
+      const currentArray = [];
+      //   display of sum and total
+      const display = document.getElementById("total");
+      const equals = document.getElementById("equals");
+      //   taking active operand from user's entry
+      let currentOperand = "";
+      let currentNumber1 = "";
+      let currentNumber2 = "";
+
+      // selects all number buttons
+      const buttons = document.querySelectorAll(".number");
+
+      // loops through them all and adds an event listener that runs showNumber function when each button is clicked
+      for (var i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener("click", showNumber);
       }
 
-//       document.querySelector(".two").addEventListener("click", clicked);
-//     function clicked(event) {
-//     document.getElementById("total").innerHTML = event.target.value
-// }
+      // for the function we want to add the button value to the display box
+      function showNumber(event) {
+        currentArray.push(event.target.value);
+        display.innerHTML = currentArray.join("");
+      }
 
-//     document.querySelector(".three").addEventListener("click", clicked);
-//     function clicked(event) {
-//         document.getElementById("total").innerHTML = event.target.value
-//     }
+      // Same as above for operands
+      const operands = document.querySelectorAll(".operand");
+      for (var i = 0; i < operands.length; i++) {
+        operands[i].addEventListener("click", showOperand);
+      }
 
-//     document.querySelector(".four").addEventListener("click", clicked);
-//     function clicked(event) {
-//         document.getElementById("total").innerHTML = event.target.value
-//     }
+      function showOperand(event) {
+        //   adding operand selected to the array in display
+        currentArray.push(event.target.value);
+        display.innerHTML = currentArray.join("");
 
-//     document.querySelector(".five").addEventListener("click", clicked);
-//     function clicked(event) {
-//         document.getElementById("total").innerHTML = event.target.value
-//     }
+        // searching the array for the operand and storing in a variable, but only when it contains equals
 
-//     document.querySelector(".six").addEventListener("click", clicked);
-//     function clicked(event) {
-//         document.getElementById("total").innerHTML = event.target.value
-//     }
+        // for (var i = 0; i < currentArray.length; i++) {
+        //   if (event.target.value.includes("+" || "-" || "*" || "/")) {
+        //     currentOperand = currentArray[i];
+        //     console.log(currentOperand);
+        //   }
+        // }
 
-//     document.querySelector(".seven").addEventListener("click", clicked);
-//     function clicked(event) {
-//         document.getElementById("total").innerHTML = event.target.value
-//     }
+        // const scores = [3, 6, 21, 9];
 
-//     document.querySelector(".eight").addEventListener("click", clicked);
-//     function clicked(event) {
-//         document.getElementById("total").innerHTML = event.target.value
-//     }
+        // want to filter the currentArray to find any operands, and store in new array - YES!
+        let finalOperand = currentArray.filter((currentArray) => {
+          return currentArray === event.target.value;
+        });
+        console.log(finalOperand);
 
-//     document.querySelector(".nine").addEventListener("click", clicked);
-//     function clicked(event) {
-//         document.getElementById("total").innerHTML = event.target.value
-//     }
+        // old array now contains numbers and operand, so below will remove operands if needed and store as new variable
+        // newArrayTest = currentArray.filter(
+        //   (item) => !finalOperand.includes(item)
+        // );
+        // console.log(newArrayTest);
+      }
 
+      //   Searching for first numbers
 
-      //   document.getElementById("two").onclick = function () {
-      //     document.getElementById("total").innerHTML =
-      //      "test";
-      //   };
+      // equals button to action the equation
 
-    //   let currentNumber = document.getElementsByClassName("number").value;
-    //   let accumulativeNumber = document.getElementById("title");
+      equals.addEventListener("click", calculateTotal);
+      let sum = 0;
+      function calculateTotal(event) {
+        sum = currentNumber1 + currentOperand + currentNumber2;
+        console.log(sum);
+      }
 
-      //   function addNumbers(event) {
-      //     accumulativeNumber.innerHTML = currentNumber;
-      //   }
-
-      // Then user selects an operand and it adds it to the above
-
-      // then user selects another number and adds it to the above
-
-      // User selects equals and the above are calculated as a sum
-
-      // and the totals box changes to show the total
-
-      //   let total = document.getElementById("total");
-      //   total.innerHTML = "";
+      // Add function to clear
+      document.querySelector(".clear").addEventListener("click", clear);
+      function clear(event) {
+        document.getElementById("total").innerHTML = "0";
+      }
     </script>
   </body>
 </html>
