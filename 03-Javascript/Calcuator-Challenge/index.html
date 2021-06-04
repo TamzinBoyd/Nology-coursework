@@ -36,22 +36,22 @@
     <script>
       // what do I want to happen
       // When user clicks on a number or operand it saves it & displays it
-      //   above needs to be limitless
+      // above needs to be limitless
       // When user clicks = the calculator needs to carry out the sum and display total
       // When user clicks AC display should reset back to 0
 
-      //   Declare variables
+      //   Declare variables ////////////////////////////////////////////////////////////////////////////////
       //   empty array to push the values into
       const currentArray = [];
+
       //   display of sum and total
       const display = document.getElementById("total");
       const equals = document.getElementById("equals");
+
       //   taking active operand from user's entry
       let currentOperand = "";
-      let currentNumber1 = "";
-      let currentNumber2 = "";
 
-      // selects all number buttons
+      // selects all number buttons ////////////////////////////////////////////////////////////////////////////
       const buttons = document.querySelectorAll(".number");
 
       // loops through them all and adds an event listener that runs showNumber function when each button is clicked
@@ -59,13 +59,13 @@
         buttons[i].addEventListener("click", showNumber);
       }
 
-      // for the function we want to add the button value to the display box
+      // adds the button's value to the display box on click
       function showNumber(event) {
         currentArray.push(event.target.value);
         display.innerHTML = currentArray.join("");
       }
 
-      // Same as above for operands
+      // Same as above for operands /////////////////////////////////////////////////////////////////////////
       const operands = document.querySelectorAll(".operand");
       for (var i = 0; i < operands.length; i++) {
         operands[i].addEventListener("click", showOperand);
@@ -76,42 +76,51 @@
         currentArray.push(event.target.value);
         display.innerHTML = currentArray.join("");
 
-        // searching the array for the operand and storing in a variable, but only when it contains equals
+        // Selecting just the operand ///////////////////////////////////////////////////////////////////////
 
-        // for (var i = 0; i < currentArray.length; i++) {
-        //   if (event.target.value.includes("+" || "-" || "*" || "/")) {
-        //     currentOperand = currentArray[i];
-        //     console.log(currentOperand);
-        //   }
-        // }
-
-        // const scores = [3, 6, 21, 9];
-
-        // want to filter the currentArray to find any operands, and store in new array - YES!
+        // want to filter the currentArray to find any operands, and store in new array
         let finalOperand = currentArray.filter((currentArray) => {
           return currentArray === event.target.value;
         });
         console.log(finalOperand);
 
-        // old array now contains numbers and operand, so below will remove operands if needed and store as new variable
-        // newArrayTest = currentArray.filter(
-        //   (item) => !finalOperand.includes(item)
-        // );
-        // console.log(newArrayTest);
+        //   Searching for first number, and store in new array
+        //     currentNumber1 = currentArray[0];
+        //     console.log(currentNumber1);
+
+        //     //   Searching for last number, and store in new array
+        //     currentNumber2 = currentArray.length - 1;
+        //     console.log(currentNumber2);
+        //
       }
 
-      //   Searching for first numbers
-
-      // equals button to action the equation
-
+      // equals button to action the equation ///////////////////////////////////////////////
+      // add click event
       equals.addEventListener("click", calculateTotal);
+
+      //   create sum and enter as 0;
       let sum = 0;
+
+      //   function to split the array into strings of numbers then puts them in a new array //////////////////////
+      //   Couldn't perform this before as it wouldn't take the final entered value
       function calculateTotal(event) {
-        sum = currentNumber1 + currentOperand + currentNumber2;
+        //   turns array into a string so it can be split
+        let addArray = currentArray.toString();
+
+        // split the array when you find +, leaving just numbers
+        addArray = addArray.split("+");
+        console.log(addArray);
+
+        // trying to add it all together!
+        sum =
+          parseInt(addArray[0]) +
+          currentOperand +
+          parseInt(addArray.length - 1);
+
         console.log(sum);
       }
 
-      // Add function to clear
+      // Add function to clear *needs fixing //////////////////////////////////////////////////////////////////
       document.querySelector(".clear").addEventListener("click", clear);
       function clear(event) {
         document.getElementById("total").innerHTML = "0";
