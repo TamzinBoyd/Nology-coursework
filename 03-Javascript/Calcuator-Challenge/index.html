@@ -49,7 +49,8 @@
       const equals = document.getElementById("equals");
 
       //   taking active operand from user's entry
-      let currentOperand = "";
+
+      let finalOperand = "";
 
       // selects all number buttons ////////////////////////////////////////////////////////////////////////////
       const buttons = document.querySelectorAll(".number");
@@ -79,22 +80,15 @@
         // Selecting just the operand ///////////////////////////////////////////////////////////////////////
 
         // want to filter the currentArray to find any operands, and store in new array
-        let finalOperand = currentArray.filter((currentArray) => {
+        finalOperand = currentArray.filter((currentArray) => {
+          // This returns the operand clicked by the user
           return currentArray === event.target.value;
         });
+        finalOperand = finalOperand.toString();
         console.log(finalOperand);
-
-        //   Searching for first number, and store in new array
-        //     currentNumber1 = currentArray[0];
-        //     console.log(currentNumber1);
-
-        //     //   Searching for last number, and store in new array
-        //     currentNumber2 = currentArray.length - 1;
-        //     console.log(currentNumber2);
-        //
       }
 
-      // equals button to action the equation ///////////////////////////////////////////////
+      // EQUALS BUTTON to action the equation ///////////////////////////////////////////////
       // add click event
       equals.addEventListener("click", calculateTotal);
 
@@ -103,21 +97,31 @@
 
       //   function to split the array into strings of numbers then puts them in a new array //////////////////////
       //   Couldn't perform this before as it wouldn't take the final entered value
+
       function calculateTotal(event) {
         //   turns array into a string so it can be split
-        let addArray = currentArray.toString();
+        let numberArray = currentArray.toString();
 
-        // split the array when you find +, leaving just numbers
-        addArray = addArray.split("+");
-        console.log(addArray);
+        // split the array when you find finalOperand (the one user entered), leaving just numbers
+        numberArray = numberArray.split(finalOperand);
+        console.log(numberArray);
 
-        // trying to add it all together!
-        sum =
-          parseInt(addArray[0]) +
-          currentOperand +
-          parseInt(addArray.length - 1);
+        // taking the first value **will need to fix to not just be first number later on
+        let firstNumber = numberArray[0];
+        console.log(firstNumber);
+        // above logs it with a comma, can't get join() method to work to remove this
 
-        console.log(sum);
+        // as above
+        let lastNumber = numberArray[1];
+        console.log(lastNumber);
+
+        // trying to add it all together! Doesn't work as above numbers still show commas
+        // once done need to apply for other operands
+        if (finalOperand === "+") {
+          sum = firstNumber + lastNumber;
+          console.log(sum);
+          display.innterHTML = sum;
+        }
       }
 
       // Add function to clear *needs fixing //////////////////////////////////////////////////////////////////
