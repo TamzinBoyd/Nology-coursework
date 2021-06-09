@@ -94,6 +94,7 @@
 
       //   create sum and enter as 0;
       let sum = 0;
+      let firstNumber = "";
 
       //   function to split the array into strings of numbers then puts them in a new array //////////////////////
       //   Couldn't perform this before as it wouldn't take the final entered value
@@ -106,22 +107,32 @@
         numberArray = numberArray.split(finalOperand);
         console.log(numberArray);
 
-        // taking the first value **will need to fix to not just be first number later on
-        let firstNumber = numberArray[0];
-        console.log(firstNumber);
-        // above logs it with a comma, can't get join() method to work to remove this
+        currentArray.forEach((currentArray) => {
+          if (currentArray[i] != finalOperand) {
+            console.log(currentArray);
+          }
+        });
 
-        // as above
-        let lastNumber = numberArray[1];
-        console.log(lastNumber);
+        // //   need to extract number when it finds the decimal and saves them seprately in an array
+        // const [firstNum, secondNum] = numberArray.split("+");
+        // console.log(firstNum, secondNum);
+
+        // taking the first value **will need to fix to not just be first number later on
+        // let firstNumber = numberArray[0];
+        // console.log(firstNumber);
+        // // above logs it with a comma, can't get join() method to work to remove this
+
+        // // as above
+        // let lastNumber = numberArray[1];
+        // console.log(lastNumber);
 
         // trying to add it all together! Doesn't work as above numbers still show commas
         // once done need to apply for other operands
-        if (finalOperand === "+") {
-          sum = firstNumber + lastNumber;
-          console.log(sum);
-          display.innterHTML = sum;
-        }
+        // if (finalOperand === "+") {
+        //   sum = firstNumber + lastNumber;
+        //   console.log(sum);
+        //   display.innterHTML = sum;
+        // }
       }
 
       // Add function to clear *needs fixing //////////////////////////////////////////////////////////////////

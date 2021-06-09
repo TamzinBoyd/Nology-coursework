@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Codystar&family=Keania+One&family=Press+Start+2P&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.calculator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 4em;
+  margin-top: 100px;
+}
+
+h3 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 100;
+  font-size: 1.5em;
+  margin-top: 20px;
+}
+
+.calculator-grid {
+  background-color: black;
+  width: 50vh;
+  height: 50vh;
+  border-radius: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  box-shadow: -5px 5px 10px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 10px;
+}
+.inputs {
+  grid-column: 1 / 5;
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.box2,
+.box1,
+.box3 {
+  height: 4em;
+  width: 8em;
+  margin: 5px;
+  padding: 5px;
+  border: none;
+  font-size: 20px;
+  border-radius: 10px;
+}
+.operators {
+  grid-column: 1 / 5;
+  display: flex;
+  justify-content: center;
+}
+
+.add,
+.multiply,
+.divide,
+.minus {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  margin: 30px;
+  background-color: orangered;
+  color: white;
+  font-size: 2em;
+  cursor: pointer;
+}
+
+.add:hover,
+.multiply:hover,
+.minus:hover,
+.divide:hover {
+  border: 2px solid white;
+  font-size: 3.5em;
+  justify-content: center;
+  align-items: center;
+}
+
+.calculate {
+  grid-column: 2 / 4;
+  height: 50px;
+  border-radius: 15px;
+  background-color: orangered;
+  color: white;
+  font-size: 25px;
+  cursor: pointer;
+  border: none;
+}
+.calculate:hover {
+  /* font-size: 2em; */
+  border: 2px solid white;
+}
+
+.display {
+  font-family: "Keania One";
+  grid-column: 2 / 4;
+  background: linear-gradient(0.25turn, #505050, #ebf8e1, #505050);
+  height: 50px;
+  width: 265px;
+  border-radius: 15px;
+  margin: auto;
+  text-align: center;
+  font-size: 30px;
+  padding: 5px;
+}
