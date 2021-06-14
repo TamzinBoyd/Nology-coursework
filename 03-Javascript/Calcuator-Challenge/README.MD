@@ -1,5 +1,7 @@
 CALCULATOR CHALLENGE
 
+Please see the code under number 2 for the working basic calculator
+
 Given the task of creating a calculator based on methods already learnt.
 
 FUNCTIONALITY
