@@ -7,8 +7,10 @@ $font-text: "Abel", sans-serif;
 $color-main: #ff0070;
 $color-second: #08fdd8;
 $color-background: #02021c;
+$light-mode-background: #d1d1d1; // still need to separate SCSS doc & link them
+$light-mode-main: #823b97;
+$light-mode-second: rgb(0, 0, 0);
 
-// still need to separate SCSS doc & link them
 * {
   margin: 0;
   padding: 0;
@@ -16,6 +18,10 @@ $color-background: #02021c;
 
 body {
   background-color: $color-background;
+}
+
+.bodyLight {
+  background-color: $light-mode-background;
 }
 h1 {
   font-family: $font-main;
@@ -34,7 +40,8 @@ p {
 .triangle__image img {
   display: flex;
   float: left;
-  max-width: 150px;
+  max-width: 180px;
+  z-index: -1;
 }
 
 // tablet
@@ -163,6 +170,14 @@ p {
   }
 }
 
+.headingLight {
+  color: $light-mode-main;
+}
+
+.introLight {
+  color: $light-mode-second;
+}
+
 //  heading - tablet
 
 @media screen and (min-width: 550px) {
@@ -186,18 +201,18 @@ p {
 
 @media screen and (min-width: 800px) {
   .intro {
-    margin-right: 50px;
+    margin-right: 150px;
 
     &__heading {
       font-size: 100px;
       line-height: 110px;
-      margin-top: 190px;
+      margin-top: 250px;
     }
 
     &__about {
       font-size: 27px;
       margin-top: 10px;
-      margin-bottom: 50px;
+      margin-bottom: 350px;
     }
   }
 }
@@ -216,6 +231,7 @@ p {
     margin-left: 10px;
     margin-top: -60px;
     text-transform: uppercase;
+    cursor: pointer;
   }
 
   &__projects {
@@ -223,7 +239,7 @@ p {
     justify-content: center;
     border: 2px $color-main solid;
     border-radius: 10px;
-    width: 90px;
+    width: 100px;
     height: 22px;
     margin-right: 4%;
     text-align: center;
@@ -243,7 +259,7 @@ p {
   &__experience {
     border: 2px $color-main solid;
     border-radius: 10px;
-    width: 90px;
+    width: 100px;
     height: 22px;
     text-align: center;
     text-decoration: none;
@@ -262,7 +278,7 @@ p {
   &__contact {
     border: 2px $color-main solid;
     border-radius: 10px;
-    width: 90px;
+    width: 100px;
     height: 22px;
     margin-left: 4%;
     text-align: center;
@@ -278,6 +294,15 @@ p {
       font-weight: bold;
     }
   }
+}
+
+.projectsLight,
+.experienceLight,
+.contactLight {
+  background-color: $light-mode-main;
+  color: $color-background;
+  border: none;
+  box-shadow: -5px 5px $color-background;
 }
 
 @media screen and (min-width: 550px) {
@@ -362,7 +387,7 @@ p {
   box-shadow: -2px 2px $color-second;
   border: none;
   margin-top: -10px;
-  margin-bottom: 50px;
+
   margin-left: 20px;
 }
 
@@ -371,8 +396,8 @@ p {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 2fr;
   gap: 10px;
-  margin-left: 12px;
-  margin-top: -10px;
+  margin: auto;
+  padding: 20px;
 }
 
 .images > img {
@@ -462,7 +487,7 @@ p {
 }
 .line2 {
   height: 4px;
-  width: 120px;
+  width: 200px;
   background-color: $color-main;
   box-shadow: -2px 2px $color-second;
   border: none;
@@ -498,12 +523,12 @@ p {
 
   .line2 {
     height: 7px;
-    width: 280px;
+    width: 480px;
     background-color: $color-main;
     box-shadow: -5px 5px $color-second;
     border: none;
     margin-top: -20px;
-    margin-bottom: 50px;
+    margin-bottom: 150px;
     margin-left: 17px;
   }
 }
@@ -571,9 +596,12 @@ p {
   font-size: 15px;
   box-shadow: 0px 5px $color-second;
 }
-.contact__link {
-  text-decoration: none;
 
+p > a {
+  color: inherit;
+  text-decoration: none;
+}
+.contact__link {
   &:hover {
     color: $color-main;
   }
@@ -643,6 +671,7 @@ p {
     &__header {
       margin-top: 100px;
       margin-left: 20px;
+
       font-size: 60px;
     }
   }
@@ -654,7 +683,7 @@ p {
     box-shadow: -5px 5px $color-second;
     border: none;
     margin-top: -20px;
-    margin-bottom: 50px;
+    margin-bottom: 150px;
     margin-left: 17px;
   }
 }
@@ -771,7 +800,8 @@ p {
   display: flex;
   float: right;
   margin-top: -220px;
-  max-width: 150px;
+  max-width: 140px;
+  z-index: -1;
 }
 
 //  tablet
@@ -786,7 +816,11 @@ p {
 // desktop
 @media screen and (min-width: 800px) {
   .footer__triangles {
-    max-width: 500px;
+    max-width: 600px;
     margin-top: -400px;
   }
 }
+
+// light mode classes //////////////////////////////////////////////////////////////
+
+// change to alternative images

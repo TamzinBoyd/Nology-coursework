@@ -5,12 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tamzin Boyd Portfolio</title>
-    <!-- <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-      crossorigin="anonymous" -->
-    <!-- /> -->
+
     <link rel="stylesheet" href="./Styles/main.css" />
   </head>
 
@@ -18,13 +13,13 @@
   <!-- 1. Add light mode interactivity -->
   <!-- 2. add triangles and shapes that move will with page -->
 
-  <body>
-    <div class="triangle__image">
+  <body class="body">
+    <div class="triangle__image dark">
       <img src="./images/image1.png" alt="logo" />
     </div>
 
     <!-- Nav bar for light mode ----------------------------------------------------->
-    <nav class="toggle">
+    <nav class="toggle dark">
       <div class="toggle__text">Switch to light mode</div>
       <div class="toggle__back"></div>
       <div class="toggle__button"></div>
@@ -53,10 +48,10 @@
     <!-- projects (images) -->
     <main>
       <div>
-        <h1 class="projects__header">Projects</h1>
-        <hr class="line" />
+        <h1 class="projects__header dark">Projects</h1>
+        <hr class="line dark" />
       </div>
-      <div class="images" id="projects">
+      <div class="images dark" id="projects">
         <img src="./images/imageone.jpeg" alt="project 1" />
 
         <img src="http://placekitten.com/g/500/500" alt="project 2" />
@@ -69,47 +64,47 @@
       </div>
 
       <!-- View project link, later on will load a pop up with description of project, or link if stored elsewhere -->
-      <div class="view"></div>
+      <div class="view dark"></div>
 
       <!-- experience section -->
 
-      <h1 class="experience__header">Skills</h1>
+      <h1 class="experience__header dark">Experience</h1>
       <hr class="line2" />
 
       <div class="experience" id="experience">
-        <h2 class="experience__one">Problem solving</h2>
+        <h2 class="experience__one dark">Problem solving</h2>
 
-        <h2 class="experience__two">Skill 2</h2>
-        <p class="experience__onedetail">
+        <h2 class="experience__two dark">Skill 2</h2>
+        <p class="experience__onedetail dark">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque minima
           porro laboriosam alias tempora cupiditate, labore est laborum magni
           sunt incidunt nemo libero quas, dolores consectetur non ut cumque
           possimus.
         </p>
-        <p class="experience__twodetail">
+        <p class="experience__twodetail dark">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque minima
           porro laboriosam alias tempora cupiditate, labore est laborum magni
           sunt incidunt nemo libero quas, dolores consectetur non ut cumque
           possimus.
         </p>
-        <h2 class="experience__three">Skill 3</h2>
-        <h2 class="experience__four">Skill 4</h2>
+        <h2 class="experience__three dark">Skill 3</h2>
+        <h2 class="experience__four dark">Skill 4</h2>
 
-        <p class="experience__threedetail">
+        <p class="experience__threedetail dark">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque minima
           porro laboriosam alias tempora cupiditate, labore est laborum magni
           sunt incidunt nemo libero quas, dolores consectetur non ut cumque
           possimus.
         </p>
 
-        <p class="experience__threedetail">
+        <p class="experience__threedetail dark">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque minima
           porro laboriosam alias tempora cupiditate, labore est laborum magni
           sunt incidunt nemo libero quas, dolores consectetur non ut cumque
           possimus.
         </p>
       </div>
-      <p class="contact__message">
+      <p class="contact__message dark">
         Thanks for stopping by, download a copy of my CV
         <a href="#" download class="contact__link">here </a>
       </p>
@@ -118,19 +113,19 @@
     <!-- contact section  -->
     <footer class="footer" id="contact">
       <div class="contact">
-        <h1 class="contact__header">Get in touch</h1>
+        <h1 class="contact__header dark">Get in touch</h1>
       </div>
       <hr class="line3" />
 
       <!-- links to external contact -->
 
       <div class="links">
-        <nav class="links__container">
+        <nav class="links__container dark">
           <a href="mailto:tamzin_boyd@hotmail.co.uk" class="links__email"
             >Email
           </a>
-          <a href="#" class="links__linkedin">Linked In</a>
-          <a href="#" class="links__github">Git Hub</a>
+          <a href="#" class="links__linkedin dark">Linked In</a>
+          <a href="#" class="links__github dark">Git Hub</a>
         </nav>
       </div>
 
@@ -140,5 +135,6 @@
         class="footer__triangles"
       />
     </footer>
+    <script src="script/script.js"></script>
   </body>
 </html>
