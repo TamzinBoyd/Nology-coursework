@@ -4,28 +4,25 @@
 // When user clicks = the calculator needs to carry out the sum and display total
 // When user clicks AC display should reset back to 0
 
+// Ways to improve for future
+// currently the calcultor only accepts one operand
+
 //   Declare variables ////////////////////////////////////////////////////////////////////////////////
 //   empty array to push the values into
-const currentArray = [];
+let currentArray = [];
 
 //   display of sum and total saved in variables
 const display = document.getElementById("total");
 const equals = document.getElementById("equals");
 
-//   taking active operand from user's entry & saving in variable
+//   variable to layer take active operand from user's entry
 let finalOperand = "";
 
-// selects all number buttons & saves in variable ////////////////////////////////////////////////////////////////////////////
+// selects all number buttons then operand buttons
 const buttons = document.querySelectorAll(".number");
+const operands = document.querySelectorAll(".operand");
 
-//   create sum as variable for use later
-const sum = 0;
-const firstNumber = "";
-
-// loops through them all and adds an event listener that runs showNumber function when each button is clicked
-for (var i = 0; i < buttons.length; i++) {
-  buttons[i].addEventListener("click", showNumber);
-}
+// FUNCTIONS ///////////////////////////////////////////////////////////////////////////////////////////
 
 // adds the button's value to the display box on click
 function showNumber(event) {
@@ -33,43 +30,31 @@ function showNumber(event) {
   display.innerHTML = currentArray.join("");
 }
 
-// Same as above for operands /////////////////////////////////////////////////////////////////////////
-const operands = document.querySelectorAll(".operand");
-for (var i = 0; i < operands.length; i++) {
-  operands[i].addEventListener("click", showOperand);
-}
-
 function showOperand(event) {
-  //   adding operand selected to the array in display
+  // adds selected operand to the display then joins it with a space
   currentArray.push(event.target.value);
   display.innerHTML = currentArray.join("");
 
-  // Selecting just the operand ///////////////////////////////////////////////////////////////////////
-
-  // want to filter the currentArray to find any operands, and store in new array
+  // filters currentarray to take the value of the operand selected by user
   finalOperand = currentArray.filter((currentArray) => {
     // This returns the operand clicked by the user
     return currentArray === event.target.value;
   });
-  //   turns it into a string?
+  //   turns it into a string for later use
   finalOperand = finalOperand.toString();
 }
 
-// EQUALS BUTTON to action the equation ///////////////////////////////////////////////
-// add click event
-equals.addEventListener("click", calculateTotal);
-
-//   function to split the array into strings of numbers then puts them in a new array //////////////////////
-//   Couldn't perform this before as it wouldn't take the final entered value
-
+// equals function to carry out final sum
 function calculateTotal(event) {
   //  changes array to a new variable but joins it together
   const calculateStr = currentArray.join("");
-  //   creates variable for the 2 separate parts
+  //   creates variable for the 2 separate parts & operand
   const operandPos = calculateStr.indexOf(finalOperand);
+  //   creates substring of value upto finaloperand
   const firstNum = calculateStr.substring(0, operandPos);
+  //   as above but takes second value
   const secondNum = calculateStr.substring(operandPos + 1);
-  console.log(firstNum, finalOperand, secondNum);
+  //   carry out the sum depending on final operand value
   if (finalOperand === "+") {
     display.innerHTML = parseFloat(firstNum) + parseFloat(secondNum);
   } else if (finalOperand === "-") {
@@ -79,34 +64,29 @@ function calculateTotal(event) {
   } else if (finalOperand === "/") {
     display.innerHTML = parseFloat(firstNum) / parseFloat(secondNum);
   }
-
-  //   trying to loop over the original array and if the current place isn't equal to finalOperand then log current array - doesn't work
-  //   currentArray.forEach((currentArray) => {
-  //     if (currentArray[i] != finalOperand) {
-  //       console.log(currentArray);
-  //     }
-  //   });
-
-  // taking the first value **will need to fix to not just be first number later on
-  // let firstNumber = numberArray[0];
-  // console.log(firstNumber);
-  // // above logs it with a comma, can't get join() method to work to remove this
-
-  // // as above
-  // let lastNumber = numberArray[1];
-  // console.log(lastNumber);
-
-  // trying to add it all together! Doesn't work as above numbers still show commas
-  // once done need to apply for other operands
-  // if (finalOperand === "+") {
-  //   sum = firstNumber + lastNumber;
-  //   console.log(sum);
-  //   display.innterHTML = sum;
-  // }
 }
 
-// Add function to clear *needs fixing //////////////////////////////////////////////////////////////////
-document.querySelector(".clear").addEventListener("click", clear);
+// when user selects clear the display returns to 0 and array is reset to empty array
 function clear(event) {
-  document.getElementById("total").innerHTML = "0";
+  display.innerHTML = "0.00";
+  calculateStr = currentArray;
+  currentArray = [];
 }
+
+//  EVENT LISTENERS ////////////////////////////////////////////////////
+// adds click to all buttons & carry out function which adds clicked values to the display
+for (var i = 0; i < buttons.length; i++) {
+  buttons[i].addEventListener("click", showNumber);
+}
+
+// Same as above for operands /////////////////////////////////////////////////////////////////////////
+
+for (var i = 0; i < operands.length; i++) {
+  operands[i].addEventListener("click", showOperand);
+}
+
+// Equals button to carry out end sum
+equals.addEventListener("click", calculateTotal);
+
+// AC clear button
+document.querySelector(".clear").addEventListener("click", clear);
