@@ -18,6 +18,10 @@ let finalOperand = "";
 // selects all number buttons & saves in variable ////////////////////////////////////////////////////////////////////////////
 const buttons = document.querySelectorAll(".number");
 
+//   create sum as variable for use later
+const sum = 0;
+const firstNumber = "";
+
 // loops through them all and adds an event listener that runs showNumber function when each button is clicked
 for (var i = 0; i < buttons.length; i++) {
   buttons[i].addEventListener("click", showNumber);
@@ -49,38 +53,39 @@ function showOperand(event) {
   });
   //   turns it into a string?
   finalOperand = finalOperand.toString();
-  console.log(finalOperand);
 }
 
 // EQUALS BUTTON to action the equation ///////////////////////////////////////////////
 // add click event
 equals.addEventListener("click", calculateTotal);
 
-//   create sum as variable for use later
-let sum = 0;
-let firstNumber = "";
-
 //   function to split the array into strings of numbers then puts them in a new array //////////////////////
 //   Couldn't perform this before as it wouldn't take the final entered value
 
 function calculateTotal(event) {
-  //   turns array into a string so it can be split
-  let numberArray = currentArray.toString();
-
-  // split the array when you find finalOperand (the one user entered), leaving just numbers
-  numberArray = numberArray.split(finalOperand);
-  console.log(numberArray);
+  //  changes array to a new variable but joins it together
+  const calculateStr = currentArray.join("");
+  //   creates variable for the 2 separate parts
+  const operandPos = calculateStr.indexOf(finalOperand);
+  const firstNum = calculateStr.substring(0, operandPos);
+  const secondNum = calculateStr.substring(operandPos + 1);
+  console.log(firstNum, finalOperand, secondNum);
+  if (finalOperand === "+") {
+    display.innerHTML = parseFloat(firstNum) + parseFloat(secondNum);
+  } else if (finalOperand === "-") {
+    display.innerHTML = parseFloat(firstNum) - parseFloat(secondNum);
+  } else if (finalOperand === "x") {
+    display.innerHTML = parseFloat(firstNum) * parseFloat(secondNum);
+  } else if (finalOperand === "/") {
+    display.innerHTML = parseFloat(firstNum) / parseFloat(secondNum);
+  }
 
   //   trying to loop over the original array and if the current place isn't equal to finalOperand then log current array - doesn't work
-  currentArray.forEach((currentArray) => {
-    if (currentArray[i] != finalOperand) {
-      console.log(currentArray);
-    }
-  });
-
-  // //   need to extract number when it finds the decimal and saves them seprately in an array
-  // const [firstNum, secondNum] = numberArray.split("+");
-  // console.log(firstNum, secondNum);
+  //   currentArray.forEach((currentArray) => {
+  //     if (currentArray[i] != finalOperand) {
+  //       console.log(currentArray);
+  //     }
+  //   });
 
   // taking the first value **will need to fix to not just be first number later on
   // let firstNumber = numberArray[0];
