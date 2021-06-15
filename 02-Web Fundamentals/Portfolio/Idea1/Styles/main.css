@@ -9,12 +9,16 @@ body {
   background-color: #02021c;
 }
 
-.bodyLight {
-  background-color: #d1d1d1;
+body.light {
+  background-color: #f6f6f6;
 }
 
 h1 {
   font-family: "Bungee Shade", cursive;
+}
+
+h1.light {
+  color: #111528;
 }
 
 h2 {
@@ -129,12 +133,8 @@ p {
   text-transform: uppercase;
 }
 
-.headingLight {
-  color: #823b97;
-}
-
-.introLight {
-  color: black;
+.intro__about.light {
+  color: #fe533d;
 }
 
 @media screen and (min-width: 550px) {
@@ -234,15 +234,6 @@ p {
   font-weight: bold;
 }
 
-.projectsLight,
-.experienceLight,
-.contactLight {
-  background-color: #823b97;
-  color: #02021c;
-  border: none;
-  box-shadow: -5px 5px #02021c;
-}
-
 @media screen and (min-width: 550px) {
   .nav__buttons {
     font-size: 20px;
@@ -300,6 +291,10 @@ p {
   margin-top: 50px;
 }
 
+.divide.light {
+  color: #fe533d;
+}
+
 .line {
   height: 4px;
   width: 160px;
@@ -324,6 +319,11 @@ p {
   height: 100%;
   border-left: #08fdd8 2px solid;
   border-bottom: #ff0070 2px solid;
+}
+
+.images.light > img {
+  border-left: #fe533d 5px solid;
+  border-bottom: #111528 5px solid;
 }
 
 @media screen and (min-width: 550px) {
@@ -675,4 +675,19 @@ p > a {
     max-width: 600px;
     margin-top: -400px;
   }
+}
+.button.light {
+  background-color: #111528;
+  color: #f6f6f6;
+  border: none;
+  box-shadow: -5px 5px #fe533d;
+}
+
+.button.light:hover {
+  background-color: #fe533d;
+}
+
+.line.light {
+  background-color: #111528;
+  box-shadow: -2px 2px #fe533d;
 }

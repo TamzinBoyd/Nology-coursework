@@ -7,9 +7,9 @@ $font-text: "Abel", sans-serif;
 $color-main: #ff0070;
 $color-second: #08fdd8;
 $color-background: #02021c;
-$light-mode-background: #d1d1d1; // still need to separate SCSS doc & link them
-$light-mode-main: #823b97;
-$light-mode-second: rgb(0, 0, 0);
+$light-mode-background: #f6f6f6; // still need to separate SCSS doc & link them
+$light-mode-main: #111528;
+$light-mode-second: #fe533d;
 
 * {
   margin: 0;
@@ -20,11 +20,16 @@ body {
   background-color: $color-background;
 }
 
-.bodyLight {
+body.light {
   background-color: $light-mode-background;
 }
+
 h1 {
   font-family: $font-main;
+}
+
+h1.light {
+  color: $light-mode-main;
 }
 
 h2 {
@@ -170,11 +175,7 @@ p {
   }
 }
 
-.headingLight {
-  color: $light-mode-main;
-}
-
-.introLight {
+.intro__about.light {
   color: $light-mode-second;
 }
 
@@ -296,15 +297,6 @@ p {
   }
 }
 
-.projectsLight,
-.experienceLight,
-.contactLight {
-  background-color: $light-mode-main;
-  color: $color-background;
-  border: none;
-  box-shadow: -5px 5px $color-background;
-}
-
 @media screen and (min-width: 550px) {
   .nav {
     &__buttons {
@@ -380,6 +372,9 @@ p {
   margin-top: 50px;
 }
 
+.divide.light {
+  color: $light-mode-second;
+}
 .line {
   height: 4px;
   width: 160px;
@@ -406,6 +401,11 @@ p {
   border-left: $color-second 2px solid;
   border-bottom: $color-main 2px solid;
   // object-fit: cover;
+}
+
+.images.light > img {
+  border-left: $light-mode-second 5px solid;
+  border-bottom: $light-mode-main 5px solid;
 }
 // tablet - images grid
 
@@ -823,4 +823,18 @@ p > a {
 
 // light mode classes //////////////////////////////////////////////////////////////
 
-// change to alternative images
+.button.light {
+  background-color: $light-mode-main;
+  color: $light-mode-background;
+  border: none;
+  box-shadow: -5px 5px $light-mode-second;
+}
+
+.button.light:hover {
+  background-color: $light-mode-second;
+}
+
+.line.light {
+  background-color: $light-mode-main;
+  box-shadow: -2px 2px $light-mode-second;
+}

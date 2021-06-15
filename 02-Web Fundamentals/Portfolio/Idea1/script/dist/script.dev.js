@@ -5,27 +5,32 @@
 // step 1 - add light mode toggle classed to all relevant sections
 // create click function
 // to change class of the elements
+var body = document.querySelector(".body");
 var toggle = document.querySelector(".toggle");
-var background = document.querySelector(".body");
 var heading = document.querySelector(".intro__heading");
-var intro = document.querySelector(".intro__about");
-var projectsNav = document.querySelector(".nav__projects");
-var experienceNav = document.querySelector(".nav__experience");
-var contactNav = document.querySelector(".nav__contact");
+var subHeading = document.querySelector(".intro__about");
+var buttons = document.querySelectorAll(".button");
+var divideHeading = document.querySelectorAll(".division");
+var images = document.querySelector(".images");
+var line = document.querySelectorAll(".line");
 toggle.addEventListener("click", lightMode);
 
-function lightMode(event) {
-  background.classList.add("bodyLight");
-  heading.classList.add("headingLight");
-  intro.classList.add("introLight");
-  projectsNav.classList.add("projectsLight");
-  experienceNav.classList.add("experienceLight");
-  contactNav.classList.add("contactLight"); //  experience.classList.add("headingLight");
-  //   heading.classList.add("headingLight");
-}
+function lightMode() {
+  body.classList.add("light");
+  heading.classList.add("light");
+  subHeading.classList.add("light");
 
-toggle.addEventListener("click", darkMode);
+  for (var i = 0; i < buttons.length; i++) {
+    buttons[i].classList.add("light");
+  }
 
-function darkMode(event) {
-  background.classList.remove("bodyLight");
+  for (var _i = 0; _i < divideHeading.length; _i++) {
+    divideHeading[_i].classList.add("light");
+  }
+
+  for (var _i2 = 0; _i2 < line.length; _i2++) {
+    line[_i2].classList.add("light");
+  }
+
+  images.classList.add("light");
 }
