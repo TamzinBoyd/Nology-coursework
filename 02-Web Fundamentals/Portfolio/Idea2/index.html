@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/f0fedaf61f.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="styles.css" />
+
+    <title>Tamzin Boyd</title>
+  </head>
+  <header>
+    <div class="nav-container">
+      <img src="logo.png" class="logo" alt="logo" />
+
+      <div href="#" class="mode-toggle">
+        <i class="fas fa-circle"></i>
+        <!-- need to add a class in JS to show the below -->
+        <p class="activate-darkmode">Switch to Dark Mode</p>
+      </div>
+    </div>
+
+    <input type="checkbox" class="nav-toggle" id="nav-toggle" />
+    <nav class="nav">
+      <ul class="nav__list">
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Experience</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <label for="nav-toggle" class="nav-toggle-label">
+      <span></span>
+    </label>
+  </header>
+
+  <main>
+    <div class="greeting">
+      <h1 class="greeting__hi">Hi</h1>
+      <h1 class="greeting__dot">.</h1>
+    </div>
+    <p class="greeting__para">
+      Welcome to my portfolio, come and take a look around
+    </p>
+
+    <div class="projects">
+      <h2 class="projects__title">PROJECTS<span class="dot">.</span></h2>
+    </div>
+    <div class="projects-container">
+      <p class="projects-description">
+        Sed ut perspiciatis unde omnis iste natus error sit
+        <span class="bold">voluptatem accusantium</span> doloremque laudantium.
+        Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+        accusantium doloremque laudantium.
+      </p>
+      <a href="https://placeholder.com" class="project-image">
+        <img src="https://via.placeholder.com/300x200"
+      /></a>
+    </div>
+  </main>
+  <body>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,201 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,700;1,100;1,500&display=swap");
+
+$background-color: #101628;
+$grey-color: #e3e2e2;
+$pink-color: #fe5541;
+$block-color: #ffd2c8;
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+header {
+  background-color: $grey-color;
+  text-align: center;
+  position: fixed;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+}
+.mode-toggle {
+  color: #fe5541;
+  display: flex;
+  font-size: 2em;
+  align-items: center;
+  margin-right: 60px;
+}
+
+.activate-darkmode {
+  display: none;
+}
+
+.activate-darkmode .dark {
+  display: block;
+}
+
+.logo {
+  margin: 0;
+  padding: 0.7em;
+  max-height: 4em;
+  display: flex;
+}
+
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  margin-left: 1em;
+  /* This takes it to the full height of the container NAV */
+  height: 100%;
+  /* Below so we can then center it within the NAV bar */
+  display: flex;
+  align-items: center;
+}
+
+/* Below is creating the 3 lines */
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  /* this code creates a white line */
+  display: block;
+  background-color: $background-color;
+  color: $background-color;
+  height: 3px;
+  width: 2em;
+  border-radius: 2px;
+  position: relative;
+}
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  /* this will change it to no content so we just have the lines */
+  content: " ";
+  position: absolute;
+}
+
+.nav-toggle-label span::before {
+  bottom: 7px;
+}
+
+.nav-toggle-label span::after {
+  top: 7px;
+}
+
+/* general nav stayling */
+nav {
+  position: absolute;
+  text-align: right;
+  top: 100%;
+  right: 0;
+  padding-right: 20px;
+  background-color: $grey-color;
+  width: 100%;
+  /* settings so it only appears when select the 3 lines */
+  transform: scale(1, 0);
+  transform-origin: top;
+  transition: transform 400ms ease-in-out;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  margin-bottom: 1em;
+  margin-left: 1em;
+}
+
+nav a {
+  color: $background-color;
+  text-decoration: none;
+  font-size: 1em;
+  text-transform: uppercase;
+  /* so invisible until check box & they fade in */
+  opacity: 0;
+  transition: opacity 150ms ease-in-out;
+}
+
+nav a:hover {
+  color: $pink-color;
+}
+
+/* below will display the NAV only of the checked box is ticked */
+.nav-toggle:checked ~ nav {
+  transform: scale(1, 1);
+}
+
+.nav-toggle:checked ~ nav a {
+  opacity: 1;
+  transition: opacity 250ms ease-in-out 250ms;
+}
+
+// HEADING /////////////////////////////////////////////
+.greeting {
+  color: $background-color;
+  padding-top: 200px;
+  font-size: 3em;
+  display: flex;
+
+  &__hi {
+    width: 1em;
+    margin-left: 50px;
+  }
+
+  &__dot {
+    color: $pink-color;
+  }
+}
+
+.greeting__para {
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+// PROJECTS /////////////////////////////////////////
+
+.projects {
+  color: $background-color;
+  font-size: 2em;
+  margin-left: 20px;
+  margin-top: 100px;
+}
+
+.projects .dot {
+  color: $pink-color;
+}
+
+.projects-container {
+  background-color: $block-color;
+  height: 900px;
+  margin-top: -15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.projects-description {
+  padding: 50px;
+  color: $background-color;
+  font-weight: 700;
+}
+
+.bold {
+  font-style: italic;
+  color: $pink-color;
+  font-weight: 400;
+}
+
+.project-image {
+  display: flex;
+  justify-content: center;
+}
