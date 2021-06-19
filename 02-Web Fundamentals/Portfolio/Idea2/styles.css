@@ -156,26 +156,33 @@ nav a:hover {
 }
 
 .projects {
-  color: #101628;
-  font-size: 2em;
-  margin-left: 20px;
   margin-top: 100px;
 }
 
-.projects .dot {
+.subHeading {
+  font-family: "Roboto", sans-serif;
+  color: #101628;
+  font-size: 3em;
+  margin-left: 20px;
+}
+
+.dot {
   color: #fe5541;
 }
 
 .projects-container {
   background-color: #ffd2c8;
-  height: 900px;
-  margin-top: -15px;
+  height: 810px;
+  margin-top: -20px;
   display: flex;
   flex-direction: column;
+  position: relative;
+  z-index: -1;
+  display: flex;
 }
 
 .projects-description {
-  padding: 50px;
+  padding: 50px 50px 20px 50px;
   color: #101628;
   font-weight: 700;
 }
@@ -189,4 +196,110 @@ nav a:hover {
 .project-image {
   display: flex;
   justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  position: relative;
+}
+
+.project-image > img {
+  border-radius: 10px;
+}
+
+.project-link {
+  position: absolute;
+  font-size: 2em;
+  font-weight: 700;
+  color: #101628;
+}
+
+.pink-bold {
+  color: #fe5541;
+}
+
+.experience__title {
+  margin-top: 100px;
+}
+
+.experience-container {
+  margin-top: -20px;
+  height: 600px;
+  background-color: #e3e2e2;
+  margin-bottom: 20px;
+}
+
+.experience-container > i {
+  justify-content: center;
+}
+
+.icon-grid {
+  width: 300px;
+  height: 200px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  margin: 0px 50px 50px 50px;
+  padding-top: 50px;
+}
+
+.icon-grid > i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #101628;
+  font-size: 3em;
+}
+
+.experience-info {
+  padding: 0px 30px 0px 30px;
+  color: #101628;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.experience-para {
+  padding: 20px 30px 0px 30px;
+  color: #101628;
+  font-size: 15px;
+}
+
+.contact {
+  height: 900px;
+  background-color: #ffd2c8;
+  z-index: -1;
+}
+.contact__intouch {
+  color: #101628;
+  padding-left: 30px;
+  font-weight: 700;
+  font-size: 25px;
+  float: left;
+  padding-top: 30px;
+}
+
+.contact__title {
+  margin-top: 20px;
+  margin-bottom: -20px;
+}
+
+.contact__para {
+  width: 200px;
+  float: left;
+  font-size: 15px;
+  padding-left: 30px;
+  padding-top: 50px;
+  color: #101628;
+}
+
+.me {
+  max-width: 150px;
+  float: right;
+  padding-right: 30px;
+  padding-top: 30px;
+}
+
+.contact__para2 {
+  float: left;
+  font-size: 15px;
+  padding: 30px 30px 30px 30px;
+  color: #101628;
 }
