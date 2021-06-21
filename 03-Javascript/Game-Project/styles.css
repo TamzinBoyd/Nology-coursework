@@ -1,0 +1,59 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+/* styling of the main game */
+.main-container {
+  position: relative;
+  width: 400px;
+  height: 900px;
+  z-index: -1;
+  border: 5px solid rgb(255, 123, 0);
+  border-radius: 10px;
+  background-color: rgb(190, 166, 187);
+}
+
+/* styling of the background image */
+.main-image {
+  position: absolute;
+  float: left;
+  z-index: -1;
+  width: 400px;
+}
+
+/* styling of the hidden objects */
+
+.object1 {
+  position: absolute;
+  float: left;
+  z-index: -1;
+}
+
+/* /* checkbox styling */
+#cat {
+  width: 150px;
+  height: 150px;
+  left: 100px;
+  top: 50px;
+  position: absolute;
+  float: left;
+  z-index: 3;
+  opacity: 0.2;
+}
+
+#dog {
+  width: 150px;
+  height: 150px;
+  left: 250px;
+  top: 450px;
+  position: absolute;
+  float: left;
+  z-index: 3;
+  opacity: 0.2;
+}
+
+/* class to hide element after being clicked */
+.hide {
+  display: none;
+}

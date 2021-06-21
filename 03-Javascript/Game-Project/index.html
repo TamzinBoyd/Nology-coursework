@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <!-- main background image -->
+      <img class="main-image" src="images/cat whole.png" />
+
+      <!-- objects to find -->
+      <img class="object1" src="images/object1.png" />
+      <img class="object2" src="images/object 2.png" />
+    </div>
+
+    <!-- check boxes -->
+    <input
+      type="checkbox"
+      id="cat"
+      name="cat"
+      value="cat"
+      onclick="addClass()"
+    />
+    <label for="cat"></label>
+
+    <input
+      type="checkbox"
+      id="dog"
+      name="dog"
+      value="dog"
+      onclick="addClassDog()"
+    />
+    <label for="dog"></label>
+
+    <script src="script.js"></script>
+  </body>
+</html>

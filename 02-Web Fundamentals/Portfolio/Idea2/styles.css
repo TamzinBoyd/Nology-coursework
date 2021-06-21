@@ -164,6 +164,7 @@ nav a:hover {
   color: #101628;
   font-size: 3em;
   margin-left: 20px;
+  margin-top: 300px;
 }
 
 .dot {
@@ -263,7 +264,7 @@ nav a:hover {
 }
 
 .contact {
-  height: 900px;
+  height: 400px;
   background-color: #ffd2c8;
   z-index: -1;
 }
@@ -302,4 +303,8 @@ nav a:hover {
   font-size: 15px;
   padding: 30px 30px 30px 30px;
   color: #101628;
+}
+
+.contact__links {
+  display: flex;
 }
