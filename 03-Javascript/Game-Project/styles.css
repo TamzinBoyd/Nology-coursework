@@ -8,7 +8,7 @@
 /* styling of the main game */
 
 body {
-  background-color: rgb(190, 166, 187);
+  background-color: rgb(65, 32, 60);
 }
 .background {
   padding: 20px;
@@ -28,6 +28,7 @@ body {
   text-align: center;
   font-size: 0.9em;
   margin: 20px;
+  color: white;
 }
 
 .display-buttons {
@@ -35,15 +36,16 @@ body {
   flex-direction: column;
   font-family: "Roboto", sans-serif;
 }
-.timer-title {
+.timer {
   width: 250px;
   height: 30px;
   margin-left: 50px;
   margin-bottom: 15px;
+  padding-top: 8px;
   border-radius: 10px;
   border: 2px solid rgb(255, 123, 0);
   background-color: white;
-
+  text-align: center;
   font-size: 1em;
 }
 

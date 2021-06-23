@@ -22,34 +22,35 @@ function addClassDog() {
 
 // Setting timer ///////////////////////////////////////
 
-// function to run on button click
-// startBtn.addEventListener("click", countdown);
-
-const startingMinutes = 1;
-let time = startingMinutes * 60;
-const timeLeftDisplay = document.querySelector("#time-left");
-// const timer = document.querySelector(".timer");
-
-// to run every second using setInterval (1000 is 1000 milliseconds = 1 sec)
-
+// adding click event to start button, to carry out function
 document.querySelector(".start").addEventListener("click", function () {
-  var timeleft = 60;
+  // setting timeleft to total time
+  var timeleft = 20;
 
+  // setting the countdown to run the function1
   var downloadTimer = setInterval(function function1() {
-    document.querySelector(".timer").innerHTML =
-      timeleft + " " + "seconds remaining";
+    // changing timer text to timeleft
 
+    const minutes = Math.floor(timeleft / 60);
+    let seconds = timeleft % 60;
+
+    document.querySelector(".timer").innerHTML =
+      // timeleft + " " + "seconds remaining";
+      `${minutes}:${seconds}`;
+    // saying time left is to minus 1 each millisecond
     timeleft -= 1;
+    // if 0 then it stops and shows a message
     if (timeleft <= 0) {
       clearInterval(downloadTimer);
-      document.querySelector(".timer").innerHTML = "Time is up!";
+      document.querySelector(".timer").innerHTML =
+        "Time's up! Did you find them all?";
     }
+    // setting 1000 milliseoncds (1 second) for the countdown
   }, 1000);
 });
 
-// function inititateCountdown() {
-//   setInterval(updateCountdown, 1000);
-// }
+// const startingMinutes = 1;
+// let time = startingMinutes * 60;
 
 // // function to calculate remaining time
 // function updateCountdown() {
