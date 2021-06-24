@@ -36,6 +36,9 @@ body {
   flex-direction: column;
   font-family: "Roboto", sans-serif;
 }
+
+/* display timer & start button */
+
 .timer {
   width: 250px;
   height: 30px;
@@ -69,6 +72,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-bottom: 10px;
 }
 .sally {
   max-width: 100px;
@@ -78,6 +82,9 @@ body {
 .visible {
   opacity: 1;
 }
+
+/* main section of game */
+
 .main-container {
   position: relative;
   width: 350px;
@@ -98,14 +105,12 @@ body {
 
 /* styling of the hidden objects */
 
-.object1 {
-  position: absolute;
-  width: 350px;
-  float: left;
-  z-index: -1;
-}
-
-.object2 {
+.object1,
+.object2,
+.object3,
+.object4,
+.object5,
+.object6 {
   position: absolute;
   width: 350px;
   float: left;
@@ -113,28 +118,71 @@ body {
 }
 
 /* /* checkbox styling */
-#cat {
-  width: 150px;
-  height: 150px;
-  left: 100px;
-  top: 50px;
+#object1 {
+  width: 35px;
+  height: 35px;
+  left: 270px;
+  top: 480px;
   position: absolute;
   float: left;
   z-index: 3;
-  opacity: 0.2;
+  opacity: 0;
 }
 
-#dog {
-  width: 150px;
-  height: 150px;
-  left: 250px;
-  top: 450px;
+#object2 {
+  width: 40px;
+  height: 40px;
+  left: 80px;
+  top: 650px;
   position: absolute;
   float: left;
   z-index: 3;
-  opacity: 0.2;
+  opacity: 0;
 }
 
+#object3 {
+  width: 40px;
+  height: 40px;
+  left: 290px;
+  top: 790px;
+  position: absolute;
+  float: left;
+  z-index: 3;
+  opacity: 0;
+}
+
+#object4 {
+  width: 50px;
+  height: 50px;
+  left: 120px;
+  top: 945px;
+  position: absolute;
+  float: left;
+  z-index: 3;
+  opacity: 0;
+}
+
+#object5 {
+  width: 50px;
+  height: 50px;
+  left: 295px;
+  top: 1095px;
+  position: absolute;
+  float: left;
+  z-index: 3;
+  opacity: 0;
+}
+
+#object6 {
+  width: 40px;
+  height: 40px;
+  left: 90px;
+  top: 1070px;
+  position: absolute;
+  float: left;
+  z-index: 3;
+  opacity: 0;
+}
 /* class to hide element after being clicked */
 .hide {
   display: none;

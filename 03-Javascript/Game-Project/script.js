@@ -1,23 +1,87 @@
 // save the items to hide in variables
 
-const cat = document.querySelector(".object1");
-const dog = document.querySelector(".object2");
+const object1 = document.querySelector(".object1");
+const object2 = document.querySelector(".object2");
+const object3 = document.querySelector(".object3");
+const object4 = document.querySelector(".object4");
+const object5 = document.querySelector(".object5");
+const object6 = document.querySelector(".object6");
 
 // save the checkboxes in variables
-const catCheckbox = document.querySelector("#cat");
-const dogCheckbox = document.querySelector("#dog");
+const checkbox1 = document.querySelector("#object1");
+const checkbox2 = document.querySelector("#object2");
+const checkbox3 = document.querySelector("#object3");
+const checkbox4 = document.querySelector("#object4");
+const checkbox5 = document.querySelector("#object5");
+const checkbox6 = document.querySelector("#object6");
+
+// save the snakes in variables
+const snake1 = document.querySelector("#snake1");
+const snake2 = document.querySelector("#snake2");
+const snake3 = document.querySelector("#snake3");
+const snake4 = document.querySelector("#snake4");
+const snake5 = document.querySelector("#snake5");
+const snake6 = document.querySelector("#snake6");
 
 // Function to hide (remove) the found object, show an alert, then hide the checkbox
-function addClass() {
-  cat.classList.add("hide");
-  alert("well done, you found an object");
-  catCheckbox.classList.add("hide");
+function snakeOne() {
+  snake1.classList.add("visible");
+  addClass1();
 }
 
-function addClassDog() {
-  dog.classList.add("hide");
+function snakeTwo() {
+  snake2.classList.add("visible");
+  addClass2();
+}
+
+function snakeThree() {
+  snake3.classList.add("visible");
+  addClass3();
+}
+function snakeFour() {
+  snake4.classList.add("visible");
+  addClass4();
+}
+function snakeFive() {
+  snake5.classList.add("visible");
+  addClass5();
+}
+function snakeSix() {
+  snake6.classList.add("visible");
+  addClass6();
+}
+
+// function to hide the found ojbect and checkbox
+function addClass1() {
+  object1.classList.add("hide");
   alert("well done, you found an object");
-  dogCheckbox.classList.add("hide");
+  checkbox1.classList.add("hide");
+}
+
+function addClass2() {
+  object2.classList.add("hide");
+  alert("well done, you found an object");
+  checkbox2.classList.add("hide");
+}
+function addClass3() {
+  object3.classList.add("hide");
+  alert("well done, you found an object");
+  checkbox3.classList.add("hide");
+}
+function addClass4() {
+  object4.classList.add("hide");
+  alert("well done, you found an object");
+  checkbox4.classList.add("hide");
+}
+function addClass5() {
+  object5.classList.add("hide");
+  alert("well done, you found an object");
+  checkbox5.classList.add("hide");
+}
+function addClass6() {
+  object6.classList.add("hide");
+  alert("well done, you found an object");
+  checkbox6.classList.add("hide");
 }
 
 // need to add function to snake items so when found it adds the class 'visible'
@@ -46,6 +110,7 @@ document.querySelector(".start").addEventListener("click", function () {
       clearInterval(downloadTimer);
       document.querySelector(".timer").innerHTML =
         "Time's up! Did you find them all?";
+      alert("Time's up");
     }
     // setting 1000 milliseoncds (1 second) for the countdown
   }, 1000);
