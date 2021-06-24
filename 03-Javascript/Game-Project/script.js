@@ -20,6 +20,8 @@ function addClassDog() {
   dogCheckbox.classList.add("hide");
 }
 
+// need to add function to snake items so when found it adds the class 'visible'
+
 // Setting timer ///////////////////////////////////////
 
 // adding click event to start button, to carry out function
@@ -48,24 +50,3 @@ document.querySelector(".start").addEventListener("click", function () {
     // setting 1000 milliseoncds (1 second) for the countdown
   }, 1000);
 });
-
-// const startingMinutes = 1;
-// let time = startingMinutes * 60;
-
-// // function to calculate remaining time
-// function updateCountdown() {
-//   // calculate minutes left, which is end time (in seconds) / 60
-//   // math.floor returns lowest number with no decimals
-//   const minutes = Math.floor(time / 60);
-//   // seconds is what number remains after calculating minutes
-//   let seconds = time % 60;
-
-//   // if seconds are less than 10 then want to display 0 before seconds so 05 etc
-//   seconds = seconds < 10 ? "0" + seconds : seconds;
-//   // show above in display
-//   timeLeftDisplay.innerHTML = `${minutes}:${seconds}`;
-//   // countdown by 1
-//   time--;
-//   // if time reaches 0, then time stops
-//   time = time < 0 ? 0 : time;
-// }

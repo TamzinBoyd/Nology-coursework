@@ -62,6 +62,22 @@ body {
   font-weight: 700;
   cursor: pointer;
 }
+
+/* styling objects */
+
+.items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.sally {
+  max-width: 100px;
+  opacity: 0.4;
+}
+
+.visible {
+  opacity: 1;
+}
 .main-container {
   position: relative;
   width: 350px;
