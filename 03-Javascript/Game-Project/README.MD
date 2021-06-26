@@ -1,25 +1,30 @@
 PROJECT BREIF
 
-Create an interactive game using HTML, CSS & JAVASCRIPT
+Create an interactive game using HTML, CSS & JAVASCRIPT with a mobile first approach
 
-SHORT STORY
+HOW I APPROACHED IT
 
-INITIAL STEPS / LONG STORY
+Decided on a missing item game where the user finds items.
 
-Decided on a missing item game, where the user finds the snakes they are removed from the image.
+BREAKING IT DOWN
 
-Firstly I played around with basic functions to practise layering elements. I knew that on click I would need to hide an element.
+1. Image including hidden objects
+2. User clicks "start game" to activate timer
+3. User finds an item, it is removed from game play and an alert shows
+4. Found items show on a display
+5. Either a. user finds all items and wins the game, alert shows and timer stops.
+   b. timer finishes before user finds all items, alert shows to stop the same
 
-I soon realised it was best to add the image as the same size each time, therefore I needed a different way to activate the click event. I opted for a checkbox in the same location as the hidden item and set opacity to 0.
+Firstly I played around with basic functions to practise layering elements. I knew that on click I would need to hide an element. In this case PNG file types met this functionality.
 
-Created a click event to add a class which displayed none, therefore hiding the element. Even if user clicked again it wouldn't reappear.
+I decided on the same snake character. I opted for a checkbox in the same location as the hidden item and set opacity to 0.
 
-Once happy with the core functionality it was time for the design! I opted for a cartoon style image, targeting more at children. I created a variety of pets using Affinity Photo.
+Created a click event to the checkboxes which added a class which changed display to none, therefore hiding the element. Even if user clicked again it wouldn't reappear.
 
-Created a preview of the items to find at a reduced opacity, when user finds a snake the related item will add a class to make it full opacity.
+Once happy with the core functionality it was time for the design! I opted for a cartoon style image, targeted more at children. I created a variety of pet illustrations using Affinity Photo.
+
+To show how many items were left to find I created a preview of the items at a reduced opacity, when user finds a snake the related item will add a class to make the preview item full opacity.
 
 Not wanting to make the game too easy I added a timer. Here I learnt about the setInterval method.
 
-The game was fully functional but there wasn't a way to tell the user they had won the game and beaten the timer -added an IF statement to check if all snakes has a class list of "visible", implying all have been found and set up an alert
-
-Struggling to stop the timer
+The game was fully functional but there wasn't a way to tell the user they had won the game, so I added an IF statement to check if all snakes have a class list of "visible", implying all have been found, and set up an alert.

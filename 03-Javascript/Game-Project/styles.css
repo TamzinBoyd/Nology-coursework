@@ -8,7 +8,7 @@
 /* styling of the main game */
 
 body {
-  background-color: rgb(65, 32, 60);
+  background-color: rgb(63, 23, 82);
 }
 .background {
   padding: 20px;
@@ -19,7 +19,7 @@ body {
   text-align: center;
   margin: 10px;
   font-size: 2.5em;
-  color: white;
+  color: rgb(255, 123, 0);
   text-shadow: 2px 2px black;
 }
 
@@ -54,7 +54,7 @@ body {
 
 .start {
   width: 250px;
-  height: 30px;
+  height: 40px;
   margin-left: 50px;
   margin-bottom: 15px;
   border-radius: 10px;
@@ -86,7 +86,7 @@ body {
   width: 350px;
   height: 700px;
   z-index: -1;
-  border: 5px solid rgb(255, 123, 0);
+  border: 5px solid white;
   border-radius: 10px;
   background-color: white;
   opacity: 0;
@@ -118,8 +118,9 @@ body {
 #object1 {
   width: 35px;
   height: 35px;
-  left: 270px;
-  top: 480px;
+
+  margin-left: 265px;
+  margin-top: -690px;
   position: absolute;
   float: left;
   z-index: 3;
@@ -129,8 +130,9 @@ body {
 #object2 {
   width: 40px;
   height: 40px;
-  left: 80px;
-  top: 650px;
+
+  margin-left: 60px;
+  margin-top: -500px;
   position: absolute;
   float: left;
   z-index: 3;
@@ -140,8 +142,9 @@ body {
 #object3 {
   width: 40px;
   height: 40px;
-  left: 290px;
-  top: 790px;
+
+  margin-left: 260px;
+  margin-top: -365px;
   position: absolute;
   float: left;
   z-index: 3;
@@ -151,8 +154,9 @@ body {
 #object4 {
   width: 50px;
   height: 50px;
-  left: 120px;
-  top: 945px;
+
+  margin-left: 100px;
+  margin-top: -220px;
   position: absolute;
   float: left;
   z-index: 3;
@@ -160,10 +164,11 @@ body {
 }
 
 #object5 {
-  width: 50px;
-  height: 50px;
-  left: 295px;
-  top: 1095px;
+  width: 40px;
+  height: 40px;
+
+  margin-left: 280px;
+  margin-top: -75px;
   position: absolute;
   float: left;
   z-index: 3;
@@ -171,15 +176,17 @@ body {
 }
 
 #object6 {
-  width: 40px;
-  height: 40px;
-  left: 90px;
-  top: 1070px;
+  width: 50px;
+  height: 50px;
+  margin-left: 50px;
+  margin-top: -95px;
+
   position: absolute;
-  float: left;
+  /* float: left; */
   z-index: 3;
   opacity: 0;
 }
+
 /* class to hide element after being clicked */
 .hide {
   display: none;
@@ -187,4 +194,48 @@ body {
 
 .visible {
   opacity: 1;
+}
+
+@media screen and (min-width: 500px) {
+  .background {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .display-buttons {
+    display: flex;
+  }
+  .start {
+    margin: auto;
+  }
+
+  .timer {
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  #object1 {
+    margin-left: 80px;
+  }
+
+  #object2 {
+    margin-left: -115px;
+  }
+
+  #object3 {
+    margin-left: 80px;
+  }
+
+  #object4 {
+    margin-left: -85px;
+  }
+
+  #object5 {
+    margin-left: 95px;
+  }
+
+  #object6 {
+    margin-left: -115px;
+  }
 }
