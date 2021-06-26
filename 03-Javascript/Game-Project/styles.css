@@ -79,10 +79,6 @@ body {
   opacity: 0.4;
 }
 
-.visible {
-  opacity: 1;
-}
-
 /* main section of game */
 
 .main-container {
@@ -93,6 +89,7 @@ body {
   border: 5px solid rgb(255, 123, 0);
   border-radius: 10px;
   background-color: white;
+  opacity: 0;
 }
 
 /* styling of the background image */
@@ -186,4 +183,8 @@ body {
 /* class to hide element after being clicked */
 .hide {
   display: none;
+}
+
+.visible {
+  opacity: 1;
 }

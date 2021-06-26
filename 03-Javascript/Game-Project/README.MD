@@ -19,3 +19,7 @@ Once happy with the core functionality it was time for the design! I opted for a
 Created a preview of the items to find at a reduced opacity, when user finds a snake the related item will add a class to make it full opacity.
 
 Not wanting to make the game too easy I added a timer. Here I learnt about the setInterval method.
+
+The game was fully functional but there wasn't a way to tell the user they had won the game and beaten the timer -added an IF statement to check if all snakes has a class list of "visible", implying all have been found and set up an alert
+
+Struggling to stop the timer

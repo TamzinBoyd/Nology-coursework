@@ -23,6 +23,8 @@ const snake4 = document.querySelector("#snake4");
 const snake5 = document.querySelector("#snake5");
 const snake6 = document.querySelector("#snake6");
 
+const container = document.querySelector(".main-container");
+
 // Function to hide (remove) the found object, show an alert, then hide the checkbox
 function snakeOne() {
   snake1.classList.add("visible");
@@ -52,36 +54,135 @@ function snakeSix() {
 }
 
 // function to hide the found ojbect and checkbox
+// then function to check if all snakes contain a class list then an alert will show & the game will be hidden again
 function addClass1() {
   object1.classList.add("hide");
-  alert("well done, you found an object");
+  alert("Well done, you found an object");
   checkbox1.classList.add("hide");
+
+  if (
+    snake1.classList.contains("visible") &&
+    snake2.classList.contains("visible") &&
+    snake3.classList.contains("visible") &&
+    snake4.classList.contains("visible") &&
+    snake5.classList.contains("visible") &&
+    snake6.classList.contains("visible")
+  ) {
+    alert("Well done, you won the game!");
+    container.classList.remove("visible");
+    function clearTimer() {
+      const test = clearInterval(downloadTimer);
+      return test;
+    }
+    document.querySelector(".timer").innerHTML = "Well done!";
+  }
 }
 
 function addClass2() {
   object2.classList.add("hide");
-  alert("well done, you found an object");
+  alert("Well done, you found an object");
   checkbox2.classList.add("hide");
+
+  if (
+    snake1.classList.contains("visible") &&
+    snake2.classList.contains("visible") &&
+    snake3.classList.contains("visible") &&
+    snake4.classList.contains("visible") &&
+    snake5.classList.contains("visible") &&
+    snake6.classList.contains("visible")
+  ) {
+    alert("Well done, you won the game!");
+    container.classList.remove("visible");
+    function clearTimer() {
+      const test = clearInterval(downloadTimer);
+      return test;
+    }
+    document.querySelector(".timer").innerHTML = "Well done!";
+  }
 }
 function addClass3() {
   object3.classList.add("hide");
-  alert("well done, you found an object");
+  alert("Well done, you found an object");
   checkbox3.classList.add("hide");
+  if (
+    snake1.classList.contains("visible") &&
+    snake2.classList.contains("visible") &&
+    snake3.classList.contains("visible") &&
+    snake4.classList.contains("visible") &&
+    snake5.classList.contains("visible") &&
+    snake6.classList.contains("visible")
+  ) {
+    alert("Well done, you won the game!");
+    container.classList.remove("visible");
+    function clearTimer() {
+      const test = clearInterval(downloadTimer);
+      return test;
+    }
+    document.querySelector(".timer").innerHTML = "Well done!";
+  }
 }
 function addClass4() {
   object4.classList.add("hide");
-  alert("well done, you found an object");
+  alert("Well done, you found an object");
   checkbox4.classList.add("hide");
+  if (
+    snake1.classList.contains("visible") &&
+    snake2.classList.contains("visible") &&
+    snake3.classList.contains("visible") &&
+    snake4.classList.contains("visible") &&
+    snake5.classList.contains("visible") &&
+    snake6.classList.contains("visible")
+  ) {
+    alert("Well done, you won the game!");
+    container.classList.remove("visible");
+    function clearTimer() {
+      const test = clearInterval(downloadTimer);
+      return test;
+    }
+    document.querySelector(".timer").innerHTML = "Well done!";
+  }
 }
 function addClass5() {
   object5.classList.add("hide");
-  alert("well done, you found an object");
+  alert("Well done, you found an object");
   checkbox5.classList.add("hide");
+  if (
+    snake1.classList.contains("visible") &&
+    snake2.classList.contains("visible") &&
+    snake3.classList.contains("visible") &&
+    snake4.classList.contains("visible") &&
+    snake5.classList.contains("visible") &&
+    snake6.classList.contains("visible")
+  ) {
+    alert("Well done, you won the game!");
+    container.classList.remove("visible");
+    function clearTimer() {
+      const test = clearInterval(downloadTimer);
+      return test;
+    }
+    document.querySelector(".timer").innerHTML = "Well done!";
+  }
 }
 function addClass6() {
   object6.classList.add("hide");
-  alert("well done, you found an object");
+  alert("Well done, you found an object");
   checkbox6.classList.add("hide");
+  if (
+    snake1.classList.contains("visible") &&
+    snake2.classList.contains("visible") &&
+    snake3.classList.contains("visible") &&
+    snake4.classList.contains("visible") &&
+    snake5.classList.contains("visible") &&
+    snake6.classList.contains("visible")
+  ) {
+    alert("Well done, you won the game!");
+    container.classList.remove("visible");
+    function clearTimer() {
+      const test = clearInterval(downloadTimer);
+      return test;
+    }
+    document.querySelector(".timer").innerHTML = "Well done!";
+  }
 }
 
 // need to add function to snake items so when found it adds the class 'visible'
@@ -90,13 +191,13 @@ function addClass6() {
 
 // adding click event to start button, to carry out function
 document.querySelector(".start").addEventListener("click", function () {
+  container.classList.add("visible");
   // setting timeleft to total time
-  var timeleft = 20;
+  var timeleft = 120;
 
   // setting the countdown to run the function1
   var downloadTimer = setInterval(function function1() {
     // changing timer text to timeleft
-
     const minutes = Math.floor(timeleft / 60);
     let seconds = timeleft % 60;
 
