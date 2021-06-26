@@ -26,14 +26,20 @@
     <input type="checkbox" class="nav-toggle" id="nav-toggle" />
     <nav class="nav">
       <ul class="nav__list">
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">Experience</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
     <label for="nav-toggle" class="nav-toggle-label">
       <span></span>
     </label>
+
+    <ul class="nav__list__desktop">
+      <li><a href="#projects" class="nav__links">Projects</a></li>
+      <li><a href="#experience" class="nav__links">Experience</a></li>
+      <li><a href="#contact" class="nav__links">Contact</a></li>
+    </ul>
   </header>
 
   <main>
@@ -47,7 +53,7 @@
     </p>
 
     <!-- projects section -->
-    <div class="projects">
+    <div class="projects" id="projects">
       <h2 class="projects__title subHeading">
         PROJECTS<span class="dot">.</span>
       </h2>
@@ -89,7 +95,7 @@
       </div>
     </div>
     <!-- experience section -->
-    <div class="experience">
+    <div class="experience" id="experience">
       <h2 class="experience__title subHeading">
         EXPERIENCE<span class="dot">.</span>
       </h2>
@@ -119,7 +125,9 @@
     </div>
 
     <!-- contact section -->
-    <h2 class="contact__title subHeading">CONTACT<span class="dot">.</span></h2>
+    <h2 class="contact__title subHeading" id="contact">
+      CONTACT<span class="dot">.</span>
+    </h2>
 
     <div class="contact">
       <p class="contact__para">

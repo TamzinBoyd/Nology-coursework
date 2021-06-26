@@ -5,6 +5,10 @@
   font-family: "Roboto", sans-serif;
 }
 
+.nav__list__desktop {
+  display: none;
+}
+
 header {
   background-color: #e3e2e2;
   text-align: center;
@@ -264,7 +268,7 @@ nav a:hover {
 }
 
 .contact {
-  height: 400px;
+  height: 450px;
   background-color: #ffd2c8;
   z-index: -1;
 }
@@ -278,7 +282,7 @@ nav a:hover {
 }
 
 .contact__title {
-  margin-top: 20px;
+  margin-top: 100px;
   margin-bottom: -20px;
 }
 
@@ -287,15 +291,15 @@ nav a:hover {
   float: left;
   font-size: 15px;
   padding-left: 30px;
-  padding-top: 50px;
+  padding-top: 100px;
   color: #101628;
 }
 
 .me {
   max-width: 150px;
   float: right;
-  padding-right: 30px;
-  padding-top: 30px;
+  margin-top: 80px;
+  margin-right: 10px;
 }
 
 .contact__para2 {
@@ -306,5 +310,77 @@ nav a:hover {
 }
 
 .contact__links {
+  position: absolute;
   display: flex;
+  width: 150px;
+  margin-left: 240px;
+  margin-top: 60px;
+  justify-content: space-around;
+}
+
+.fa-envelope,
+.fa-linkedin,
+.fa-github-square {
+  font-size: 2em;
+  color: #101628;
+}
+
+.fa-envelope:hover,
+.fa-linkedin:hover,
+.fa-github-square:hover {
+  color: #fe5541;
+}
+
+@media screen and (min-width: 568px) {
+  .nav-toggle,
+.nav-toggle-label {
+    display: none;
+  }
+
+  .nav__list__desktop {
+    float: right;
+    width: 300px;
+    display: block;
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 30px;
+    margin-top: -55px;
+  }
+
+  .nav__list__desktop > li {
+    list-style-type: none;
+  }
+
+  .nav__links {
+    text-decoration: none;
+    color: #101628;
+  }
+
+  .nav__links:hover {
+    color: #fe5541;
+  }
+
+  .mode-toggle {
+    margin-right: 320px;
+  }
+
+  .icon-grid {
+    width: 100vh;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .me {
+    float: left;
+    margin-top: -50px;
+    margin-left: -190px;
+  }
+
+  .contact__para {
+    width: 100%;
+    float: left;
+    font-size: 15px;
+    padding-left: 30px;
+    padding-top: 100px;
+  }
 }
