@@ -24,6 +24,50 @@ const snake5 = document.querySelector("#snake5");
 const snake6 = document.querySelector("#snake6");
 
 const container = document.querySelector(".main-container");
+let timer = document.querySelector(".timer");
+
+// Setting timer ///////////////////////////////////////
+
+// adding click event to start button, to carry out function
+document.querySelector(".start").addEventListener("click", function () {
+  container.classList.add("visible");
+
+  // setting timeleft to total time
+  var timeleft = 120;
+
+  // setting the countdown to run the function1
+  var downloadTimer = setInterval(function function1() {
+    // changing timer text to timeleft
+    const minutes = Math.floor(timeleft / 60);
+    let seconds = timeleft % 60;
+
+    document.querySelector(".timer").innerHTML =
+      // timeleft + " " + "seconds remaining";
+      `${minutes}:${seconds}`;
+
+    // saying time left is to minus 1 each millisecond
+    timeleft -= 1;
+    // if 0 then it stops and shows a message
+    if (timeleft <= 0) {
+      clearInterval(downloadTimer);
+      timer.innerHTML = "Time's up! Did you find them all?";
+      alert("Time's up");
+      // if all snakes have been found then timer shows a message
+    } else if (
+      snake1.classList.contains("visible") &&
+      snake2.classList.contains("visible") &&
+      snake3.classList.contains("visible") &&
+      snake4.classList.contains("visible") &&
+      snake5.classList.contains("visible") &&
+      snake6.classList.contains("visible")
+    ) {
+      clearInterval(downloadTimer);
+      timer.innerHTML = "Well done, you won the game";
+    }
+
+    // setting 1000 milliseoncds (1 second) for the countdown
+  }, 1000);
+});
 
 // Function to hide (remove) the found object, show an alert, then hide the checkbox
 function snakeOne() {
@@ -70,11 +114,6 @@ function addClass1() {
   ) {
     alert("Well done, you won the game!");
     container.classList.remove("visible");
-    function clearTimer() {
-      const test = clearInterval(downloadTimer);
-      return test;
-    }
-    document.querySelector(".timer").innerHTML = "Well done!";
   }
 }
 
@@ -93,11 +132,6 @@ function addClass2() {
   ) {
     alert("Well done, you won the game!");
     container.classList.remove("visible");
-    function clearTimer() {
-      const test = clearInterval(downloadTimer);
-      return test;
-    }
-    document.querySelector(".timer").innerHTML = "Well done!";
   }
 }
 function addClass3() {
@@ -114,11 +148,6 @@ function addClass3() {
   ) {
     alert("Well done, you won the game!");
     container.classList.remove("visible");
-    function clearTimer() {
-      const test = clearInterval(downloadTimer);
-      return test;
-    }
-    document.querySelector(".timer").innerHTML = "Well done!";
   }
 }
 function addClass4() {
@@ -135,11 +164,6 @@ function addClass4() {
   ) {
     alert("Well done, you won the game!");
     container.classList.remove("visible");
-    function clearTimer() {
-      const test = clearInterval(downloadTimer);
-      return test;
-    }
-    document.querySelector(".timer").innerHTML = "Well done!";
   }
 }
 function addClass5() {
@@ -156,11 +180,6 @@ function addClass5() {
   ) {
     alert("Well done, you won the game!");
     container.classList.remove("visible");
-    function clearTimer() {
-      const test = clearInterval(downloadTimer);
-      return test;
-    }
-    document.querySelector(".timer").innerHTML = "Well done!";
   }
 }
 function addClass6() {
@@ -177,42 +196,5 @@ function addClass6() {
   ) {
     alert("Well done, you won the game!");
     container.classList.remove("visible");
-    function clearTimer() {
-      const test = clearInterval(downloadTimer);
-      return test;
-    }
-    document.querySelector(".timer").innerHTML = "Well done!";
   }
 }
-
-// need to add function to snake items so when found it adds the class 'visible'
-
-// Setting timer ///////////////////////////////////////
-
-// adding click event to start button, to carry out function
-document.querySelector(".start").addEventListener("click", function () {
-  container.classList.add("visible");
-  // setting timeleft to total time
-  var timeleft = 120;
-
-  // setting the countdown to run the function1
-  var downloadTimer = setInterval(function function1() {
-    // changing timer text to timeleft
-    const minutes = Math.floor(timeleft / 60);
-    let seconds = timeleft % 60;
-
-    document.querySelector(".timer").innerHTML =
-      // timeleft + " " + "seconds remaining";
-      `${minutes}:${seconds}`;
-    // saying time left is to minus 1 each millisecond
-    timeleft -= 1;
-    // if 0 then it stops and shows a message
-    if (timeleft <= 0) {
-      clearInterval(downloadTimer);
-      document.querySelector(".timer").innerHTML =
-        "Time's up! Did you find them all?";
-      alert("Time's up");
-    }
-    // setting 1000 milliseoncds (1 second) for the countdown
-  }, 1000);
-});
