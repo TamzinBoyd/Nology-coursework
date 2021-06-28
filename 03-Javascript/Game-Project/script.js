@@ -1,4 +1,4 @@
-// save the items to hide in variables
+// save the hidden snakes in variables
 
 const object1 = document.querySelector(".object1");
 const object2 = document.querySelector(".object2");
@@ -7,7 +7,7 @@ const object4 = document.querySelector(".object4");
 const object5 = document.querySelector(".object5");
 const object6 = document.querySelector(".object6");
 
-// save the checkboxes in variables
+// save the checkboxes (for hidden snakes) in variables
 const checkbox1 = document.querySelector("#object1");
 const checkbox2 = document.querySelector("#object2");
 const checkbox3 = document.querySelector("#object3");
@@ -15,7 +15,7 @@ const checkbox4 = document.querySelector("#object4");
 const checkbox5 = document.querySelector("#object5");
 const checkbox6 = document.querySelector("#object6");
 
-// save the snakes in variables
+// save the snake items in variables
 const snake1 = document.querySelector("#snake1");
 const snake2 = document.querySelector("#snake2");
 const snake3 = document.querySelector("#snake3");
@@ -98,7 +98,8 @@ function snakeSix() {
 }
 
 // function to hide the found ojbect and checkbox
-// then function to check if all snakes contain a class list then an alert will show & the game will be hidden again
+// then function to check if all snakes contain a class "visible", if so it means all snakes have been found
+// so show an alert & the game will be hidden again
 function addClass1() {
   object1.classList.add("hide");
   alert("Well done, you found an object");
