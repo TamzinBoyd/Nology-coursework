@@ -24,6 +24,29 @@ header {
   width: 100%;
 }
 
+.dot {
+  color: $pink-color;
+}
+
+.subHeading {
+  font-family: $font;
+  color: $background-color;
+  font-size: 3em;
+  margin-left: 20px;
+  margin-top: 300px;
+}
+
+.pink-bold {
+  color: $pink-color;
+}
+.bold {
+  font-style: italic;
+  color: $pink-color;
+  font-weight: 400;
+}
+
+// nav styling
+
 .nav-container {
   display: flex;
   justify-content: space-between;
@@ -146,7 +169,7 @@ nav a:hover {
 }
 
 // HEADING /////////////////////////////////////////////
-.greeting {
+.welcome {
   color: $background-color;
   padding-top: 200px;
   font-size: 3em;
@@ -162,51 +185,36 @@ nav a:hover {
   }
 }
 
-.greeting__para {
+.welcome__info {
   margin-left: 50px;
   margin-right: 50px;
+}
+
+.scroll {
+  display: none;
 }
 
 // PROJECTS /////////////////////////////////////////
 
 .projects {
   margin-top: 100px;
-}
 
-.subHeading {
-  font-family: $font;
-  color: $background-color;
-  font-size: 3em;
-  margin-left: 20px;
-  margin-top: 300px;
-}
+  &__container {
+    background-color: $block-color;
+    height: 810px;
+    margin-top: -20px;
 
-.dot {
-  color: $pink-color;
-}
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: -1;
+  }
 
-.projects-container {
-  background-color: $block-color;
-  height: 810px;
-  margin-top: -20px;
-
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  z-index: -1;
-  display: flex;
-}
-
-.projects-description {
-  padding: 50px 50px 20px 50px;
-  color: $background-color;
-  font-weight: 700;
-}
-
-.bold {
-  font-style: italic;
-  color: $pink-color;
-  font-weight: 400;
+  &__description {
+    padding: 50px 50px 20px 50px;
+    color: $background-color;
+    font-weight: 700;
+  }
 }
 
 .project-image {
@@ -226,9 +234,6 @@ nav a:hover {
   font-size: 2em;
   font-weight: 700;
   color: $background-color;
-}
-.pink-bold {
-  color: $pink-color;
 }
 
 // Experience section //////////////////////////////
@@ -265,7 +270,7 @@ nav a:hover {
   font-size: 3em;
 }
 
-.experience-info {
+.experience-intro {
   padding: 0px 30px 0px 30px;
   color: $background-color;
   font-weight: 700;
@@ -282,12 +287,14 @@ nav a:hover {
 
 .contact {
   height: 450px;
+  margin-top: 150px;
   background-color: $block-color;
   z-index: -1;
 
   &__intouch {
-    color: $background-color;
-    padding-left: 30px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 30px 0px 30px 0px;
     font-weight: 700;
     font-size: 25px;
     float: left;
@@ -295,58 +302,58 @@ nav a:hover {
   }
 }
 
-.contact__title {
-  margin-top: 100px;
-  margin-bottom: -20px;
-}
-
-.contact__para {
-  width: 200px;
-  float: left;
-  font-size: 15px;
-  padding-left: 30px;
-  padding-top: 100px;
-
-  color: $background-color;
-}
-
 .me {
   max-width: 150px;
-  float: right;
+  margin: 0 auto;
 
-  margin-top: 80px;
-  margin-right: 10px;
-}
-
-.contact__para2 {
-  float: left;
-  font-size: 15px;
-  padding: 30px 30px 30px 30px;
-
-  color: $background-color;
-}
-
-.contact__links {
-  position: absolute;
   display: flex;
-  width: 150px;
-  margin-left: 240px;
-  margin-top: 60px;
-  justify-content: space-around;
+  justify-content: center;
 }
 
-.fa-envelope,
-.fa-linkedin,
-.fa-github-square {
-  font-size: 2em;
-  color: #101628;
-}
+// .contact__title {
+//   margin-top: 100px;
+//   margin-bottom: -20px;
+// }
 
-.fa-envelope:hover,
-.fa-linkedin:hover,
-.fa-github-square:hover {
-  color: $pink-color;
-}
+// .contact__para {
+//   width: 200px;
+//   float: left;
+//   font-size: 15px;
+//   padding-left: 30px;
+//   padding-top: 100px;
+
+//   color: $background-color;
+// }
+
+// .contact__para2 {
+//   float: left;
+//   font-size: 15px;
+//   padding: 30px 30px 30px 30px;
+
+//   color: $background-color;
+// }
+
+// .contact__links {
+//   position: absolute;
+//   display: flex;
+//   width: 150px;
+//   margin-left: 240px;
+//   margin-top: 60px;
+//   justify-content: space-around;
+// }
+
+// .fa-envelope,
+// .fa-linkedin,
+// .fa-github-square {
+//   font-size: 2em;
+//   color: #101628;
+// }
+
+// .fa-envelope:hover,
+// .fa-linkedin:hover,
+// .fa-github-square:hover {
+//   color: $pink-color;
+// }
 
 // Adapting to Desktop layout
 
@@ -386,6 +393,157 @@ nav a:hover {
   .icon-grid {
     width: 100vh;
 
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .me {
+    float: left;
+    margin-top: -50px;
+    margin-left: -190px;
+  }
+
+  .contact__para {
+    width: 100%;
+    float: left;
+    font-size: 15px;
+    padding-left: 30px;
+    padding-top: 100px;
+  }
+}
+// ////////////////////////////////////////////////////////////////////////////
+@media screen and (min-width: 568px) {
+  .nav-toggle,
+  .nav-toggle-label {
+    display: none;
+  }
+
+  .nav__list__desktop {
+    float: right;
+    width: 300px;
+    display: block;
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 30px;
+    margin-top: -55px;
+  }
+
+  .nav__list__desktop > li {
+    list-style-type: none;
+  }
+
+  .nav__links {
+    text-decoration: none;
+    color: #101628;
+  }
+
+  .nav__links:hover {
+    color: #fe5541;
+  }
+
+  .mode-toggle {
+    margin-right: 320px;
+  }
+
+  .welcome__hi {
+    font-size: 3em;
+    margin-left: 100px;
+    margin-top: 80px;
+  }
+
+  .welcome__dot {
+    margin-top: 80px;
+  }
+  .dot {
+    font-size: 3em;
+  }
+  .welcome__para {
+    margin-left: 110px;
+  }
+
+  // scoll
+
+  .scroll {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 140px;
+    color: #fe5541;
+  }
+
+  .chevron {
+    width: 50px;
+    display: flex;
+    justify-content: center;
+  }
+  .chevron:hover {
+    font-size: 2em;
+  }
+
+  // projects /////////////////////////
+  .subHeading {
+    font-size: 3em;
+    margin-left: 20px;
+  }
+
+  .subHeading-projects {
+    font-size: 3em;
+    margin-left: 20px;
+    margin-top: -60px;
+  }
+
+  .projects {
+    &__title {
+      margin-top: -50px;
+    }
+    &__description {
+      width: 80vh;
+    }
+  }
+  .projects__container {
+    margin-top: -45px;
+    display: flex;
+  }
+
+  .projects__section1 {
+    display: flex;
+    margin: 0px auto;
+    padding-top: 100px;
+    padding-right: 20px;
+  }
+
+  .projects__section2 {
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 0px auto;
+    padding-left: 20px;
+  }
+  .project__link {
+    font-size: 2em;
+    font-weight: 700;
+  }
+
+  //  experience ///////////////
+
+  .experience-info {
+    display: flex;
+  }
+
+  .experience-container {
+    margin-top: -45px;
+  }
+  // contact section ////////////////////@warn
+
+  .subHeading-contact {
+    font-size: 3em;
+    margin-left: 20px;
+  }
+
+  .contact {
+    margin-top: -45px;
+  }
+  .icon-grid {
+    width: 100vh;
     display: flex;
     justify-content: space-around;
   }

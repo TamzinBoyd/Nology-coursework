@@ -69,7 +69,7 @@ function calculateTotal(event) {
 // when user selects clear the display returns to 0 and array is reset to empty array
 function clear(event) {
   display.innerHTML = "0.00";
-  calculateStr = currentArray;
+
   currentArray = [];
 }
 

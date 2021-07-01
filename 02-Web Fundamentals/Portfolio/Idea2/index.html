@@ -35,6 +35,7 @@
       <span></span>
     </label>
 
+    <!-- to be hidden in mobile view -->
     <ul class="nav__list__desktop">
       <li><a href="#projects" class="nav__links">Projects</a></li>
       <li><a href="#experience" class="nav__links">Experience</a></li>
@@ -43,63 +44,66 @@
   </header>
 
   <main>
-    <div class="greeting">
-      <h1 class="greeting__hi">Hi</h1>
-      <h1 class="greeting__dot">.</h1>
+    <!-- 1st page - welcome message -->
+    <div class="welcome">
+      <h1 class="welcome__hi">Hi</h1>
+      <h1 class="welcome__dot dot">.</h1>
     </div>
 
-    <p class="greeting__para">
-      Welcome to my portfolio, come and take a look around
+    <p class="welcome__info">
+      I'm Tamzin, welcome to my portfolio. Come and take a look around
     </p>
+
+    <div class="scroll">
+      <p>scroll down</p>
+      <div class="chevron"><i class="fas fa-chevron-down"></i></div>
+    </div>
 
     <!-- projects section -->
     <div class="projects" id="projects">
-      <h2 class="projects__title subHeading">
-        PROJECTS<span class="dot">.</span>
-      </h2>
-    </div>
+      <h2 class="subHeading-projects">PROJECTS<span class="dot">.</span></h2>
 
-    <div class="projects-container">
-      <p class="projects-description">
-        Sed ut perspiciatis unde omnis iste natus error sit
-        <span class="bold">voluptatem accusantium</span> doloremque laudantium.
-        Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-        accusantium doloremque laudantium.
-      </p>
-      <div class="image-container">
-        <a href="https://placeholder.com" class="project-image">
-          <img src="https://via.placeholder.com/250x200" alt="project" />
+      <div class="projects__container">
+        <div class="projects__section1">
+          <p class="projects__description">
+            Sed ut perspiciatis unde omnis iste natus error sit
+            <span class="bold">voluptatem accusantium</span> doloremque
+            laudantium. Sed ut perspiciatis unde omnis iste natus error sit
+            voluptatem accusantium doloremque laudantium.
+          </p>
 
-          <div class="project-link">
-            View <span class="pink-bold">Project</span>
-          </div>
-        </a>
-      </div>
-
-      <div class="projects-container">
-        <p class="projects-description">
-          Sed ut perspiciatis unde omnis iste natus error sit
-          <span class="bold">voluptatem accusantium</span> doloremque
-          laudantium. Sed ut perspiciatis unde omnis iste natus error sit
-          voluptatem accusantium doloremque laudantium.
-        </p>
-        <div class="image-container">
-          <a href="https://placeholder.com" alt="project" class="project-image">
-            <img src="https://via.placeholder.com/250x200" />
-
-            <div class="project-link">
-              View <span class="pink-bold">Project</span>
-            </div>
+          <a href="https://placeholder.com" class="project__image">
+            <img src="https://via.placeholder.com/250x200" alt="project" />
           </a>
+        </div>
+
+        <div class="projects__section2">
+          <p class="projects__description">
+            Sed ut perspiciatis unde omnis iste natus error sit
+            <span class="bold">voluptatem accusantium</span> doloremque
+            laudantium. Sed ut perspiciatis unde omnis iste natus error sit
+            voluptatem accusantium doloremque laudantium.
+          </p>
+          <div class="image-container">
+            <a
+              href="https://placeholder.com"
+              alt="project"
+              class="project__image"
+            >
+              <img src="https://via.placeholder.com/250x200" />
+            </a>
+          </div>
         </div>
       </div>
     </div>
+
     <!-- experience section -->
     <div class="experience" id="experience">
       <h2 class="experience__title subHeading">
         EXPERIENCE<span class="dot">.</span>
       </h2>
 
+      <!-- skill icons -->
       <div class="experience-container">
         <div class="icon-grid">
           <i class="fab fa-js-square"></i>
@@ -110,41 +114,30 @@
         </div>
 
         <div class="experience-info">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, vero!
-          <span class="bold">Cumque aperiam</span> numquam ab vero adipisci
-          voluptatibus iste vel delectus.
-        </div>
-        <div class="experience-para">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, vero!
-          Cumque aperiam numquam ab vero adipisci voluptatibus iste vel
-          delectus. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Fugiat, vero! Cumque aperiam numquam ab vero adipisci voluptatibus
-          iste vel delectus.
+          <div class="experience-intro">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat,
+            vero!
+            <span class="bold">Cumque aperiam</span> numquam ab vero adipisci
+            voluptatibus iste vel delectus.
+          </div>
+          <div class="experience-para">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat,
+            vero! Cumque aperiam numquam ab vero adipisci voluptatibus iste vel
+            delectus. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Fugiat, vero! Cumque aperiam numquam ab vero adipisci voluptatibus
+            iste vel delectus.
+          </div>
         </div>
       </div>
     </div>
 
     <!-- contact section -->
-    <h2 class="contact__title subHeading" id="contact">
+    <h2 class="subHeading-contact" id="contact">
       CONTACT<span class="dot">.</span>
     </h2>
 
     <div class="contact">
-      <p class="contact__para">
-        I’m a software developer working near to xxxx. When I’m not stuck with
-        my head in a latop I enjoy horse riding, design and walking. If you like
-        what you hear then drop me a line.
-      </p>
       <img src="me.png" alt="illustration" class="me" />
-      <p class="contact__intouch">
-        I’d <span class="bold">love</span> for you to get in touch. Download my
-        CV <a href="#"></a><span class="bold">here</span>
-      </p>
-      <p class="contact__para2">
-        Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis
-        suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
-      </p>
-
       <div class="contact__links">
         <i class="far fa-envelope" class="icon"></i>
         <i class="fab fa-linkedin" class="icon" href="#"></i>
@@ -154,6 +147,20 @@
           href="https://github.com/TamzinBoyd"
         ></i>
       </div>
+      <p class="contact__para">
+        I’m a software developer working near to xxxx. When I’m not stuck with
+        my head in a latop I enjoy horse riding, design and walking. If you like
+        what you hear then drop me a line.
+      </p>
+
+      <p class="contact__intouch">
+        I’d <span class="bold">love</span> for you to get in touch. Download my
+        CV <a href="#"></a><span class="bold">here</span>
+      </p>
+      <p class="contact__para2">
+        Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis
+        suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
+      </p>
     </div>
   </main>
   <body>

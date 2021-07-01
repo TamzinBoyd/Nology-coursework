@@ -16,12 +16,12 @@
       </p>
 
       <div class="items">
-        <img class="sally snake_toShow" src="images/sally.png" />
-        <img class="sally snake_toShow" src="images/sally.png" />
-        <img class="sally snake_toShow" src="images/sally.png" />
-        <br /><img class="sally snake_toShow" src="images/sally.png" />
-        <img class="sally snake_toShow" src="images/sally.png" />
-        <img class="sally snake_toShow" src="images/sally.png" />
+        <img class="sally" id="snake1" src="images/sally.png" />
+        <img class="sally" id="snake2" src="images/sally.png" />
+        <img class="sally" id="snake3" src="images/sally.png" />
+        <br /><img class="sally" id="snake4" src="images/sally.png" />
+        <img class="sally" id="snake5" src="images/sally.png" />
+        <img class="sally" id="snake6" src="images/sally.png" />
       </div>
       <div class="display-buttons">
         <button class="start">Start Game</button>
@@ -32,62 +32,67 @@
         <img class="main-image" src="images/background.png" />
 
         <!-- objects to find -->
-        <img class="object1 snake_toFind" src="images/object1.png" />
-        <img class="object2 snake_toFind" src="images/object2.png" />
-        <img class="object3 snake_toFind" src="images/object3.png" />
-        <img class="object4 snake_toFind" src="images/object4.png" />
-        <img class="object5 snake_toFind" src="images/object5.png" />
-        <img class="object6 snake_toFind" src="images/object6.png" />
+        <img class="object1" src="images/object1.png" />
+        <img class="object2" src="images/object2.png" />
+        <img class="object3" src="images/object3.png" />
+        <img class="object4" src="images/object4.png" />
+        <img class="object5" src="images/object5.png" />
+        <img class="object6" src="images/object6.png" />
       </div>
 
       <!-- check boxes -->
-      <div>
+      <div class="checkboxes">
         <input
           type="checkbox"
-          class="snakecheckbox_one"
-          id="checkbox1"
+          id="object1"
           name="object1"
           value=" "
+          onclick="snakeOne()"
         />
         <label for="object1"></label>
 
         <input
           type="checkbox"
-          class="snakecheckbox_two"
-          id="checkbox2"
+          id="object2"
+          name="object2"
           value=""
+          onclick="snakeTwo()"
         />
         <label for="object2"></label>
 
         <input
           type="checkbox"
-          class="snakecheckbox_three"
-          id="checkbox3"
+          id="object3"
+          name="object3"
           value=""
+          onclick="snakeThree()"
         />
         <label for="object3"></label>
 
         <input
           type="checkbox"
-          class="snakecheckbox_four"
-          id="checkbox4"
+          id="object4"
+          name="object4"
           value=""
+          onclick="snakeFour()"
         />
         <label for="object4"></label>
 
         <input
           type="checkbox"
-          class="snakecheckbox_five"
-          id="checkbox5"
+          id="object5"
+          name="object5"
           value=""
+          onclick="snakeFive()"
         />
         <label for="object5"></label>
 
         <input
           type="checkbox"
-          class="snakecheckbox_six"
-          id="checkbox6"
+          id="object6"
+          name="object6"
           value=""
+          onclick="snakeSix()"
         />
         <label for="object6"></label>
       </div>

@@ -115,7 +115,7 @@ body {
 }
 
 /* /* checkbox styling */
-#object1 {
+#checkbox1 {
   width: 35px;
   height: 35px;
 
@@ -127,7 +127,7 @@ body {
   opacity: 0;
 }
 
-#object2 {
+#checkbox2 {
   width: 40px;
   height: 40px;
 
@@ -139,7 +139,7 @@ body {
   opacity: 0;
 }
 
-#object3 {
+#checkbox3 {
   width: 40px;
   height: 40px;
 
@@ -151,7 +151,7 @@ body {
   opacity: 0;
 }
 
-#object4 {
+#checkbox4 {
   width: 50px;
   height: 50px;
 
@@ -163,7 +163,7 @@ body {
   opacity: 0;
 }
 
-#object5 {
+#checkbox5 {
   width: 40px;
   height: 40px;
 
@@ -175,7 +175,7 @@ body {
   opacity: 0;
 }
 
-#object6 {
+#checkbox6 {
   width: 50px;
   height: 50px;
   margin-left: 50px;
@@ -215,27 +215,27 @@ body {
     margin-bottom: 20px;
   }
 
-  #object1 {
+  #checkbox1 {
     margin-left: 80px;
   }
 
-  #object2 {
+  #checkbox2 {
     margin-left: -115px;
   }
 
-  #object3 {
+  #checkbox3 {
     margin-left: 80px;
   }
 
-  #object4 {
+  #checkbox4 {
     margin-left: -85px;
   }
 
-  #object5 {
+  #checkbox5 {
     margin-left: 95px;
   }
 
-  #object6 {
+  #checkbox6 {
     margin-left: -115px;
   }
 }
