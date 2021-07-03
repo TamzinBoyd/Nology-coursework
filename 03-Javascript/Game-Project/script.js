@@ -4,6 +4,7 @@ const snakesToFind = document.querySelectorAll(".snake_toFind");
 
 const container = document.querySelector(".main-container");
 let timer = document.querySelector(".timer");
+let downloadTimer = "";
 
 // adding event listeners to all checkboxes
 for (let index = 0; index < checkboxes.length; index++) {
@@ -13,56 +14,29 @@ for (let index = 0; index < checkboxes.length; index++) {
     // each checkbox related to specific snake, so it ensures the right one is hidden
     //  by checking the last part of the current class list
     if (event.target.classList[0].split("_")[1] === "one") {
-      hideSnakeOne();
+      hideSnake(snakesToFind[0], snakesToShow[0]);
     } else if (event.target.classList[0].split("_")[1] === "two") {
-      hideSnakeTwo();
+      hideSnake(snakesToFind[1], snakesToShow[1]);
     } else if (event.target.classList[0].split("_")[1] === "three") {
-      hideSnakeThree();
+      hideSnake(snakesToFind[2], snakesToShow[2]);
     } else if (event.target.classList[0].split("_")[1] === "four") {
-      hideSnakeFour();
+      hideSnake(snakesToFind[3], snakesToShow[3]);
     } else if (event.target.classList[0].split("_")[1] === "five") {
-      hideSnakeFive();
+      hideSnake(snakesToFind[4], snakesToShow[4]);
     } else if (event.target.classList[0].split("_")[1] === "six") {
-      hideSnakeSix();
+      hideSnake(snakesToFind[5], snakesToShow[5]);
     }
   });
 }
 
-// functions for each found snake
-function hideSnakeOne() {
-  document.querySelector(".object1").classList.add("hide");
-  snakesToShow[0].classList.add("visible");
+// passing into it the snake location, so it hides the correct snake / checkbox
+function hideSnake(snakesToFind, snakesToShow) {
+  snakesToFind.classList.add("hide");
+  snakesToShow.classList.add("visible");
   alert("Well done, you found a snake");
 }
 
-function hideSnakeTwo() {
-  document.querySelector(".object2").classList.add("hide");
-  snakesToShow[1].classList.add("visible");
-  alert("Well done, you found a snake");
-}
-
-function hideSnakeThree() {
-  document.querySelector(".object3").classList.add("hide");
-  snakesToShow[2].classList.add("visible");
-  alert("Well done, you found a snake");
-}
-
-function hideSnakeFour() {
-  document.querySelector(".object4").classList.add("hide");
-  snakesToShow[3].classList.add("visible");
-  alert("Well done, you found a snake");
-}
-function hideSnakeFive() {
-  document.querySelector(".object5").classList.add("hide");
-  snakesToShow[4].classList.add("visible");
-  alert("Well done, you found a snake");
-}
-
-function hideSnakeSix() {
-  document.querySelector(".object6").classList.add("hide");
-  snakesToShow[5].classList.add("visible");
-  alert("Well done, you found a snake");
-}
+// Setting the reset button ///////////////////////////////////////
 
 // Setting the timer ///////////////////////////////////////
 
@@ -71,17 +45,22 @@ document.querySelector(".start").addEventListener("click", function () {
 
   // setting timeleft to total time for the game  to run (in seconds)
   let timeleft = 120;
-  let downloadTimer = setInterval(function function1() {
+  let downloadTimer = setInterval(function startTime() {
     // changing timer text to timeleft, calculating minutes then remainder into seconds
     const minutes = Math.floor(timeleft / 60);
     let seconds = timeleft % 60;
+    seconds = seconds.toString();
 
-    document.querySelector(".timer").innerHTML = `${minutes}:${seconds}`;
+    if (seconds.length === 2) {
+      document.querySelector(".timer").innerHTML = `${minutes}:${seconds}`;
+    } else if (seconds.length === 1) {
+      document.querySelector(".timer").innerHTML = `${minutes}:0${seconds}`;
+    }
 
     // saying time left is to take away 1 each millisecond
     timeleft -= 1;
     // if 0 then it stops and shows a message
-    if (timeleft <= 0) {
+    if (timeleft === 0) {
       clearInterval(downloadTimer);
       timer.innerHTML = "Time's up! Did you find them all?";
       alert("Time's up");
@@ -102,4 +81,16 @@ document.querySelector(".start").addEventListener("click", function () {
 
     // setting 1000 milliseoncds (1 second) for the countdown
   }, 1000);
+
+  document.querySelector(".reset").addEventListener("click", () => {
+    for (let i = 0; i < snakesToShow.length; i++) {
+      snakesToShow[i].classList.remove("visible");
+    }
+
+    for (let i = 0; i < snakesToFind.length; i++) {
+      snakesToFind[i].classList.remove("hide");
+    }
+
+    clearInterval(downloadTimer);
+  });
 });
