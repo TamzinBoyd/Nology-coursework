@@ -1,64 +1,24 @@
+@import "./_base.scss";
+
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,700;1,100;1,500&display=swap");
 
-$background-color: #101628;
-$grey-color: #e3e2e2;
-$pink-color: #fe5541;
-$block-color: #ffd2c8;
-$font: "Roboto", sans-serif;
-
-* {
-  margin: 0;
-  padding: 0;
-  font-family: $font;
-}
-
-.nav__list__desktop {
-  display: none;
-}
-
-header {
-  background-color: $grey-color;
-  text-align: center;
-  position: fixed;
-  font-family: Arial, Helvetica, sans-serif;
-  width: 100%;
-}
-
-.dot {
-  color: $pink-color;
-}
-
-.subHeading {
-  font-family: $font;
-  color: $background-color;
-  font-size: 3em;
-  margin-left: 20px;
-  margin-top: 300px;
-}
-
-.pink-bold {
-  color: $pink-color;
-}
-.bold {
-  font-style: italic;
-  color: $pink-color;
-  font-weight: 400;
-}
-
-// nav styling
+// nav styling //////////////////////////////////////////////////////////////
 
 .nav-container {
   display: flex;
   justify-content: space-between;
 }
+
 .mode-toggle {
-  color: #fe5541;
   display: flex;
-  font-size: 2em;
+  font-size: 30px;
   align-items: center;
   margin-right: 60px;
 }
 
+.mode-toggle > i {
+  color: #fe5541;
+}
 .activate-darkmode {
   display: none;
 }
@@ -69,7 +29,7 @@ header {
 
 .logo {
   margin: 0;
-  padding: 0.7em;
+  padding: 10px;
   max-height: 4em;
   display: flex;
 }
@@ -83,9 +43,7 @@ header {
   top: 0;
   right: 20px;
   margin-left: 1em;
-  /* This takes it to the full height of the container NAV */
   height: 100%;
-  /* Below so we can then center it within the NAV bar */
   display: flex;
   align-items: center;
 }
@@ -97,7 +55,7 @@ header {
   /* this code creates a white line */
   display: block;
   background-color: $background-color;
-  color: $background-color;
+
   height: 3px;
   width: 2em;
   border-radius: 2px;
@@ -120,13 +78,14 @@ header {
 
 /* general nav stayling */
 nav {
+  background-color: $grey-color;
+  width: 100%;
   position: absolute;
   text-align: right;
   top: 100%;
   right: 0;
   padding-right: 20px;
-  background-color: $grey-color;
-  width: 100%;
+
   /* settings so it only appears when select the 3 lines */
   transform: scale(1, 0);
   transform-origin: top;
@@ -145,17 +104,12 @@ nav li {
 }
 
 nav a {
-  color: $background-color;
   text-decoration: none;
   font-size: 1em;
   text-transform: uppercase;
   /* so invisible until check box & they fade in */
   opacity: 0;
   transition: opacity 150ms ease-in-out;
-}
-
-nav a:hover {
-  color: $pink-color;
 }
 
 /* below will display the NAV only of the checked box is ticked */
@@ -168,26 +122,24 @@ nav a:hover {
   transition: opacity 250ms ease-in-out 250ms;
 }
 
+.nav__links:hover {
+  color: $pink-color;
+}
+
 // HEADING /////////////////////////////////////////////
 .welcome {
-  color: $background-color;
   padding-top: 200px;
-  font-size: 3em;
+  font-size: 70px;
   display: flex;
 
   &__hi {
-    width: 1em;
     margin-left: 50px;
-  }
-
-  &__dot {
-    color: $pink-color;
   }
 }
 
 .welcome__info {
-  margin-left: 50px;
-  margin-right: 50px;
+  margin-left: 55px;
+  padding-right: 40px;
 }
 
 .scroll {
@@ -195,45 +147,52 @@ nav a:hover {
 }
 
 // PROJECTS /////////////////////////////////////////
+.project-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+  justify-items: center;
+  align-items: center;
+}
+.box1,
+.box2,
+.box3 {
+  background-color: $pink-color;
+  border-radius: 20px;
+  height: 500px;
+  padding: 20px;
+}
 
 .projects {
-  margin-top: 100px;
-
   &__container {
     background-color: $block-color;
-    height: 810px;
+    height: 1700px;
     margin-top: -20px;
-
-    display: flex;
-    flex-direction: column;
+    padding: 100px 30px 30px 30px;
     position: relative;
     z-index: -1;
   }
-
-  &__description {
-    padding: 50px 50px 20px 50px;
-    color: $background-color;
-    font-weight: 700;
-  }
 }
 
-.project-image {
-  display: flex;
+.projects__name {
+  text-align: center;
+  margin-bottom: 15px;
+}
+.projects__description {
+  text-align: center;
   justify-content: center;
-  align-items: center;
-  text-decoration: none;
-  position: relative;
 }
 
-.project-image > img {
-  border-radius: 10px;
+.projects__links {
+  font-size: 50px;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
-.project-link {
-  position: absolute;
-  font-size: 2em;
-  font-weight: 700;
-  color: $background-color;
+.project__image > img {
+  border-radius: 20px;
+  width: 100%;
 }
 
 // Experience section //////////////////////////////
@@ -243,7 +202,7 @@ nav a:hover {
 }
 .experience-container {
   margin-top: -20px;
-  height: 600px;
+  height: 700px;
   background-color: $grey-color;
   margin-bottom: 20px;
 }
@@ -253,8 +212,7 @@ nav a:hover {
 }
 
 .icon-grid {
-  width: 300px;
-  height: 200px;
+  grid-gap: 30px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
@@ -263,104 +221,83 @@ nav a:hover {
 }
 
 .icon-grid > i {
+  margin-top: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: $background-color;
-  font-size: 3em;
+
+  font-size: 60px;
 }
 
 .experience-intro {
-  padding: 0px 30px 0px 30px;
-  color: $background-color;
   font-weight: 700;
   font-size: 20px;
+  padding: 30px 30px 0px 30px;
+  text-align: center;
 }
 
 .experience-para {
-  padding: 20px 30px 0px 30px;
-  color: $background-color;
   font-size: 15px;
+  padding: 30px;
+  text-align: center;
 }
 
 // Contact section ///////////////////////////////
 
 .contact {
   height: 450px;
-  margin-top: 150px;
+  margin-top: -20px;
   background-color: $block-color;
   z-index: -1;
-
-  &__intouch {
-    margin: 0 auto;
-    text-align: center;
-    padding: 30px 0px 30px 0px;
-    font-weight: 700;
-    font-size: 25px;
-    float: left;
-    padding-top: 30px;
-  }
 }
 
 .me {
   max-width: 150px;
-  margin: 0 auto;
-
+  margin-right: 30px;
+  float: right;
   display: flex;
   justify-content: center;
 }
 
-// .contact__title {
-//   margin-top: 100px;
-//   margin-bottom: -20px;
-// }
+.contact__links {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
 
-// .contact__para {
-//   width: 200px;
-//   float: left;
-//   font-size: 15px;
-//   padding-left: 30px;
-//   padding-top: 100px;
+.icon {
+  padding: 50px 10px 10px 10px;
+  font-size: 40px;
+}
 
-//   color: $background-color;
-// }
+.contact__para {
+  font-size: 15px;
+  margin-top: 30px;
+  padding: 10px 30px 30px 30px;
+  text-align: center;
+}
 
-// .contact__para2 {
-//   float: left;
-//   font-size: 15px;
-//   padding: 30px 30px 30px 30px;
+.contact__intouch {
+  text-align: center;
+  padding: 0px 30px 0px 30px;
+  font-weight: 700;
+  font-size: 20px;
+}
 
-//   color: $background-color;
-// }
+.contact__para2 {
+  font-size: 15px;
+  margin-top: 40px;
+  padding: 0px 30px 30px 30px;
+  text-align: center;
+}
 
-// .contact__links {
-//   position: absolute;
-//   display: flex;
-//   width: 150px;
-//   margin-left: 240px;
-//   margin-top: 60px;
-//   justify-content: space-around;
-// }
-
-// .fa-envelope,
-// .fa-linkedin,
-// .fa-github-square {
-//   font-size: 2em;
-//   color: #101628;
-// }
-
-// .fa-envelope:hover,
-// .fa-linkedin:hover,
-// .fa-github-square:hover {
-//   color: $pink-color;
-// }
-
-// Adapting to Desktop layout
+// desktop ////////////////////////////////////////////////////////////////////////////////////////////////
 
 @media screen and (min-width: 568px) {
   .nav-toggle,
   .nav-toggle-label {
     display: none;
+    opacity: 1;
   }
 
   .nav__list__desktop {
@@ -369,8 +306,9 @@ nav a:hover {
     display: block;
     display: flex;
     justify-content: space-around;
-    padding-bottom: 30px;
-    margin-top: -55px;
+    align-items: center;
+    margin-top: -40px;
+    margin-right: 80px;
   }
 
   .nav__list__desktop > li {
@@ -386,79 +324,19 @@ nav a:hover {
     color: $pink-color;
   }
 
-  .mode-toggle {
-    margin-right: 320px;
-  }
-
-  .icon-grid {
-    width: 100vh;
-
-    display: flex;
-    justify-content: space-around;
-  }
-
-  .me {
-    float: left;
-    margin-top: -50px;
-    margin-left: -190px;
-  }
-
-  .contact__para {
-    width: 100%;
-    float: left;
-    font-size: 15px;
-    padding-left: 30px;
-    padding-top: 100px;
-  }
-}
-// ////////////////////////////////////////////////////////////////////////////
-@media screen and (min-width: 568px) {
-  .nav-toggle,
-  .nav-toggle-label {
-    display: none;
-  }
-
-  .nav__list__desktop {
-    float: right;
-    width: 300px;
-    display: block;
-    display: flex;
-    justify-content: space-around;
-    padding-bottom: 30px;
-    margin-top: -55px;
-  }
-
-  .nav__list__desktop > li {
-    list-style-type: none;
-  }
-
-  .nav__links {
-    text-decoration: none;
-    color: #101628;
-  }
-
-  .nav__links:hover {
-    color: #fe5541;
-  }
-
-  .mode-toggle {
-    margin-right: 320px;
-  }
+  // welcome section
 
   .welcome__hi {
-    font-size: 3em;
-    margin-left: 100px;
+    font-size: 200px;
     margin-top: 80px;
   }
 
   .welcome__dot {
-    margin-top: 80px;
+    margin-top: 130px;
   }
+
   .dot {
-    font-size: 3em;
-  }
-  .welcome__para {
-    margin-left: 110px;
+    font-size: 150px;
   }
 
   // scoll
@@ -476,89 +354,91 @@ nav a:hover {
     display: flex;
     justify-content: center;
   }
-  .chevron:hover {
-    font-size: 2em;
-  }
 
   // projects /////////////////////////
   .subHeading {
-    font-size: 3em;
-    margin-left: 20px;
+    font-size: 70px;
+    margin-left: 40px;
   }
 
-  .subHeading-projects {
-    font-size: 3em;
-    margin-left: 20px;
-    margin-top: -60px;
-  }
-
-  .projects {
-    &__title {
-      margin-top: -50px;
-    }
-    &__description {
-      width: 80vh;
-    }
-  }
   .projects__container {
-    margin-top: -45px;
-    display: flex;
+    margin-top: -50px;
   }
 
-  .projects__section1 {
-    display: flex;
-    margin: 0px auto;
-    padding-top: 100px;
-    padding-right: 20px;
+  .project-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    justify-items: center;
+    align-items: center;
+  }
+  .box1,
+  .box2,
+  .box3 {
+    height: 550px;
   }
 
-  .projects__section2 {
-    display: flex;
-    flex-direction: row-reverse;
-    margin: 0px auto;
-    padding-left: 20px;
-  }
-  .project__link {
-    font-size: 2em;
-    font-weight: 700;
-  }
-
-  //  experience ///////////////
-
-  .experience-info {
-    display: flex;
-  }
+  //   //  experience ///////////////
 
   .experience-container {
     margin-top: -45px;
   }
-  // contact section ////////////////////@warn
 
-  .subHeading-contact {
-    font-size: 3em;
-    margin-left: 20px;
+  .icon-grid {
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    padding-top: 80px;
   }
+
+  .experience-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 15px;
+  }
+
+  .experience-intro {
+    grid-column: 1 / 2;
+    font-size: 20px;
+    padding-left: 50px;
+  }
+
+  .experience-para {
+    grid-column: 2/4;
+    font-size: 20px;
+    padding-right: 50px;
+  }
+
+  //   // contact section ////////////////////
 
   .contact {
     margin-top: -45px;
-  }
-  .icon-grid {
-    width: 100vh;
+    height: 600px;
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
   }
 
   .me {
-    float: left;
-    margin-top: -50px;
-    margin-left: -190px;
+    margin-top: -70px;
+    min-width: 250px;
+    min-height: 250px;
   }
 
+  .contact__links {
+    margin-left: -40px;
+  }
   .contact__para {
-    width: 100%;
-    float: left;
-    font-size: 15px;
-    padding-left: 30px;
-    padding-top: 100px;
+    font-size: 20px;
+    padding: 0px 100px 50px 100px;
+  }
+  .contact__intouch {
+    font-size: 20px;
+  }
+
+  .contact__para2 {
+    font-size: 20px;
+    padding: 0px 100px 50px 100px;
   }
 }

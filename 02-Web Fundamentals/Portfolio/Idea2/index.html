@@ -14,8 +14,9 @@
   </head>
   <header>
     <div class="nav-container">
-      <img src="logo.png" class="logo" alt="logo" />
+      <img src="./images/logo.png" class="logo" alt="logo" />
 
+      <!-- dark mode toggle -->
       <div href="#" class="mode-toggle">
         <i class="fas fa-circle"></i>
         <!-- need to add a class in JS to show the below -->
@@ -23,6 +24,7 @@
       </div>
     </div>
 
+    <!-- mobile nav list -->
     <input type="checkbox" class="nav-toggle" id="nav-toggle" />
     <nav class="nav">
       <ul class="nav__list">
@@ -59,45 +61,69 @@
       <div class="chevron"><i class="fas fa-chevron-down"></i></div>
     </div>
 
-    <!-- projects section -->
+    <!-- projects section////////////////////////////// -->
     <div class="projects" id="projects">
-      <h2 class="subHeading-projects">PROJECTS<span class="dot">.</span></h2>
+      <h2 class="subHeading projects">PROJECTS<span class="dot">.</span></h2>
 
       <div class="projects__container">
-        <div class="projects__section1">
-          <p class="projects__description">
-            Sed ut perspiciatis unde omnis iste natus error sit
-            <span class="bold">voluptatem accusantium</span> doloremque
-            laudantium. Sed ut perspiciatis unde omnis iste natus error sit
-            voluptatem accusantium doloremque laudantium.
-          </p>
+        <div class="project-cards">
+          <div class="box1">
+            <h3 class="projects__name">Hidden Object Game</h3>
+            <p class="projects__description">
+              Sed ut perspiciatis unde omnis iste natus error sit
+              <span class="bold">voluptatem accusantium</span> doloremque
+              laudantium. Sed ut omnis iste natus error sit voluptatem
+              accusantium doloremque laudantium.
+            </p>
+            <div class="projects__links">
+              <a href="https://google.com" target="_blank" class="github">
+                <i class="fab fa-github-square"></i>
+              </a>
+            </div>
 
-          <a href="https://placeholder.com" class="project__image">
-            <img src="https://via.placeholder.com/250x200" alt="project" />
-          </a>
-        </div>
+            <a class="project__image">
+              <img src="images/snake-project.jpg" alt="project" />
+            </a>
+          </div>
 
-        <div class="projects__section2">
-          <p class="projects__description">
-            Sed ut perspiciatis unde omnis iste natus error sit
-            <span class="bold">voluptatem accusantium</span> doloremque
-            laudantium. Sed ut perspiciatis unde omnis iste natus error sit
-            voluptatem accusantium doloremque laudantium.
-          </p>
-          <div class="image-container">
-            <a
-              href="https://placeholder.com"
-              alt="project"
-              class="project__image"
-            >
-              <img src="https://via.placeholder.com/250x200" />
+          <div class="box2">
+            <h3 class="projects__name">Hidden Oject Game</h3>
+            <p class="projects__description">
+              Sed ut perspiciatis unde omnis iste natus error sit
+              <span class="bold">voluptatem accusantium</span> doloremque
+              laudantium. Sed ut perspiciatis unde omnis iste natus error sit
+              voluptatem accusantium doloremque laudantium.
+            </p>
+            <div class="projects__links">
+              <i class="fab fa-github-square" href="#"></i>
+            </div>
+
+            <a href="https://placeholder.com" class="project__image">
+              <img src="https://via.placeholder.com/250x200" alt="project" />
+            </a>
+          </div>
+
+          <div class="box3">
+            <h3 class="projects__name">Hidden Oject Game</h3>
+            <p class="projects__description">
+              Sed ut perspiciatis unde omnis iste natus error sit
+              <span class="bold">voluptatem accusantium</span> doloremque
+              laudantium. Sed ut perspiciatis unde omnis iste natus error sit
+              voluptatem accusantium doloremque laudantium.
+            </p>
+            <div class="projects__links">
+              <i class="fab fa-github-square" href="#"></i>
+            </div>
+
+            <a href="https://placeholder.com" class="project__image">
+              <img src="https://via.placeholder.com/250x200" alt="project" />
             </a>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- experience section -->
+    <!-- experience section ////////////////////////////////////////////// -->
     <div class="experience" id="experience">
       <h2 class="experience__title subHeading">
         EXPERIENCE<span class="dot">.</span>
@@ -132,18 +158,15 @@
     </div>
 
     <!-- contact section -->
-    <h2 class="subHeading-contact" id="contact">
-      CONTACT<span class="dot">.</span>
-    </h2>
+    <h2 class="subHeading" id="contact">CONTACT<span class="dot">.</span></h2>
 
     <div class="contact">
-      <img src="me.png" alt="illustration" class="me" />
+      <img src="./images/me.png" alt="illustration" class="me" />
       <div class="contact__links">
-        <i class="far fa-envelope" class="icon"></i>
-        <i class="fab fa-linkedin" class="icon" href="#"></i>
+        <i class="far fa-envelope icon"></i>
+        <i class="fab fa-linkedin icon" href="#"></i>
         <i
-          class="fab fa-github-square"
-          class="icon"
+          class="fab fa-github-square icon"
           href="https://github.com/TamzinBoyd"
         ></i>
       </div>

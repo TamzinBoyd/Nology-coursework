@@ -8,7 +8,7 @@
 /* styling of the main game */
 
 body {
-  background-color: rgb(63, 23, 82);
+  background-color: #101628;
 }
 .background {
   padding: 20px;
@@ -19,7 +19,7 @@ body {
   text-align: center;
   margin: 10px;
   font-size: 2.5em;
-  color: rgb(255, 123, 0);
+  color: #fe5541;
   text-shadow: 2px 2px black;
 }
 
@@ -46,20 +46,21 @@ body {
   margin-bottom: 15px;
   padding-top: 8px;
   border-radius: 10px;
-  border: 2px solid rgb(255, 123, 0);
+  border: 2px solid #fe5541;
   background-color: white;
   text-align: center;
   font-size: 1em;
 }
 
-.start {
+.start,
+.reset {
   width: 250px;
   height: 40px;
   margin-left: 50px;
   margin-bottom: 15px;
   border-radius: 10px;
   border: none;
-  background-color: rgb(255, 123, 0);
+  background-color: #fe5541;
   color: white;
   font-size: 1em;
   font-weight: 700;
@@ -205,7 +206,8 @@ body {
   .display-buttons {
     display: flex;
   }
-  .start {
+  .start,
+  .reset {
     margin: auto;
   }
 
