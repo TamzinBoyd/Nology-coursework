@@ -313,13 +313,6 @@ nav a {
   font-size: 20px;
 }
 
-.contact__para2 {
-  font-size: 15px;
-  margin-top: 40px;
-  padding: 0px 30px 30px 30px;
-  text-align: center;
-}
-
 @media screen and (min-width: 568px) {
   .nav-toggle,
 .nav-toggle-label {
@@ -398,7 +391,7 @@ nav a {
   .box1,
 .box2,
 .box3 {
-    height: 550px;
+    height: 580px;
   }
 
   .experience-container {
@@ -457,9 +450,38 @@ nav a {
   .contact__intouch {
     font-size: 20px;
   }
+}
+body.dark {
+  background-color: #101628;
+}
 
-  .contact__para2 {
-    font-size: 20px;
-    padding: 0px 100px 50px 100px;
-  }
+.welcome__hi.dark,
+.welcome__info.dark {
+  color: #e3e2e2;
+}
+
+.subHeading.dark {
+  color: #ffd2c8;
+}
+
+.projects__container.dark,
+.experience-container.dark {
+  background-color: #817c7c;
+}
+
+.skill-icon.dark {
+  color: #fe5541;
+}
+
+.contact.dark {
+  background-color: #101628;
+}
+
+.contact__para.dark,
+.contact__intouch.dark {
+  color: #ffd2c8;
+}
+
+.nav-container.dark {
+  background-color: #817c7c;
 }

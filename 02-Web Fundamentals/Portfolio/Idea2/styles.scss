@@ -284,12 +284,12 @@ nav a {
   font-size: 20px;
 }
 
-.contact__para2 {
-  font-size: 15px;
-  margin-top: 40px;
-  padding: 0px 30px 30px 30px;
-  text-align: center;
-}
+// .contact__para2 {
+//   font-size: 15px;
+//   margin-top: 40px;
+//   padding: 0px 30px 30px 30px;
+//   text-align: center;
+// }
 
 // desktop ////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -375,7 +375,7 @@ nav a {
   .box1,
   .box2,
   .box3 {
-    height: 550px;
+    height: 580px;
   }
 
   //   //  experience ///////////////
@@ -436,9 +436,40 @@ nav a {
   .contact__intouch {
     font-size: 20px;
   }
+}
 
-  .contact__para2 {
-    font-size: 20px;
-    padding: 0px 100px 50px 100px;
-  }
+// DARK MODE CLASSES /////////////////////////////////////////
+body.dark {
+  background-color: $background-color;
+}
+
+.welcome__hi.dark,
+.welcome__info.dark {
+  color: $grey-color;
+}
+
+.subHeading.dark {
+  color: $block-color;
+}
+
+.projects__container.dark,
+.experience-container.dark {
+  background-color: $background-color-dark;
+}
+
+.skill-icon.dark {
+  color: $pink-color;
+}
+
+.contact.dark {
+  background-color: $background-color;
+}
+
+.contact__para.dark,
+.contact__intouch.dark {
+  color: $block-color;
+}
+
+.nav-container.dark {
+  background-color: $background-color-dark;
 }
