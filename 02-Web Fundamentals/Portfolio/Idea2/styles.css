@@ -23,13 +23,6 @@ header {
   color: #fe5541;
 }
 
-.subHeading {
-  font-family: "Roboto", sans-serif;
-  font-size: 40px;
-  margin-left: 20px;
-  margin-top: 100px;
-}
-
 .pink-bold {
   color: #fe5541;
 }
@@ -197,18 +190,21 @@ nav a {
   padding: 20px;
 }
 
-.projects__container {
+.subHeading-projects {
+  font-size: 40px;
+  margin-left: 20px;
+  margin-top: -130px;
+  margin-bottom: 80px;
+}
+
+.projects {
   background-color: #ffd2c8;
-  height: 1700px;
-  margin-top: -20px;
+  margin-top: 100px;
   padding: 100px 30px 30px 30px;
-  position: relative;
-  z-index: -1;
 }
 
 .projects__name {
   text-align: center;
-  margin-bottom: 15px;
 }
 
 .projects__description {
@@ -228,15 +224,16 @@ nav a {
   width: 100%;
 }
 
-.experience__title {
+.subHeading-experience {
+  font-family: "Roboto", sans-serif;
+  font-size: 40px;
+  margin-left: 20px;
   margin-top: 100px;
 }
 
-.experience-container {
-  margin-top: -20px;
-  height: 700px;
+.experience {
   background-color: #e3e2e2;
-  margin-bottom: 20px;
+  margin-top: -20px;
 }
 
 .experience-container > i {
@@ -273,29 +270,34 @@ nav a {
   text-align: center;
 }
 
+.subHeading-contact {
+  font-size: 40px;
+  margin-left: 20px;
+  margin-top: 100px;
+}
+
 .contact {
-  height: 450px;
-  margin-top: -20px;
   background-color: #ffd2c8;
-  z-index: -1;
+  margin-top: -20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .me {
-  max-width: 150px;
-  margin-right: 30px;
-  float: right;
-  display: flex;
-  justify-content: center;
+  max-width: 100px;
+  margin-top: 30px;
 }
 
 .contact__links {
   display: flex;
   justify-content: center;
-  padding: 20px;
+  align-items: center;
+  padding: 5px;
 }
 
 .icon {
-  padding: 50px 10px 10px 10px;
+  padding: 20px 10px 10px 10px;
   font-size: 40px;
 }
 
@@ -371,13 +373,15 @@ nav a {
     justify-content: center;
   }
 
-  .subHeading {
+  .subHeading-projects {
     font-size: 70px;
     margin-left: 40px;
+    margin-top: -220px;
+    margin-bottom: 100px;
   }
 
-  .projects__container {
-    margin-top: -50px;
+  .projects {
+    margin-top: 100px;
   }
 
   .project-cards {
@@ -394,8 +398,11 @@ nav a {
     height: 580px;
   }
 
-  .experience-container {
-    margin-top: -45px;
+  .subHeading-experience {
+    font-size: 70px;
+    margin-left: 20px;
+    margin-top: 180px;
+    margin-bottom: -50px;
   }
 
   .icon-grid {
@@ -421,21 +428,29 @@ nav a {
   .experience-para {
     grid-column: 2/4;
     font-size: 20px;
-    padding-right: 50px;
+    padding: 0px 20px 120px 20px;
+  }
+
+  .subHeading-contact {
+    font-size: 70px;
+    margin-left: 20px;
+    margin-top: 100px;
+    margin-bottom: -50px;
   }
 
   .contact {
     margin-top: -45px;
-    height: 600px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
   }
 
   .me {
     margin-top: -70px;
-    min-width: 250px;
-    min-height: 250px;
+    min-width: 200px;
+    min-height: 200px;
+  }
+
+  .icon {
+    padding: 50px 10px 10px 10px;
+    font-size: 40px;
   }
 
   .contact__links {
