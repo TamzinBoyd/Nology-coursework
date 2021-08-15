@@ -33,6 +33,9 @@
 // 4. Return the translated "letter" in morse code
 // 5. Display results to user
 
+// Really struggling to know how to pass an array into a class so it can be used in a function,
+// also knowing how to loop over it within a class, if possible
+
 const testArray = ["a", "b", "c"];
 const mapArray = "";
 
@@ -62,58 +65,5 @@ class TranslateToEnglish {
 }
 
 console.log(TranslateToEnglish.mapArray(testArray));
-
 // const testObject = new TranslateToEnglish(testArray[1]);
 // console.log(testObject.getTranslation());
-
-// it can carry out methods, like checking the passed in value & if statements
-
-// /////////////////////////////////////////////////////////////////////////////////////////////////
-// const myList = document.getElementById("myList");
-
-// class ListBinding {
-//   constructor(element) {
-//     this.listElement = element;
-//     this.textList = [];
-//   }
-
-//   //   makes an <li> tag
-//   static createListItem(text) {
-//     const li = document.createElement("li");
-//     li.textContent = text;
-//     return li;
-//   }
-
-//   //   to update physical DOM with items contaned in textList.
-//   update() {
-//     //   remove any LI elements/tags from list Element
-//     while (this.listElement.firstChild) {
-//       this.listElement.removeChild(this.listElement.firstChild);
-//     }
-
-//     // Fill UL/OL tag with <li>
-//     for (const text of this.textList) {
-//       this.listElement.appendChild(ListBinding.createListItem(text));
-//     }
-//   }
-
-//   // will add the text passed into the empty array & adds it to HTML
-//   add(text) {
-//     this.textList.push(text);
-//     this.update();
-//   }
-
-//   //   remove item starting at given index & update HTML
-
-//   remove(index) {
-//     this.textList.splice(index, 1);
-//     this.update();
-//   }
-// }
-// // creating object and passing in the variable for the HTML ID
-// const listBinding = new ListBinding(myList);
-
-// console.log(listBinding.add("test"));
-// console.log(listBinding.add("test2"));
-// console.log(listBinding.add("test3"));
-// console.log(listBinding.remove(1));
