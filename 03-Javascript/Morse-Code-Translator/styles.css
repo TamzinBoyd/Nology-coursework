@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;700&family=Tangerine:wght@400;700&display=swap");
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: #ffedcc;
+}
+
+.title {
+  background-color: #690500;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+h1 {
+  color: #ffedcc;
+  font-family: "Roboto Mono", sans-serif;
+  font-size: 15px;
+  padding-top: 20px;
+}
+
+h2 {
+  color: #ffedcc;
+  font-size: 15px;
+  font-family: "Roboto Mono", sans-serif;
+  margin: -5px 5px 45px 5px;
+}
+
+span::before {
+  content: "Morse Code";
+  animation: animate infinite 3s;
+  padding-left: 10px;
+}
+
+.test::before {
+  content: "Translator";
+  animation: animate2 infinite 3s;
+  padding-left: 10px;
+}
+
+@keyframes animate {
+  0% {
+    content: "Morse Code";
+  }
+
+  75% {
+    content: "-- --- .-. ... . / -.-. --- -.. .";
+  }
+}
+
+@keyframes animate2 {
+  0% {
+    content: "Translator";
+  }
+
+  75% {
+    content: "- .-. .- -. ... .-.. .- - --- .-.";
+  }
+}
+
+.description {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 20px;
+  font-size: 15px;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0px 30px 10px 30px;
+}
+.entry-box-english,
+.entry-box-morse {
+  height: 100px;
+  width: 100%;
+  text-align: center;
+}
+
+.button {
+  width: 100px;
+  height: 40px;
+  background-color: #690500;
+  border-style: none;
+  border-radius: 5px;
+  color: #ffedcc;
+  margin: 20px;
+  font-weight: 600;
+}
