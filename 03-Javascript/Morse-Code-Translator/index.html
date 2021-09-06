@@ -14,29 +14,32 @@
     </div>
     <div class="description">
       <p>
-        Enter our text to translate English to Morse code and Morse code to
-        English text
+        Enter text to translate English to Morse code and Morse code to English
       </p>
     </div>
     <div class="main">
       <form action="#">
         <label for="English"></label>
-        <input
+        <textarea
           class="entry-box-english"
-          type="text"
           name="English"
           placeholder="Enter English text here"
-        />
+          rows="4"
+          cols="50"
+        ></textarea>
+
         <button class="button" type="button">Translate</button>
         <label for="Morse"></label>
-        <input
+        <textarea
           class="entry-box-morse"
-          type="text"
           name="Morse"
-          placeholder="Enter Morse Code here"
-        />
+          placeholder="Enter Morse Code here, separate characters with a space and words with -"
+          rows="20"
+          cols="50"
+        ></textarea>
       </form>
     </div>
+
     <ul id="myList">
       <!-- to be filled by JS -->
     </ul>

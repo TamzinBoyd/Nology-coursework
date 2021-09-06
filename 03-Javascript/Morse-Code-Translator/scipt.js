@@ -1,69 +1,153 @@
-//  CHALLENGE
-// Create a morse code translator using OOP.
-//
-// it should be able to translate based on user input from the DOM.
-// Consider how you will store the morse characters in JS to make translation easier.
-//
-// The classes you use should store all the information needed to translate between Morse and
-// English, including the alphabets themselves, the word to translate and possibly the eventual output as it’s changing.
-//
-// Some of the methods might include how to add a word to translate, how to break it down to aid
-// the translation and you’ll have to think carefully about how and when you call these methods to
-// make sure the state of the object is getting changed correctly.
-//
-// The logic for translating both ways won’t be exactly the same but some methods may be similar
-// enough that you might be able to create a base class to extend from in order to share logic
-// between the two translators (Morse => English, English => Morse).
+//  CHALLENGE - Create a morse code translator using OOP.
 
 // STEP ONE - RESEARCH MORSE CODE TRANSLATION
 //  Each letter has a morse code equivalent, these are combined to make words. Using  . & -
 
 // DESIGN & CONTENT
 // An input box for user to enter their text
-// output box (with option to also input)
-// option to switch between morse code & English
-// when entering morse code ask user to enter space between entries?
+// output box to display translation (may also be needed for morse code entry)
+// button to activate the translate OR show translation as type
 // design mobile first
 
 // FUNCTONALITY
-// User enters text & returns translation in input box
-// 1. User enters value. Save it from the DOM into an array
-// 2. Split array into individual characters (as strings, in array)
-// 3. Function to loop over / map array and check each letter
-// 4. Return the translated "letter" in morse code
-// 5. Display results to user
+// 1. User enters value via input box, convert to string
+// 2. Split into characters. Translations stored in an object.
+// 3. Map over object to find the key and return translation
+// 4. Display results to user
+// Morse to English will be different as user will need to separate characters by space
 
-// Really struggling to know how to pass an array into a class so it can be used in a function,
-// also knowing how to loop over it within a class, if possible
+const englishAlphabet = {
+  a: ".-",
+  b: "-...",
+  c: "-.-.",
+  d: "-..",
+  e: ".",
+  f: "..-.",
+  g: "--.",
+  h: "....",
+  i: "..",
+  j: ".---",
+  k: "-.-",
+  l: ".-..",
+  m: "--",
+  n: "-.",
+  o: "---",
+  p: ".--.",
+  q: "--.-",
+  r: ".-.",
+  s: "...",
+  t: "-",
+  u: "..-",
+  v: "...-",
+  w: ".--",
+  x: "-..-",
+  y: "-.--",
+  z: "--..",
+  1: ".----",
+  2: "..---",
+  3: "...--",
+  4: "....-",
+  5: ".....",
+  6: "-....",
+  7: "--...",
+  8: "---..",
+  9: "----.",
+  0: "-----",
+  ".": ".-.-.-",
+  ",": "--..--",
+  "?": "..--..",
+  " ": "  ",
+};
 
-const testArray = ["a", "b", "c"];
-const mapArray = "";
+const morseAlphabet = {
+  " ": "",
+  "-": " ",
+  ".-": "a",
+  "-...": "b",
+  "-.-.": "c",
+  "-..": "d",
+  // e: ".",
+  // f: "..-.",
+  // g: "--.",
+  // h: "....",
+  // i: "..",
+  // j: ".---",
+  // k: "-.-",
+  // l: ".-..",
+  // m: "--",
+  // n: "-.",
+  // o: "---",
+  // p: ".--.",
+  // q: "--.-",
+  // r: ".-.",
+  // s: "...",
+  // t: "-",
+  // u: "..-",
+  // v: "...-",
+  // w: ".--",
+  // x: "-..-",
+  // y: "-.--",
+  // z: "--..",
+  // 1: ".----",
+  // 2: "..---",
+  // 3: "...--",
+  // 4: "....-",
+  // 5: ".....",
+  // 6: "-....",
+  // 7: "--...",
+  // 8: "---..",
+  // 9: "----.",
+  // 0: "-----",
+  // ".": ".-.-.-",
+  // ",": "--..--",
+  // "?": "..--..",
+  // " ": " ",
+};
 
-class TranslateToEnglish {
-  constructor(value) {
-    this.value = value;
-  }
+// translate English to Morse code //////////////////////////////////
+document
+  .querySelector(".entry-box-english")
+  .addEventListener("input", function () {
+    // get value from 1st input box
+    let getEnglishInput = document.querySelector(".entry-box-english").value;
+    getEnglishInput = getEnglishInput.toString().toLowerCase();
 
-  //   getTranslation(arr) {
-  //     if (this.value === "a") {
-  //       return "-";
-  //     } else if (this.value === "b") {
-  //       return "-...";
-  //     }
-  //   }
+    let getMorseBox = document.querySelector(".entry-box-morse");
 
-  mapArray = (letter) => {
-    for (let i = 0; i < testArray.length; i++) {
-      // console.log(testArray[i]);
-      if (this.value === "a") {
-        return "-";
-      } else if (this.value === "b") {
-        return "-...";
-      }
-    }
-  };
-}
+    const convertToMorse = (englishInput) => {
+      return englishInput
+        .split("")
+        .map((character) => {
+          return englishAlphabet[character]
+            ? // if true return the object value at the passed in key value
+              englishAlphabet[character]
+            : // if false return the character entered
+              character;
+        })
+        .join("");
+    };
 
-console.log(TranslateToEnglish.mapArray(testArray));
-// const testObject = new TranslateToEnglish(testArray[1]);
-// console.log(testObject.getTranslation());
+    getMorseBox.value = convertToMorse(getEnglishInput);
+  });
+
+// translate Morse code to English
+// will need to know the character by separating with space or -
+document
+  .querySelector(".entry-box-morse")
+  .addEventListener("input", function () {
+    let getMorseInput = document.querySelector(".entry-box-morse").value;
+    // getEnglishInput = getEnglishInput.toLowercase();
+    getMorseInput = getMorseInput.split(" ");
+
+    let getEnglishBox = document.querySelector(".entry-box-english");
+
+    // want to take each "character" from Morse Code input (e.g. .-)
+    // check it against the morseAlphabet object
+    // return the value that matches the key
+    // const getMorseCharacters = () => {
+    //   getMorseInput.map((morseCharacter) => {
+    //     console.log(morseCharacter);
+    //   });
+    // };
+    // getEnglishBox.value = getMorseCharacters(morseAlphabet);
+  });
