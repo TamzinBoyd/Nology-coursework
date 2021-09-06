@@ -1,21 +1,3 @@
-//  CHALLENGE - Create a morse code translator using OOP.
-
-// STEP ONE - RESEARCH MORSE CODE TRANSLATION
-//  Each letter has a morse code equivalent, these are combined to make words. Using  . & -
-
-// DESIGN & CONTENT
-// An input box for user to enter their text
-// output box to display translation (may also be needed for morse code entry)
-// button to activate the translate OR show translation as type
-// design mobile first
-
-// FUNCTONALITY
-// 1. User enters value via input box, convert to string
-// 2. Split into characters. Translations stored in an object.
-// 3. Map over object to find the key and return translation
-// 4. Display results to user
-// Morse to English will be different as user will need to separate characters by space
-
 const englishAlphabet = {
   a: ".-",
   b: "-...",
@@ -66,42 +48,42 @@ const morseAlphabet = {
   "-...": "b",
   "-.-.": "c",
   "-..": "d",
-  // e: ".",
-  // f: "..-.",
-  // g: "--.",
-  // h: "....",
-  // i: "..",
-  // j: ".---",
-  // k: "-.-",
-  // l: ".-..",
-  // m: "--",
-  // n: "-.",
-  // o: "---",
-  // p: ".--.",
-  // q: "--.-",
-  // r: ".-.",
-  // s: "...",
-  // t: "-",
-  // u: "..-",
-  // v: "...-",
-  // w: ".--",
-  // x: "-..-",
-  // y: "-.--",
-  // z: "--..",
-  // 1: ".----",
-  // 2: "..---",
-  // 3: "...--",
-  // 4: "....-",
-  // 5: ".....",
-  // 6: "-....",
-  // 7: "--...",
-  // 8: "---..",
-  // 9: "----.",
-  // 0: "-----",
-  // ".": ".-.-.-",
-  // ",": "--..--",
-  // "?": "..--..",
-  // " ": " ",
+  e: ".",
+  f: "..-.",
+  g: "--.",
+  h: "....",
+  i: "..",
+  j: ".---",
+  k: "-.-",
+  l: ".-..",
+  m: "--",
+  n: "-.",
+  o: "---",
+  p: ".--.",
+  q: "--.-",
+  r: ".-.",
+  s: "...",
+  t: "-",
+  u: "..-",
+  v: "...-",
+  w: ".--",
+  x: "-..-",
+  y: "-.--",
+  z: "--..",
+  1: ".----",
+  2: "..---",
+  3: "...--",
+  4: "....-",
+  5: ".....",
+  6: "-....",
+  7: "--...",
+  8: "---..",
+  9: "----.",
+  0: "-----",
+  ".": ".-.-.-",
+  ",": "--..--",
+  "?": "..--..",
+  " ": " ",
 };
 
 // translate English to Morse code //////////////////////////////////
