@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Morse Code Translator</title>
+
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -17,27 +18,36 @@
         Enter text to translate English to Morse code and Morse code to English
       </p>
     </div>
-    <div class="main">
-      <form action="#">
-        <label for="English"></label>
-        <textarea
-          class="entry-box-english"
-          name="English"
-          placeholder="Enter English text here"
-          rows="4"
-          cols="50"
-        ></textarea>
-
-        <button class="button" type="button">Translate</button>
-        <label for="Morse"></label>
-        <textarea
-          class="entry-box-morse"
-          name="Morse"
-          placeholder="Enter Morse Code here, separate characters with a space and words with -"
-          rows="20"
-          cols="50"
-        ></textarea>
-      </form>
+    <div class="main container">
+      <div class="input1">
+        <form action="#">
+          <label for="English"></label>
+          <textarea
+            class="entry-box-english"
+            name="English"
+            placeholder="Enter English text here"
+            rows="4"
+            cols="50"
+          ></textarea>
+        </form>
+        </div>
+        <div class="buttons">
+          <button class="button-eng" type="button">Translate to Morse</button>
+          <button class="button-mor" type="button">Translate to English</button>
+        </div>
+        <div class="input2">
+        <form>
+          <label for="Morse"></label>
+          <textarea
+            class="entry-box-morse"
+            name="Morse"
+            placeholder="Enter Morse Code here, separate each character with a space, follow with / for a new word"
+            rows="20"
+            cols="50"
+          ></textarea>
+        </form>
+      </div>
+    </div>
     </div>
 
     <ul id="myList">
