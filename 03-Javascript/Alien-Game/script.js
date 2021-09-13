@@ -42,15 +42,48 @@ shootButton.addEventListener("click", function () {
   ) {
     gameOver();
   } else {
+    hitShip();
     //   use random number to select element in ship array
-    randomNum = shipArr[Math.floor(Math.random() * shipArr.length)];
-  }
-  if (randomNum.shipType === "attack") {
-    console.log(randomNum.shipType);
-  } else {
-    alert("wrong ship");
   }
 });
+
+function hitShip() {
+  let motherCurrentScore = document.querySelector(".mother-score");
+  let defenseCurrentScore = document.querySelector(".defense-score");
+  let attackCurrentScore = document.querySelector(".attack-score");
+  randomNum = shipArr[Math.floor(Math.random() * shipArr.length)];
+  if (randomNum.shipType === "attack" && attackShip.currentPoints > 0) {
+    attackShip.deductPoints();
+    attackCurrentScore.innerHTML = attackShip.currentPoints;
+    console.log(
+      attackShip.currentPoints,
+      defenseShip.currentPoints,
+      motherShip.currentPoints
+    );
+  } else if (
+    randomNum.shipType === "defense" &&
+    defenseShip.currentPoints > 0
+  ) {
+    defenseShip.deductPoints();
+    defenseCurrentScore.innerHTML = defenseShip.currentPoints;
+
+    console.log(
+      attackShip.currentPoints,
+      defenseShip.currentPoints,
+      motherShip.currentPoints
+    );
+  } else if (randomNum.shipType === "mother" && motherShip.currentPoints > 0) {
+    motherShip.deductPoints();
+    motherCurrentScore.innerHTML = motherShip.currentPoints;
+    console.log(
+      attackShip.currentPoints,
+      defenseShip.currentPoints,
+      motherShip.currentPoints
+    );
+  } else {
+    return gameOver();
+  }
+}
 
 // mother ship - can take 1 hit
 // each defence ship (5 of) can take 8 hits (40)
