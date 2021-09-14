@@ -15,14 +15,17 @@ class Ship {
   }
 
   deductPoints() {
-    return (this.currentPoints = this.currentPoints - this.pointsDeducted);
-    console.log(this.currentPoints);
+    if (this.currentPoints >= 0) {
+      return (this.currentPoints = this.currentPoints - this.pointsDeducted);
+    } else {
+      this.currentPoints = this.currentPoints;
+    }
   }
 }
 
 let motherShip = new Ship("mother", 100, 100);
 let defenseShip = new Ship("defense", 80, 10);
-let attackShip = new Ship("attack", 45, 12);
+let attackShip = new Ship("attack", 48, 12);
 
 // what happens when click shoot button
 // a random ship object is hit.
@@ -31,6 +34,10 @@ let attackShip = new Ship("attack", 45, 12);
 // if so deduct the points and update current points
 let shipArr = [motherShip, defenseShip, attackShip];
 let randomNum = 0;
+
+let motherCurrentScore = document.querySelector(".mother-score");
+let defenseCurrentScore = document.querySelector(".defense-score");
+let attackCurrentScore = document.querySelector(".attack-score");
 
 const shootButton = document.querySelector(".shoot-button");
 shootButton.addEventListener("click", function () {
@@ -43,45 +50,38 @@ shootButton.addEventListener("click", function () {
     gameOver();
   } else {
     hitShip();
-    //   use random number to select element in ship array
   }
 });
 
 function hitShip() {
-  let motherCurrentScore = document.querySelector(".mother-score");
-  let defenseCurrentScore = document.querySelector(".defense-score");
-  let attackCurrentScore = document.querySelector(".attack-score");
   randomNum = shipArr[Math.floor(Math.random() * shipArr.length)];
-  if (randomNum.shipType === "attack" && attackShip.currentPoints > 0) {
+  console.log(randomNum);
+  if (
+    randomNum.shipType === "attack" &&
+    attackShip.currentPoints > 0
+    // defenseShip.currentPoints > 0 &&
+    // motherShip.currentPoints > 0
+  ) {
     attackShip.deductPoints();
     attackCurrentScore.innerHTML = attackShip.currentPoints;
-    console.log(
-      attackShip.currentPoints,
-      defenseShip.currentPoints,
-      motherShip.currentPoints
-    );
   } else if (
     randomNum.shipType === "defense" &&
     defenseShip.currentPoints > 0
+    // attackShip.currentPoints > 0 &&
+    // motherShip.currentPoints > 0
   ) {
     defenseShip.deductPoints();
     defenseCurrentScore.innerHTML = defenseShip.currentPoints;
-
-    console.log(
-      attackShip.currentPoints,
-      defenseShip.currentPoints,
-      motherShip.currentPoints
-    );
-  } else if (randomNum.shipType === "mother" && motherShip.currentPoints > 0) {
+  } else if (
+    randomNum.shipType === "mother" &&
+    motherShip.currentPoints > 0
+    // defenseShip.currentPoints > 0 &&
+    // attackShip.currentPoints > 0
+  ) {
     motherShip.deductPoints();
     motherCurrentScore.innerHTML = motherShip.currentPoints;
-    console.log(
-      attackShip.currentPoints,
-      defenseShip.currentPoints,
-      motherShip.currentPoints
-    );
   } else {
-    return gameOver();
+    gameOver();
   }
 }
 
@@ -91,4 +91,9 @@ function hitShip() {
 
 function gameOver() {
   alert("Game over");
+  console.log(
+    motherShip.currentPoints,
+    defenseShip.currentPoints,
+    attackShip.currentPoints
+  );
 }
