@@ -80,3 +80,34 @@ button {
 .hide {
   background-color: red;
 }
+
+.game-over {
+  width: 400px;
+  height: 280px;
+  background-color: red;
+  position: relative;
+  margin: auto;
+  margin-top: -480px;
+  border: 3px dotted white;
+  text-align: center;
+
+  padding: 30px;
+  font-family: "Press Start 2P", sans-serif;
+  line-height: 2;
+}
+
+.hidden {
+  display: none;
+}
+
+.restart-button {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.restart-game-button {
+  color: black;
+  background-color: white;
+  margin: auto;
+}

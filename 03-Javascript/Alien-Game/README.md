@@ -17,4 +17,3 @@ When a ship reaches 0 points a ship on HTML needs a hidden classlist.
 
 OTHER ADDITIONS?
 Consider time limit?
-End of game alert, consider HTML with CSS hidden class

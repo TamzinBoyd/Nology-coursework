@@ -17,7 +17,6 @@ let defenseShip2 = new Ship("defense", 80, 10);
 let defenseShip3 = new Ship("defense", 80, 10);
 let defenseShip4 = new Ship("defense", 80, 10);
 let defenseShip5 = new Ship("defense", 80, 10);
-
 let attackShip = new Ship("attack", 48, 12);
 let attackShip2 = new Ship("attack", 48, 12);
 let attackShip3 = new Ship("attack", 48, 12);
@@ -44,11 +43,13 @@ let shipArr = [
   attackShip7,
   attackShip8,
 ];
-let randomShip = 0;
 
+const gameOverMessage = document.querySelector(".game-over");
 const shootButton = document.querySelector(".shoot-button");
+const restartButton = document.querySelector(".restart-button");
+
 shootButton.addEventListener("click", function () {
-  //   check if all ships have 0 points
+  //   check if all ships have 0 points / mothership has 0
   if (motherShip.currentPoints === 0) {
     gameOver();
   } else if (
@@ -61,42 +62,11 @@ shootButton.addEventListener("click", function () {
   }
 });
 
-checkHtmlTest = () => {
-  // used attack as example to see if could delete a random ship on the screen
-  if (randomShip.currentPoints <= 0 && randomShip.shipType === "attack") {
-    // collect all ships with classlist
-    const shootShip = document.querySelectorAll(".attackship");
-    // as gives Node list, tried to push these into an array
-    const testArr = [];
-    shootShip.forEach((word) => {
-      testArr.push(word);
-      // console.log(testArr);
-    });
-
-    for (let i = 0; i < testArr.length; i++) {
-      // is the ship in current array already hidden?
-      if (testArr[i].classList.contains("hide")) {
-        // if yes do the test again to access the next ship
-        checkHtmlTest();
-        // if not add hide to current element then break out as don't want to hide more than one ship
-      } else {
-        // when reach this point it shows the console log but doesn't add a classlist
-        testArr[i].classList.add("hide");
-        console.log("reached else statement");
-        console.log(testArr[i].classList);
-        break;
-      }
-    }
-  }
-
-  // check score of current ship
-
-  // if 0 then delete ship
-};
 const hitShip = () => {
-  // choose random ship
+  // choose random ship from array on each hit
   randomShip = shipArr[Math.floor(Math.random() * shipArr.length)];
 
+  // if the ship is already at 0 points then pick another ship
   if (randomShip.currentPoints <= 0) {
     hitShip();
     checkHtmlTest();
@@ -107,11 +77,46 @@ const hitShip = () => {
   }
 };
 
-const gameOver = () => {
-  alert("Game over");
+// below trying to figure out how to delete a ship on the page when they are at 0 points
+// could get it to work for first one but not additional
+checkHtmlTest = () => {
+  console.log("test");
+  //   // used attack as example to see if could delete a random ship on the screen
+  //   if (randomShip.currentPoints <= 0 && randomShip.shipType === "attack") {
+  //     // collect all ships with classlist
+  //     const shootShip = document.querySelectorAll(".attackship");
+  //     // as gives Node list, tried to push these into an array
+  //     const testArr = [];
+  //     shootShip.forEach((word) => {
+  //       testArr.push(word);
+  //     });
+
+  // below deoesn't work
+  //   for (let i = 0; i < testArr.length; i++) {
+  //     // is the ship in current array already hidden?
+  //     if (testArr[i].classList.contains("hide")) {
+  //       // if yes do the test again to access the next ship
+  //       checkHtmlTest();
+  //       // if not add hide to current element then break out as don't want to hide more than one ship
+  //     } else {
+  //       // when reach this point it shows the console log but doesn't add a classlist
+  //       testArr[i].classList.add("hide");
+  //       console.log("reached else statement");
+  //       console.log(testArr[i].classList);
+  //       break;
+  //     }
+  //   }
+  // }
 };
 
-// add a hidden class list
-// need to get the ship from HTML - not sure how as need to link it to the object
+gameOver = () => {
+  console.log("Game over");
+  gameOverMessage.classList.remove("hidden");
+  shootButton.classList.add("hidden");
+};
 
-// create an HTML element for game over that is only visible when game over is activated - class list
+restartButton.addEventListener("click", function () {
+  gameOverMessage.classList.add("hidden");
+  shootButton.classList.remove("hidden");
+  // need to add something to reset point scores?
+});
