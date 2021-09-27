@@ -44,6 +44,7 @@ const englishAlphabet = {
 const morseAlphabet = {
   " ": "",
   "/": " ",
+  ">": ".",
   ".-": "a",
   "-...": "b",
   "-.-.": "c",
@@ -85,13 +86,14 @@ const morseAlphabet = {
   "..--..": "?",
 };
 
+let getEnglishBox = document.querySelector(".entry-box-english");
+let getMorseBox = document.querySelector(".entry-box-morse");
+
 // translate English to Morse code //////////////////////////////////
 document.querySelector(".button-eng").addEventListener("click", function () {
   // get value from 1st input box
   let getEnglishInput = document.querySelector(".entry-box-english").value;
   getEnglishInput = getEnglishInput.toString().toLowerCase();
-
-  let getMorseBox = document.querySelector(".entry-box-morse");
 
   const translateToMorse = (englishInput) => {
     return englishInput
@@ -132,5 +134,3 @@ document.querySelector(".button-mor").addEventListener("click", function () {
   };
   getEnglishBox.value = translateToEnglish(getMorseInput);
 });
-
-let getEnglishBox = document.querySelector(".entry-box-english");
