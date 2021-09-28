@@ -8,6 +8,9 @@ class Ship {
   deductPoints() {
     return (this.currentPoints = this.currentPoints - this.pointsDeducted);
   }
+  HTMLRender() {
+    return `<div> ${this.shipType}</div>`;
+  }
 }
 
 // create objects for each ship
@@ -43,7 +46,23 @@ let shipArr = [
   attackShip7,
   attackShip8,
 ];
+const defenseShips = document.querySelector(".defense");
 
+// const gameRender = shipArr.forEach((ship) => {
+//   `<div> ${ship.shipType} </div>`;
+// });
+
+// defenseShips.appendChild(gameRender);
+
+shipArr.forEach((ship) => {
+  // console.log(ship);
+  // console.log(ship.shipType);
+  console.log(ship.HTMLRender);
+
+  defenseShips.appendChild(ship.HTMLRender());
+});
+
+let randomShip = 0;
 const gameOverMessage = document.querySelector(".game-over");
 const shootButton = document.querySelector(".shoot-button");
 const restartButton = document.querySelector(".restart-button");
@@ -65,7 +84,7 @@ shootButton.addEventListener("click", function () {
 const hitShip = () => {
   // choose random ship from array on each hit
   randomShip = shipArr[Math.floor(Math.random() * shipArr.length)];
-
+  console.log(randomShip);
   // if the ship is already at 0 points then pick another ship
   if (randomShip.currentPoints <= 0) {
     hitShip();
@@ -77,37 +96,64 @@ const hitShip = () => {
   }
 };
 
-// below trying to figure out how to delete a ship on the page when they are at 0 points
-// could get it to work for first one but not additional
 checkHtmlTest = () => {
-  console.log("test");
-  //   // used attack as example to see if could delete a random ship on the screen
-  //   if (randomShip.currentPoints <= 0 && randomShip.shipType === "attack") {
-  //     // collect all ships with classlist
-  //     const shootShip = document.querySelectorAll(".attackship");
-  //     // as gives Node list, tried to push these into an array
-  //     const testArr = [];
-  //     shootShip.forEach((word) => {
-  //       testArr.push(word);
-  //     });
+  if (randomShip.currentPoints <= 0 && randomShip.shipType === "attack") {
+    // randomShip.classList.add("hide");
+    console.log(randomShip);
+    // const shootShip = document.querySelectorAll(".attackship");
+    // as gives Node list, tried to push these into an array
+    // const testArr = [];
+    // shootShip.forEach((word) => {
+    //   testArr.push(word);
+    // });
 
-  // below deoesn't work
-  //   for (let i = 0; i < testArr.length; i++) {
-  //     // is the ship in current array already hidden?
-  //     if (testArr[i].classList.contains("hide")) {
-  //       // if yes do the test again to access the next ship
-  //       checkHtmlTest();
-  //       // if not add hide to current element then break out as don't want to hide more than one ship
-  //     } else {
-  //       // when reach this point it shows the console log but doesn't add a classlist
-  //       testArr[i].classList.add("hide");
-  //       console.log("reached else statement");
-  //       console.log(testArr[i].classList);
-  //       break;
-  //     }
-  //   }
-  // }
+    // console.log(testArr);
+
+    // for (let i = 0; i < testArr.length; i++) {
+    //   // is the ship in current array already hidden?
+    //   if (testArr[i].classList.contains("hide")) {
+    //     // if yes do the test again to access the next ship
+    //     checkHtmlTest();
+    //     // if not add hide to current element then break out as don't want to hide more than one ship
+    //   } else {
+    //     // when reach this point it shows the console log but doesn't add a classlist
+    //     testArr[i].classList.add("hide");
+    //     console.log("reached else statement");
+    //     console.log(testArr[i].classList);
+    //     break;
+    //   }
+    // }
+  }
 };
+
+//   // used attack as example to see if could delete a random ship on the screen
+// if (randomShip.currentPoints <= 0 && randomShip.shipType === "attack") {
+//   // collect all ships with classlist
+//   const shootShip = document.querySelectorAll(".attackship");
+//   // as gives Node list, tried to push these into an array
+//   const testArr = [];
+//   shootShip.forEach((word) => {
+//     testArr.push(word);
+//   });
+
+//   console.log(testArr);
+//   // below deoesn't work
+//   for (let i = 0; i < testArr.length; i++) {
+//     // is the ship in current array already hidden?
+//     if (testArr[i].classList.contains("hide")) {
+//       // if yes do the test again to access the next ship
+//       checkHtmlTest();
+//       // if not add hide to current element then break out as don't want to hide more than one ship
+//     } else {
+//       // when reach this point it shows the console log but doesn't add a classlist
+//       testArr[i].classList.add("hide");
+//       console.log("reached else statement");
+//       console.log(testArr[i].classList);
+//       break;
+//     }
+// }
+// }
+// };
 
 gameOver = () => {
   console.log("Game over");
