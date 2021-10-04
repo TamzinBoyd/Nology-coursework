@@ -4,23 +4,18 @@ class Ship {
     this.currentPoints = currentPoints;
     this.pointsDeducted = pointsDeducted;
   }
-
   deductPoints() {
     return (this.currentPoints = this.currentPoints - this.pointsDeducted);
   }
-  // below not yet being used
-  HTMLRender() {
-    return `<div>Sunk ship</div>`;
-  }
 }
 
-// create objects for each ship
+// create objects for each ship & push into an array
 let motherShip = new Ship("mother", 100, 9);
-let defenseShip = new Ship("defense", 80, 10);
-let defenseShip2 = new Ship("defense", 80, 10);
-let defenseShip3 = new Ship("defense", 80, 10);
-let defenseShip4 = new Ship("defense", 80, 10);
-let defenseShip5 = new Ship("defense", 80, 10);
+let defenceShip = new Ship("defence", 80, 10);
+let defenceShip2 = new Ship("defence", 80, 10);
+let defenceShip3 = new Ship("defence", 80, 10);
+let defenceShip4 = new Ship("defence", 80, 10);
+let defenceShip5 = new Ship("defence", 80, 10);
 let attackShip = new Ship("attack", 48, 12);
 let attackShip2 = new Ship("attack", 48, 12);
 let attackShip3 = new Ship("attack", 48, 12);
@@ -30,14 +25,13 @@ let attackShip6 = new Ship("attack", 48, 12);
 let attackShip7 = new Ship("attack", 48, 12);
 let attackShip8 = new Ship("attack", 48, 12);
 
-// put objects into an array
-let shipArr = [
-  motherShip,
-  defenseShip,
-  defenseShip2,
-  defenseShip3,
-  defenseShip4,
-  defenseShip5,
+let shipArr = [];
+shipArr.push(
+  defenceShip,
+  defenceShip2,
+  defenceShip3,
+  defenceShip4,
+  defenceShip5,
   attackShip,
   attackShip2,
   attackShip3,
@@ -45,38 +39,67 @@ let shipArr = [
   attackShip5,
   attackShip6,
   attackShip7,
-  attackShip8,
+  attackShip8
+);
+
+// get each ship's ID from HTLML & push into array
+const attackHtml1 = document.getElementById("attack1");
+const attackHtml2 = document.getElementById("attack2");
+const attackHtml3 = document.getElementById("attack3");
+const attackHtml4 = document.getElementById("attack4");
+const attackHtml5 = document.getElementById("attack5");
+const attackHtml6 = document.getElementById("attack6");
+const attackHtml7 = document.getElementById("attack7");
+const attackHtml8 = document.getElementById("attack8");
+const defenceHtml1 = document.getElementById("defence1");
+const defenceHtml2 = document.getElementById("defence2");
+const defenceHtml3 = document.getElementById("defence3");
+const defenceHtml4 = document.getElementById("defence4");
+const defenceHtml5 = document.getElementById("defence5");
+
+let htmlArr = [
+  attackHtml1,
+  attackHtml2,
+  attackHtml3,
+  attackHtml4,
+  attackHtml5,
+  attackHtml6,
+  attackHtml7,
+  attackHtml8,
+  defenceHtml1,
+  defenceHtml2,
+  defenceHtml3,
+  defenceHtml4,
+  defenceHtml5,
 ];
 
-const element = document.querySelector(".defense");
+// get other elements
+const element = document.querySelector(".defence");
 const gameOverMessage = document.querySelector(".game-over");
 const shootButton = document.querySelector(".shoot-button");
 const restartButton = document.querySelector(".restart-button");
 let messageToPlayer = document.querySelector(".message");
 let randomShip = 0;
 
-// loop over array to create ships in the HTML (none random)
-for (let i = 0; i < shipArr.length; i++) {
-  const createShips = document.createElement("h3");
-  const textEl = document.createTextNode(shipArr[i].shipType);
-  createShips.appendChild(textEl);
-  element.appendChild(createShips);
-}
+// loop over array to create ships in the HTML (not random)
+// for (let i = 0; i < shipArr.length; i++) {
+//   const createShips = document.createElement("h3");
+//   const textEl = document.createTextNode(shipArr[i].shipType);
+//   createShips.appendChild(textEl);
+//   element.appendChild(createShips);
+// }
 
-// need to find way to hide just one element, below hides all
-hideShip = (ship) => {
-  element.classList.add("hide");
-};
-
+// shoot button
 shootButton.addEventListener("click", function () {
-  //   check if all ships have 0 points / mothership has 0
+  //   check if all ships have 0 points / mothership has 0 (that means game over)
   if (motherShip.currentPoints === 0) {
     gameOver();
   } else if (
-    defenseShip.currentPoints === 0 &&
+    defenceShip.currentPoints === 0 &&
     attackShip.currentPoints === 0
   ) {
     gameOver();
+    // if not game over then we choose a ship to hit
   } else {
     hitShip();
   }
@@ -85,27 +108,59 @@ shootButton.addEventListener("click", function () {
 const hitShip = () => {
   // choose random ship from array on each hit
   randomShip = shipArr[Math.floor(Math.random() * shipArr.length)];
-  console.log(randomShip);
-  // if the ship is already at 0 points then pick another ship
+
+  // if ship has already been sunk then pick another ship
   if (randomShip.currentPoints <= 0) {
     hitShip();
-    hideShip();
+    // otherwise let player know the type of ship hit, deduct points and check if the ship now has run out of points, If so sink the ship
   } else {
-    messageToPlayer.innerHTML = `Well done, you hit a ${randomShip.shipType} ship!`;
-    // console.log(randomShip.currentPoints);
-    // console.log(randomShip);
+    messageToPlayer.innerHTML = `${randomShip.shipType} ship has been hit!`;
     randomShip.deductPoints();
+    if (randomShip.currentPoints <= 0) {
+      hideShip();
+      alert(`Well done, you sunk one of the ${randomShip.shipType} ships!`);
+      messageToPlayer.innerHTML = `${randomShip.shipType} ship has been hit!`;
+    }
   }
 };
 
 gameOver = () => {
-  console.log("Game over");
   gameOverMessage.classList.remove("hidden");
   shootButton.classList.add("hidden");
 };
 
-restartButton.addEventListener("click", function () {
+restartButton.addEventListener("click", () => {
   gameOverMessage.classList.add("hidden");
   shootButton.classList.remove("hidden");
-  // need to add something to reset point scores?
+  messageToPlayer.innerHTML = "Hit shoot to start the game";
+  // below doesn;t work, says element isn;t a function? /////////////////////////////////
+  shipArr.forEach((element) => {
+    if (element.shipType.contains("defence")) {
+      element.currentPoints = 90;
+    } else if (element.shipType.contains("attack")) {
+      element.currentPoints = 48;
+    } else {
+      return shipArr;
+    }
+  });
+  htmlArr.forEach((ship) => {
+    ship.classList.remove("sunk-ship");
+  });
+  console.log(motherShip.currentPoints, defenceShip2.currentPoints);
 });
+
+hideShip = () => {
+  // select random ship from array
+  const randomHtml = htmlArr[Math.floor(Math.random() * htmlArr.length)];
+
+  // if ship is already sunk then choose another ship in array
+  if (randomHtml.classList.contains("sunk-ship")) {
+    hideShip();
+    // hide defence ship
+  } else if (randomHtml.classList.contains("defenceship")) {
+    randomHtml.classList.add("sunk-ship");
+    //  hide attacked ship
+  } else if (randomHtml.classList.contains("attackship")) {
+    randomHtml.classList.add("sunk-ship");
+  }
+};

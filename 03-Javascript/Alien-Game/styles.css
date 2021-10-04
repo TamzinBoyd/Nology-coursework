@@ -6,6 +6,10 @@
   color: white;
 }
 
+body {
+  background-color: black;
+}
+
 .heading {
   font-family: "Gluten", cursive;
   text-align: center;
@@ -18,41 +22,34 @@
   text-align: center;
 }
 
-body {
-  background-color: black;
-}
 .container {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 20px;
   margin-top: 30px;
-
   font-family: "Press Start 2P", sans-serif;
   text-align: center;
 }
 
-.defense {
-  margin: auto;
-  width: 80%;
+.mother {
+  margin-top: 30px;
   grid-column: 1 / 9;
-
+}
+.defence {
+  width: 100%;
+  grid-column: 1 / 9;
   margin-top: 30px;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
 }
-.message {
-  font-family: "Gluten", cursive;
-  margin: auto;
-  text-align: center;
+
+.defenceship {
+  padding: 20px;
   font-size: 30px;
 }
-/* .defenceship {
-  padding: 20px;
-} */
 
-/* .attack-1 {
+.attack {
   width: 100%;
   grid-column: 1 / 9;
   font-size: 10px;
@@ -60,11 +57,12 @@ body {
   display: flex;
   justify-content: center;
 }
-
-.attackship {
-  padding: 20px;
-} */
-
+.message {
+  font-family: "Gluten", cursive;
+  margin: auto;
+  text-align: center;
+  font-size: 30px;
+}
 .button-container {
   text-align: center;
   margin: 50px;
@@ -80,27 +78,18 @@ button {
   font-size: 20px;
 }
 
-.hide {
-  background-color: red;
-}
-
 .game-over {
   width: 400px;
   height: 280px;
   background-color: red;
   position: relative;
   margin: auto;
-  margin-top: -480px;
+  margin-top: 100px;
   border: 3px dotted white;
   text-align: center;
-
   padding: 30px;
   font-family: "Press Start 2P", sans-serif;
   line-height: 2;
-}
-
-.hidden {
-  display: none;
 }
 
 .restart-button {
@@ -118,4 +107,82 @@ button {
 h3 {
   font-size: 20px;
   padding: 30px;
+}
+
+.hidden {
+  display: none;
+}
+.sunk-ship {
+  color: black;
+}
+
+@media screen and (max-width: 768px) {
+  .heading {
+    margin: 20px 0px 20px 0px;
+    font-size: 30px;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+    margin-top: 20px;
+  }
+
+  .mother {
+    margin-top: 20px;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    font-size: 10px;
+  }
+  .defence {
+    grid-column: 1 / 4;
+    grid-row: 2 / 4;
+    margin-top: 10px;
+  }
+
+  .defenceship {
+    padding: 10px;
+    font-size: 10px;
+  }
+
+  .attack {
+    grid-column: 1 / 4;
+    grid-row: 3 / 5;
+    font-size: 10px;
+    margin-top: 10px;
+  }
+  .message {
+    font-size: 20px;
+  }
+  /* .button-container {
+    text-align: center;
+    margin: 50px;
+  } */
+
+  button {
+    width: 70px;
+    height: 70px;
+    border-radius: 50px;
+
+    font-size: 15px;
+  }
+
+  .game-over {
+    margin-top: -330px;
+    width: 200px;
+    height: 200px;
+    font-size: 10px;
+  }
+
+  /* .restart-button {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+  } */
+
+  h3 {
+    font-size: 10px;
+  }
 }

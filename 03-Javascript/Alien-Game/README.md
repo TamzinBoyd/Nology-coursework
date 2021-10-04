@@ -15,5 +15,7 @@ When the ship is hit, access the object to deduct points and update current poin
 Recognise when all current points are 0/Mother ship 0 and show "game over - you've won".
 When a ship reaches 0 points a ship on HTML needs a hidden classlist.
 
-OTHER ADDITIONS?
-Consider time limit?
+IMPROVEMENTS NEEDED
+
+- Reset button - currently it doesn't reset points or class lists due to bug
+- Improve responsiveness for grid elements
