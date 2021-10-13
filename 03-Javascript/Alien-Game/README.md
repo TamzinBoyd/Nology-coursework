@@ -5,6 +5,7 @@ Create a text based/basic alien shooting game
 When a ship is hit the points are deducted
 
 Game over is when all ships have 0 points left or Mother ship has 0 points
+Aim for less than 50 lines of code
 
 FUNCTIONALITY
 
@@ -17,6 +18,9 @@ When a ship reaches 0 points a ship on HTML needs a hidden classlist.
 
 IMPROVEMENTS NEEDED
 
+- Add remaining points to HTML?
+- Bug with Grid in CSS when adapting to mobile
 - Reset button - currently it doesn't reset points or class lists due to bug
 - Improve responsiveness for grid elements
-- Reduce no lines of code / refactor
+- Refactor code
+- Carry out unit testing once functioning

@@ -78,18 +78,11 @@ const element = document.querySelector(".defence");
 const gameOverMessage = document.querySelector(".game-over");
 const shootButton = document.querySelector(".shoot-button");
 const restartButton = document.querySelector(".restart-button");
+
 let messageToPlayer = document.querySelector(".message");
 let randomShip = 0;
 
-// loop over array to create ships in the HTML (not random)
-// for (let i = 0; i < shipArr.length; i++) {
-//   const createShips = document.createElement("h3");
-//   const textEl = document.createTextNode(shipArr[i].shipType);
-//   createShips.appendChild(textEl);
-//   element.appendChild(createShips);
-// }
-
-// shoot button
+// shoot button ////////////////////////////////////////////////////////////////////////////////////
 shootButton.addEventListener("click", function () {
   //   check if all ships have 0 points / mothership has 0 (that means game over)
   if (motherShip.currentPoints === 0) {
@@ -117,6 +110,7 @@ const hitShip = () => {
   } else {
     messageToPlayer.innerHTML = `${randomShip.shipType} ship has been hit!`;
     randomShip.deductPoints();
+
     if (randomShip.currentPoints <= 0) {
       hideShip();
       messageToPlayer.innerHTML = `Well done, you sunk one of the ${randomShip.shipType} ships!`;
@@ -124,18 +118,37 @@ const hitShip = () => {
   }
 };
 
-// show game over message and hide shoot button
+// hiding the HTML elements of the ship once sunk (currently in an array) ////////////////////////////////////////////////////////////
+hideShip = () => {
+  // select random ship from array
+  const randomHtml = htmlArr[Math.floor(Math.random() * htmlArr.length)];
+
+  // if ship is already sunk then choose another ship in array. Mothership N/A as 0 points means game over
+  if (randomHtml.classList.contains("sunk-ship")) {
+    hideShip();
+    // hide defence ship
+  } else if (randomHtml.classList.contains("defenceship")) {
+    randomHtml.classList.add("sunk-ship");
+
+    //  hide attacked ship
+  } else if (randomHtml.classList.contains("attackship")) {
+    randomHtml.classList.add("sunk-ship");
+  }
+};
+
+// show game over message and hide shoot button ///////////////////////////////////////////////////////////////////////////////////
 gameOver = () => {
   gameOverMessage.classList.remove("hidden");
   shootButton.classList.add("hidden");
 };
 
-// reset button
+// reset button - currently doesn't work
 restartGame = () => {
   gameOverMessage.classList.add("hidden");
   shootButton.classList.remove("hidden");
   messageToPlayer.innerHTML = "Hit shoot to start the game";
-  // below doesn;t work, says element isn;t a function? /////////////////////////////////
+
+  // below doesn't work, says element isn't a function? /////////////////////////////////
   shipArr.forEach((element) => {
     if (element.shipType.contains("defence")) {
       element.currentPoints = 90;
@@ -153,19 +166,11 @@ restartGame = () => {
 
 restartButton.addEventListener("click", restartGame);
 
-// hiding the HTML elements of the ships (currently in an array)
-hideShip = () => {
-  // select random ship from array
-  const randomHtml = htmlArr[Math.floor(Math.random() * htmlArr.length)];
-
-  // if ship is already sunk then choose another ship in array. Mothership N/A as 0 points means game over
-  if (randomHtml.classList.contains("sunk-ship")) {
-    hideShip();
-    // hide defence ship
-  } else if (randomHtml.classList.contains("defenceship")) {
-    randomHtml.classList.add("sunk-ship");
-    //  hide attacked ship
-  } else if (randomHtml.classList.contains("attackship")) {
-    randomHtml.classList.add("sunk-ship");
-  }
-};
+// below was adding HTML, but couldnt then add classes to it
+// loop over array to create ships in the HTML (not random)
+// for (let i = 0; i < shipArr.length; i++) {
+//   const createShips = document.createElement("h3");
+//   const textEl = document.createTextNode(shipArr[i].shipType);
+//   createShips.appendChild(textEl);
+//   element.appendChild(createShips);
+// }
