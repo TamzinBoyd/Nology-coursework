@@ -109,27 +109,29 @@ const hitShip = () => {
   // choose random ship from array on each hit
   randomShip = shipArr[Math.floor(Math.random() * shipArr.length)];
 
-  // if ship has already been sunk then pick another ship
+  // if ship has already been sunk then hit another ship
   if (randomShip.currentPoints <= 0) {
     hitShip();
-    // otherwise let player know the type of ship hit, deduct points and check if the ship now has run out of points, If so sink the ship
+    // otherwise let player know the type of ship hit, deduct points and check if the ship now has run out of points
+    // If so sink the ship
   } else {
     messageToPlayer.innerHTML = `${randomShip.shipType} ship has been hit!`;
     randomShip.deductPoints();
     if (randomShip.currentPoints <= 0) {
       hideShip();
-      alert(`Well done, you sunk one of the ${randomShip.shipType} ships!`);
-      messageToPlayer.innerHTML = `${randomShip.shipType} ship has been hit!`;
+      messageToPlayer.innerHTML = `Well done, you sunk one of the ${randomShip.shipType} ships!`;
     }
   }
 };
 
+// show game over message and hide shoot button
 gameOver = () => {
   gameOverMessage.classList.remove("hidden");
   shootButton.classList.add("hidden");
 };
 
-restartButton.addEventListener("click", () => {
+// reset button
+restartGame = () => {
   gameOverMessage.classList.add("hidden");
   shootButton.classList.remove("hidden");
   messageToPlayer.innerHTML = "Hit shoot to start the game";
@@ -147,13 +149,16 @@ restartButton.addEventListener("click", () => {
     ship.classList.remove("sunk-ship");
   });
   console.log(motherShip.currentPoints, defenceShip2.currentPoints);
-});
+};
 
+restartButton.addEventListener("click", restartGame);
+
+// hiding the HTML elements of the ships (currently in an array)
 hideShip = () => {
   // select random ship from array
   const randomHtml = htmlArr[Math.floor(Math.random() * htmlArr.length)];
 
-  // if ship is already sunk then choose another ship in array
+  // if ship is already sunk then choose another ship in array. Mothership N/A as 0 points means game over
   if (randomHtml.classList.contains("sunk-ship")) {
     hideShip();
     // hide defence ship

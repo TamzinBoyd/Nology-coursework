@@ -19,3 +19,4 @@ IMPROVEMENTS NEEDED
 
 - Reset button - currently it doesn't reset points or class lists due to bug
 - Improve responsiveness for grid elements
+- Reduce no lines of code / refactor
