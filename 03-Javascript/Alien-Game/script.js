@@ -83,20 +83,18 @@ let messageToPlayer = document.querySelector(".message");
 let randomShip = 0;
 
 // shoot button ////////////////////////////////////////////////////////////////////////////////////
-shootButton.addEventListener("click", function () {
-  //   check if all ships have 0 points / mothership has 0 (that means game over)
-  if (motherShip.currentPoints === 0) {
-    gameOver();
-  } else if (
-    defenceShip.currentPoints === 0 &&
+const shootShip = () => {
+  if (
+    (motherShip.currentPoints === 0) | (defenceShip.currentPoints === 0) &&
     attackShip.currentPoints === 0
   ) {
     gameOver();
-    // if not game over then we choose a ship to hit
   } else {
     hitShip();
   }
-});
+};
+
+shootButton.addEventListener("click", shootShip);
 
 const hitShip = () => {
   // choose random ship from array on each hit
