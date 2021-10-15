@@ -33,6 +33,11 @@ body {
   justify-content: center;
   margin: auto;
   margin-top: 30px;
+  width: 100%;
+}
+
+.mothership {
+  justify-self: center;
 }
 .defence {
   display: grid;
@@ -77,6 +82,10 @@ button {
   font-weight: 700;
   font-size: 20px;
   border: 2px solid red;
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 .game-over {
@@ -129,10 +138,12 @@ h3 {
   }
 
   .intro {
+    margin: auto;
     font-size: 10px;
+    width: 80%;
   }
   .mother {
-    margin-top: 30px;
+    margin-top: 50px;
     text-align: center;
   }
 
@@ -140,18 +151,23 @@ h3 {
     font-size: 20px;
   }
 
-  /* This section the 5th item isn't going into the centre of the grid */
   .defence {
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-wrap: wrap;
   }
 
   .defenceship {
     font-size: 10px;
     padding: 10px;
+    flex-grow: 1;
   }
 
+  .defenceship:nth-child(5) {
+    flex-grow: 1;
+  }
   .attack {
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-wrap: wrap;
     font-size: 10px;
     padding: 5px;
   }
