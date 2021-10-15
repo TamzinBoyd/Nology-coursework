@@ -100,7 +100,7 @@ const hitShip = () => {
   // choose random ship from array on each hit
   randomShip = shipArr[Math.floor(Math.random() * shipArr.length)];
 
-  // if ship has already been sunk then hit another ship
+  // if ship has already been sunk (has 0 points) then hit another ship
   if (randomShip.currentPoints <= 0) {
     hitShip();
     // otherwise let player know the type of ship hit, deduct points and check if the ship now has run out of points
@@ -147,6 +147,7 @@ restartGame = () => {
   messageToPlayer.innerHTML = "Hit shoot to start the game";
 
   // below doesn't work, says element isn't a function? /////////////////////////////////
+  // trying to reset the values of t
   shipArr.forEach((element) => {
     if (element.shipType.contains("defence")) {
       element.currentPoints = 90;

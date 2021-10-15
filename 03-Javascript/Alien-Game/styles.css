@@ -23,35 +23,30 @@ body {
 }
 
 .container {
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-
-  grid-template-areas:
-    "a a a a a a a a"
-    "b b b b b b b b"
-    "c c c c c c c c";
-  grid-gap: 20px;
-  margin-top: 30px;
   font-family: "Press Start 2P", sans-serif;
   align-items: center;
 }
 
 .mother {
-  grid-area: a;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
   margin: auto;
   margin-top: 30px;
 }
 .defence {
-  grid-area: b;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
   margin: auto;
   margin-top: 20px;
   width: 100%;
-  display: flex;
+  justify-content: center;
   text-align: center;
 }
 .attack {
-  grid-area: c;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  justify-content: center;
   text-align: center;
 }
 
@@ -81,6 +76,7 @@ button {
   background-color: red;
   font-weight: 700;
   font-size: 20px;
+  border: 2px solid red;
 }
 
 .game-over {
@@ -129,35 +125,47 @@ h3 {
   }
 
   .container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-areas:
-      "a a a a"
-      "b b b b"
-      "b b b b"
-      "c c c c"
-      "c c c c"
-      "c c c c";
-    grid-gap: 10px;
     margin-top: 20px;
   }
 
+  .intro {
+    font-size: 10px;
+  }
   .mother {
-    margin-top: 20px;
-    font-size: 15px;
+    margin-top: 30px;
+    text-align: center;
+  }
+
+  .mothership {
+    font-size: 20px;
+  }
+
+  /* This section the 5th item isn't going into the centre of the grid */
+  .defence {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .defenceship {
-    padding: 10px;
     font-size: 10px;
+    padding: 10px;
+  }
+
+  .attack {
+    grid-template-columns: repeat(3, 1fr);
+    font-size: 10px;
+    padding: 5px;
   }
 
   .attackship {
     font-size: 10px;
-    margin-top: 10px;
+    padding: 10px;
   }
   .message {
     font-size: 15px;
+  }
+
+  .button-container {
+    margin: 20px;
   }
 
   button {
