@@ -66,3 +66,20 @@ h2 {
 .button:hover {
   cursor: pointer;
 }
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 80px;
+  }
+
+  h2 {
+    font-size: 15px;
+  }
+
+  .pokemon {
+    width: 60vh;
+    height: 300px;
+  }
+  .name {
+    font-size: 40px;
+  }
+}
