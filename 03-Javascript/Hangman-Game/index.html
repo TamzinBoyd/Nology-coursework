@@ -8,14 +8,40 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <button class="start">Start Game</button>
-    <input class="input" type="text" placeholder="Enter a letter" />
-    <button class="button">Check letter</button>
-    <div><h3 class="message"></h3></div>
-    <div class="hide" id="hiddenWord"></div>
-    <ul class="usedLetters"></ul>
-    <div class="error"></div>
-    <div class="score"></div>
+    <div class="start-container">
+      <h1>Hangman</h1>
+      <button class="start">Start Game</button>
+    </div>
+    <div id="hiddenWord"><p></p></div>
+
+    <div class="hangman hide">
+      <div id="line3" class="line hide"></div>
+      <div id="line2" class="line hide"></div>
+      <div id="line" class="line hide"></div>
+      <div id="line9" class="line hide"></div>
+      <div id="line4" class="line hide"></div>
+      <div id="circle" class="line hide"></div>
+      <div id="line5" class="line hide"></div>
+      <div id="line6" class="line hide"></div>
+      <div id="line7" class="line hide"></div>
+      <div id="line8" class="line hide"></div>
+    </div>
+    <div class="letters-container hide">
+      <ul class="usedLetters hide"></ul>
+    </div>
+    <div class="input-container">
+      <input class="input hide" type="text" placeholder="Enter a letter here" />
+      <button class="button hide">Check letter</button>
+    </div>
+    <div class="game-over hide">
+      <h2 class="game-over-message">Game over! Better luck next time</h2>
+    </div>
+    <div class="won-game hide">
+      <h2 class="won-game-message">
+        Well done, you guessed the word correctly
+      </h2>
+    </div>
+    <button class="reset hide">Restart Game</button>
     <script src="script.js"></script>
   </body>
 </html>

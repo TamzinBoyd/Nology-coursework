@@ -1,3 +1,185 @@
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap");
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background-color: rgb(183, 194, 255);
+}
+
+.start-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  font-family: "Alfa Slab One", serif;
+  font-weight: 300;
+  color: black;
+  margin-top: 30px;
+}
+.start {
+  margin-top: 30px;
+  width: 200px;
+  height: 30px;
+  background-color: #17369e;
+  color: white;
+  border-style: none;
+  border-radius: 10px;
+  box-shadow: -4px 4px #ffffff;
+  cursor: pointer;
+}
+
 #hiddenWord {
-  font-size: 30px;
+  margin: auto;
+  margin-top: 30px;
+  font-size: 20px;
+  width: 200px;
+  text-align: center;
+}
+
+.letters-container {
+  width: 200px;
+  margin: auto;
+  margin-top: 30px;
+  padding: 10px;
+  text-align: center;
+  background-color: #17369e;
+  color: white;
+  border-radius: 10px;
+}
+.usedLetters {
+  font-family: "Alfa Slab One", serif;
+  font-weight: 100;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.input {
+  margin: auto;
+  margin-top: 30px;
+  border-style: none;
+  border: 2px solid #17369e;
+  border-radius: 5px;
+  font-size: 20px;
+  text-align: center;
+  width: 200px;
+  height: 30px;
+}
+
+.button {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 200px;
+  height: 30px;
+  background-color: #17369e;
+  color: white;
+  border-style: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.hangman {
+  width: 200px;
+  height: 200px;
+  background-color: white;
+  margin: auto;
+  margin-top: 30px;
+  padding: 20px;
+}
+#line {
+  width: 150px;
+  border-bottom: 1px solid black;
+  position: absolute;
+}
+
+#line2 {
+  height: 200px;
+  border-left: 1px solid black;
+  position: absolute;
+}
+
+#line3 {
+  height: 200px;
+  width: 50px;
+  border-bottom: 1px solid black;
+  position: absolute;
+}
+
+#line4 {
+  height: 40px;
+  margin-left: 150px;
+  border-left: 1px solid black;
+  position: absolute;
+}
+
+#circle {
+  width: 40px;
+  height: 40px;
+  margin-left: 130px;
+  margin-top: 40px;
+  border-radius: 50%;
+  background-color: white;
+  border: 2px solid black;
+  position: absolute;
+}
+
+#line5 {
+  height: 60px;
+  margin-left: 150px;
+  margin-top: 82px;
+  border-left: 1px solid black;
+  position: absolute;
+}
+
+#line6 {
+  width: 50px;
+  margin-left: 125px;
+  margin-top: 100px;
+  border-bottom: 1px solid black;
+  position: absolute;
+}
+
+#line7 {
+  width: 52px;
+  height: 80px;
+  margin-left: 157px;
+  margin-top: 135px;
+  border-bottom: 1px solid black;
+  -webkit-transform: translateY(-40px) translateX(15px) rotate(50deg);
+  position: absolute;
+}
+
+#line8 {
+  width: 52px;
+  height: 80px;
+  margin-left: 138px;
+  margin-top: 145px;
+  border-bottom: 1px solid black;
+  -webkit-transform: translateY(0px) translateX(0px) rotate(130deg);
+  position: absolute;
+}
+
+#line9 {
+  width: 52px;
+  height: 80px;
+  margin-left: 22px;
+  margin-top: 5px;
+  border-bottom: 1px solid black;
+  -webkit-transform: translateY(0px) translateX(0px) rotate(130deg);
+  position: absolute;
+}
+
+.game-over {
+  background-color: red;
+  width: 400px;
+  height: 400px;
+}
+.hide {
+  display: none;
 }
