@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rampart+One&display=swap");
 
 * {
   margin: 0px;
@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: rgb(183, 194, 255);
+  background-image: url("./clouds.jpg");
 }
 
 .start-container {
@@ -16,26 +16,27 @@ body {
 }
 
 h1 {
-  font-family: "Alfa Slab One", serif;
+  font-family: "Rampart one", serif;
+  font-size: 50px;
   font-weight: 300;
-  color: black;
+  color: rgb(10, 10, 49);
   margin-top: 30px;
 }
 .start {
-  margin-top: 30px;
+  margin-top: 20px;
   width: 200px;
   height: 30px;
-  background-color: #17369e;
+  background-color: #fe5541;
   color: white;
   border-style: none;
   border-radius: 10px;
-  box-shadow: -4px 4px #ffffff;
+
   cursor: pointer;
 }
 
 #hiddenWord {
   margin: auto;
-  margin-top: 30px;
+  margin-top: 20px;
   font-size: 20px;
   width: 200px;
   text-align: center;
@@ -44,15 +45,15 @@ h1 {
 .letters-container {
   width: 200px;
   margin: auto;
-  margin-top: 30px;
+  margin-top: 20px;
   padding: 10px;
   text-align: center;
-  background-color: #17369e;
+  background-color: #101628;
   color: white;
   border-radius: 10px;
 }
 .usedLetters {
-  font-family: "Alfa Slab One", serif;
+  font-family: "Rampart one", serif;
   font-weight: 100;
 }
 
@@ -63,11 +64,12 @@ h1 {
 }
 .input {
   margin: auto;
-  margin-top: 30px;
+  margin-top: 20px;
   border-style: none;
-  border: 2px solid #17369e;
-  border-radius: 5px;
-  font-size: 20px;
+
+  border: 2px solid #101628;
+  border-radius: 10px;
+  font-size: 15px;
   text-align: center;
   width: 200px;
   height: 30px;
@@ -77,13 +79,24 @@ h1 {
   margin-top: 10px;
   margin-bottom: 20px;
   width: 200px;
-  height: 30px;
-  background-color: #17369e;
+  height: 35px;
+  background-color: #fe5541;
   color: white;
   border-style: none;
   border-radius: 10px;
   cursor: pointer;
 }
+.reset {
+  margin: auto;
+  width: 200px;
+  height: 35px;
+  background-color: #fe5541;
+  color: white;
+  border-style: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
 .hangman {
   width: 200px;
   height: 200px;
@@ -176,9 +189,33 @@ h1 {
 }
 
 .game-over {
-  background-color: red;
-  width: 400px;
-  height: 400px;
+  position: absolute;
+  background-color: #101628;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 200px;
+  height: 200px;
+  padding: 20px;
+  margin-top: -360px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+  text-align: center;
+}
+
+.won-game-message {
+  position: absolute;
+  background-color: #101628;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 200px;
+  height: 200px;
+  padding: 20px;
+  margin-top: -360px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+  text-align: center;
 }
 .hide {
   display: none;

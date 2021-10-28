@@ -29,6 +29,7 @@ GET & CHECK A VALUE
 
 - enter value in input box & store
 - convert all to lowercase
+- Replace letters with \_. or / if a space
 - check if value is in the chosen word with loop, if so update chosen word to show the value
 - if not score needs to decrease by 1 & classlist removed from hangman element
 - Alphabet to update minus the value
