@@ -153,7 +153,7 @@ const hideShip = () => {
 };
 
 // show game over message and hide shoot button //////////////////////////////////////////
-const gameOver = () => {
+export const gameOver = () => {
   gameOverMessage.classList.remove("hidden");
   shootButton.classList.add("hidden");
 };
