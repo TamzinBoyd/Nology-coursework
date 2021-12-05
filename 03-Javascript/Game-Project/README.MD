@@ -1,17 +1,17 @@
-PROJECT BREIF
+PROJECT BRIEF
 
-Create an interactive game using HTML, CSS & JAVASCRIPT with a mobile first approach
+First game project to create an interactive game using HTML, CSS & JAVASCRIPT.
 
-HOW I APPROACHED IT
+THE GAME
 
-Decided on a missing item game where the user finds items.
+Decided on a missing item game where the user finds the hidden snakes. Targeted more towards childen.
 
 BREAKING IT DOWN
 
-1. Image including hidden objects
+1. Would need an image including hidden objects
 2. User clicks "start game" to activate timer
-3. User finds an item, it is removed from game play and an alert shows
-4. Found items show on a display
+3. User finds a snake, it is removed from game play and an alert shows
+4. Found snakes show on a display
 5. Either a. user finds all items and wins the game, alert shows and timer stops.
    b. timer finishes before user finds all items, alert shows to stop the same
 

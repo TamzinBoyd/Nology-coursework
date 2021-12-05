@@ -159,8 +159,10 @@ nav a {
 .box3 {
   background-color: $pink-color;
   border-radius: 20px;
-  height: 500px;
+  height: 100%;
   padding: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 .subHeading-projects {
@@ -174,6 +176,7 @@ nav a {
   background-color: $block-color;
   margin-top: 100px;
   padding: 100px 30px 30px 30px;
+  padding-bottom: 200px;
 }
 
 .projects__name {
@@ -191,7 +194,12 @@ nav a {
   margin-bottom: 15px;
 }
 
-.project__image > img {
+.projects__image {
+  justify-content: center;
+  align-items: center;
+}
+
+.projects__image > img {
   border-radius: 20px;
   width: 100%;
 }
