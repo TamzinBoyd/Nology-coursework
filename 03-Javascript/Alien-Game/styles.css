@@ -38,6 +38,7 @@ body {
 
 .mothership {
   justify-self: center;
+  color: red;
 }
 .defence {
   display: grid;
