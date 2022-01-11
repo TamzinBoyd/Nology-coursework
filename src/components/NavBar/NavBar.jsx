@@ -1,10 +1,13 @@
 import React from "react";
 import SearchBar from "../SearchBar";
 
-const NavBar = () => {
+const NavBar = (props) => {
+  const { updateSearchText } = props;
+
   return (
     <div>
-      <SearchBar />
+      <h1>BREWDOG</h1>
+      <SearchBar updateSearchText={updateSearchText} />
     </div>
   );
 };
