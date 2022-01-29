@@ -22,10 +22,6 @@ const App = () => {
       .catch((error) => console.error(error));
   };
 
-  useEffect(() => {
-    const filterBeers = `https://api.punkapi.com/v2/beers${filterByName}`;
-  }, [filterByName]);
-
   // pass value of input box into api list & update state to results
   const updateBeerList = async (filterByName) => {
     const beerList = await getBeers(filterByName);
@@ -35,6 +31,10 @@ const App = () => {
   useEffect(() => {
     updateBeerList();
   }, []);
+
+  useEffect(() => {
+    const filterBeers = `https://api.punkapi.com/v2/beers${filterByName}`;
+  }, [filterByName]);
 
   return (
     <div className="App">
