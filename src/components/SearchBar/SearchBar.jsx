@@ -1,17 +1,20 @@
 import React from "react";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import styles from "./SearchBar.module.scss";
 
 const SearchBar = (props) => {
-  const { updateSearchText } = props;
-
-  const input = (
-    <input type="text" onInput={(e) => updateSearchText(e.target.value)} />
-  );
+  const { placeholder, setSearchTerm } = props;
 
   return (
     <div>
-      <h3>Search for your favourite beer</h3>
-      {input}
+      <h3 className={styles.title}>Search for your favourite beer</h3>
+      {/* works until you remove the text so need to see how to fix this - also can't get it to show all beers on loadin */}
+      <input
+        className={styles.input}
+        type="text"
+        placeholder={placeholder}
+        // change searchTerm state to value of input box
+        onChange={(e) => setSearchTerm(e.target.value)}
+      />
     </div>
   );
 };

@@ -1,13 +1,10 @@
 import React from "react";
-import SearchBar from "../SearchBar";
+import styles from "./NavBar.module.scss";
 
-const NavBar = (props) => {
-  const { updateSearchText } = props;
-
+const NavBar = () => {
   return (
-    <div>
-      <h1>BREWDOG</h1>
-      <SearchBar updateSearchText={updateSearchText} />
+    <div className={styles.navbar}>
+      <h1 className={styles.logo}>BREWDOG</h1>
     </div>
   );
 };
