@@ -25,8 +25,8 @@ Services to hold api request
 
 <!-- filtering -->
 
-When entering a letter in the search box, you want to check if that letter is contained in any of the beer.names
-If so render the card
-beers array . filter (searchTerm {
-return < Card />
-})
+1. get results from API
+2. Render beers based on these results
+3. WHEN user enters something in the input box, then re-render the beers based on the search term,
+   copying the beers into a new state
+   problem is it updates the state

@@ -8,24 +8,15 @@ import CardList from "./components/CardList/CardList";
 import SearchBar from "./components/SearchBar";
 
 const App = () => {
-  // state later set to API list so beers = api array
-  const [beers, setBeers] = useState([]);
-  const [searchTerm, setSearchTerm] = useState("");
-  const filterByName = `?beer_name=${searchTerm}`;
-
-  const getBeers = (filterByName) => {
-    return fetch(`https://api.punkapi.com/v2/beers${filterByName}`)
-      .then((response) => response.json())
-      .then((respJason) => {
-        return respJason;
-      })
-      .catch((error) => console.error(error));
-  };
+  const [masterBeers, setMasterBeers] = useState(false);
+  const [searchTerm, setSearchTerm] = useState(false);
+  const [searchedBeers, setSearchedBeers] = useState(false);
 
   // pass value of input box into api list & update state to results
-  const updateBeerList = async (filterByName) => {
-    const beerList = await getBeers(filterByName);
-    setBeers(beerList);
+  const updateBeerList = async () => {
+    const beerList = await getBeers();
+    setMasterBeers(beerList);
+    // setSearchedBeers(beerList);
   };
 
   useEffect(() => {
@@ -33,18 +24,33 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-    const filterBeers = `https://api.punkapi.com/v2/beers${filterByName}`;
-  }, [filterByName]);
+    // if equal to false, don't do anything, otherwise run the function
+    if (!masterBeers) {
+      return;
+    }
+    getFilteredBeers();
+    // only run when searchTerm exists
+  }, [searchTerm]);
+
+  // filter beers based on search entered by user
+  const getFilteredBeers = () => {
+    console.log(searchedBeers);
+    const filteredBeers = searchedBeers.filter((beer) => {
+      return beer.name.toUpperCase().includes(searchTerm);
+    });
+    setSearchedBeers(filteredBeers);
+    console.log(filteredBeers);
+  };
 
   return (
     <div className="App">
-      <NavBar beers={beers} />
+      <NavBar />
       <SearchBar
-        beers={beers}
         placeholder={"Search our extensive range of beers"}
         setSearchTerm={setSearchTerm}
       />
-      <CardList beers={beers} />
+      {/* if state contains value then render the comp */}
+      {masterBeers && <CardList searchedBeers={searchedBeers} />}
     </div>
   );
 };

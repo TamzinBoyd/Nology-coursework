@@ -1,19 +1,18 @@
 import React from "react";
 import Card from "../Card";
-import styles from "./CardList.module.scss";
+import styles from "./SearchedBeers.module.scss";
 
-const CardList = (props) => {
+const SearchedBeers = (props) => {
   const { searchedBeers } = props;
-  // currently logs undefined
-  console.log(searchedBeers);
 
+  // render Card, pass in beer
   const getCardJsx = (beer) => (
     <div>
       <Card beer={beer} />
     </div>
   );
 
-  // map over masterBeets state (array) & for each beer carry out the function to render a card
+  // map over beers state (array) & for each beer carry out the function to render a card
   return (
     <>
       <section className={styles.container}>
@@ -25,4 +24,4 @@ const CardList = (props) => {
   );
 };
 
-export default CardList;
+export default SearchedBeers;
