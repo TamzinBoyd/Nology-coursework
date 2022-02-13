@@ -8,7 +8,7 @@ DESIGN & CONTENT
 - An input box for user to enter their text
 - Output box to display translation (may also be needed for morse code entry)
 - Button to activate the translate OR show translation as type
-- Ddesign mobile first
+- Design mobile first
 
 FUNCTONALITY
 
